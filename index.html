@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEXABABY — MPASI Real Food & Tumbuh Kembang Bayi Indonesia</title>
+<meta name="description" content="Panduan MPASI real food & tumbuh kembang bayi berbasis data. Untuk Mama Indonesia yang ingin parenting dengan confident, bukan sekadar asumsi.">
+<meta property="og:title" content="HEXABABY — MPASI Real Food & Tumbuh Kembang Bayi">
+<meta property="og:description" content="Parenting berbasis data — dimulai dari sini.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#3D5E3A;--forest-dark:#2A4027;--sage:#7BA370;--sage-light:#C8DECC;--cream:#F5EFE0;--cream-mid:#EDE5D0;--sand:#D4B896;--terra:#B85C38;--terra-light:#F0CEBC;--charcoal:#2D2926;--warm-gray:#6B5E52;--light-gray:#B4B2A9;--font-body:'Plus Jakarta Sans',sans-serif;--font-serif:'Lora',serif;--radius-sm:12px;--radius-md:20px;--radius-lg:32px;--radius-xl:48px;--shadow-card:0 4px 24px rgba(61,94,58,0.10),0 1px 4px rgba(61,94,58,0.06);--shadow-float:0 8px 40px rgba(61,94,58,0.14),0 2px 8px rgba(61,94,58,0.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--cream);color:var(--charcoal);overflow-x:hidden;line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,239,224,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(61,94,58,0.08);transition:box-shadow 0.3s}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:28px;width:auto}
+.nav-logo-text{font-size:20px;font-weight:800;color:var(--forest);letter-spacing:-0.02em}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--warm-gray);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--forest)}
+.nav-cta{background:var(--forest)!important;color:var(--cream)!important;padding:10px 22px;border-radius:100px;font-weight:600;font-size:14px;transition:background 0.2s,transform 0.15s!important}
+.nav-cta:hover{background:var(--forest-dark)!important;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;border:none;background:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px}
+
+/* BUTTONS */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:var(--cream);padding:16px 32px;border-radius:100px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(61,94,58,0.3);transition:all 0.2s}
+.btn-primary:hover{background:var(--forest-dark);transform:translateY(-2px);box-shadow:0 8px 32px rgba(61,94,58,0.35)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--forest);padding:16px 28px;border-radius:100px;font-size:16px;font-weight:600;text-decoration:none;border:2px solid var(--sage);transition:all 0.2s}
+.btn-secondary:hover{background:var(--sage-light);transform:translateY(-2px)}
+
+/* HERO */
+.hero{min-height:100vh;padding:140px 40px 80px;position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-blob{position:absolute;pointer-events:none;z-index:0}
+.hero-blob-1{top:-100px;right:-120px;width:600px;height:600px;background:radial-gradient(ellipse,var(--sage-light) 0%,transparent 70%);border-radius:60% 40% 70% 30% / 50% 60% 40% 60%;opacity:0.5;animation:morphBlob1 12s ease-in-out infinite}
+.hero-blob-2{bottom:-80px;left:-100px;width:500px;height:450px;background:radial-gradient(ellipse,var(--terra-light) 0%,transparent 70%);border-radius:40% 60% 30% 70% / 60% 40% 60% 40%;opacity:0.4;animation:morphBlob2 10s ease-in-out infinite}
+@keyframes morphBlob1{0%,100%{border-radius:60% 40% 70% 30% / 50% 60% 40% 60%;transform:translate(0,0)}33%{border-radius:40% 60% 30% 70% / 60% 40% 60% 40%;transform:translate(10px,-15px)}66%{border-radius:70% 30% 50% 50% / 30% 70% 60% 40%;transform:translate(-10px,10px)}}
+@keyframes morphBlob2{0%,100%{border-radius:40% 60% 30% 70% / 60% 40% 60% 40%}50%{border-radius:60% 40% 70% 30% / 40% 60% 40% 60%;transform:translate(15px,-10px)}}
+.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--sage-light);color:var(--forest);padding:6px 16px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:0.02em;margin-bottom:24px}
+.hero-badge::before{content:'';display:block;width:8px;height:8px;border-radius:50%;background:var(--forest);opacity:0.7}
+.hero-title{font-family:var(--font-serif);font-size:clamp(42px,5vw,64px);font-weight:600;line-height:1.15;color:var(--charcoal);margin-bottom:12px}
+.hero-title em{font-style:italic;color:var(--forest)}
+.hero-title-sub{font-family:var(--font-body);font-size:clamp(28px,3.5vw,42px);font-weight:800;color:var(--forest);line-height:1.1;margin-bottom:20px}
+.hero-desc{font-size:17px;color:var(--warm-gray);line-height:1.7;max-width:460px;margin-bottom:36px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-visual{position:relative;z-index:1}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* WAVY */
+.wavy-divider{width:100%;overflow:hidden;line-height:0;margin-bottom:-2px}
+.wavy-divider svg{display:block;width:100%}
+
+/* SECTION COMMONS */
+.section-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.section-label{font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px}
+.section-title{font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);color:var(--charcoal);line-height:1.25;margin-bottom:16px}
+.section-title em{font-style:italic;color:var(--forest)}
+.section-subtitle{font-size:17px;color:var(--warm-gray);max-width:540px;margin:0 auto;line-height:1.7}
+.section-header{text-align:center;margin-bottom:64px}
+
+/* PROBLEM */
+.section-problem{background:var(--forest);padding:80px 40px;position:relative;overflow:hidden}
+.section-problem::before{content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;background:radial-gradient(ellipse,rgba(200,222,204,0.12) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.problem-title{font-family:var(--font-serif);font-size:clamp(32px,4vw,48px);color:var(--cream);line-height:1.25;margin-bottom:24px}
+.problem-title em{font-style:italic;color:var(--sage-light)}
+.problem-desc{color:rgba(245,239,224,0.75);font-size:16px;line-height:1.75;margin-bottom:32px}
+.pain-points{display:flex;flex-direction:column;gap:16px}
+.pain-point{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,0.06);padding:18px 20px;border-radius:var(--radius-md);border:1px solid rgba(200,222,204,0.15);transition:all 0.25s}
+.pain-point:hover{background:rgba(255,255,255,0.10);border-color:rgba(200,222,204,0.3)}
+.pain-point-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.pain-point-text h4{color:var(--cream);font-size:15px;font-weight:600;margin-bottom:4px}
+.pain-point-text p{color:rgba(245,239,224,0.65);font-size:13px;line-height:1.5}
+
+/* FEATURES */
+.section-features{background:var(--cream);padding:100px 40px}
+.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.feature-card{background:white;border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-card);border:1px solid rgba(61,94,58,0.06);transition:all 0.3s;position:relative;overflow:hidden}
+.feature-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-float)}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--forest);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.feature-card.terra::before{background:var(--terra)}
+.feature-card.sage::before{background:var(--sage)}
+.feature-card-large{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.feature-emoji{font-size:36px;margin-bottom:20px;display:block}
+.feature-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:14px}
+.feature-tag.green{background:var(--sage-light);color:var(--forest)}
+.feature-tag.terra{background:var(--terra-light);color:var(--terra)}
+.feature-tag.sage{background:var(--cream-mid);color:var(--warm-gray)}
+.feature-card h3{font-size:22px;font-weight:800;color:var(--charcoal);margin-bottom:12px;line-height:1.3}
+.feature-card p{font-size:15px;color:var(--warm-gray);line-height:1.7;margin-bottom:20px}
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.feature-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--charcoal);font-weight:500}
+.feature-list li::before{content:'✓';display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--sage-light);color:var(--forest);font-size:11px;font-weight:700;flex-shrink:0}
+.feature-visual{background:var(--cream);border-radius:var(--radius-md);padding:24px;overflow:hidden}
+
+/* ECOSYSTEM */
+.section-ecosystem{background:var(--forest-dark);padding:100px 40px;position:relative;overflow:hidden}
+.ecosystem-bg-blob{position:absolute;pointer-events:none;width:600px;height:400px;background:radial-gradient(ellipse,rgba(200,222,204,0.08) 0%,transparent 70%)}
+.ecosystem-bg-blob-1{top:-100px;right:-100px}
+.ecosystem-bg-blob-2{bottom:-100px;left:-100px}
+.ecosystem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+.ecosystem-card{background:rgba(255,255,255,0.06);border:1px solid rgba(200,222,204,0.12);border-radius:var(--radius-lg);padding:28px 24px;transition:all 0.3s;text-decoration:none;display:block;position:relative;overflow:hidden}
+.ecosystem-card:hover{background:rgba(255,255,255,0.10);border-color:rgba(200,222,204,0.25);transform:translateY(-4px)}
+.ecosystem-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--sage-light);border-radius:0 0 var(--radius-lg) var(--radius-lg);opacity:0;transition:opacity 0.3s}
+.ecosystem-card:hover::after{opacity:1}
+.ecosystem-card-icon{font-size:32px;margin-bottom:16px;display:block}
+.ecosystem-card-handle{font-size:12px;font-weight:700;letter-spacing:0.06em;color:var(--sage-light);margin-bottom:10px}
+.ecosystem-card h3{font-size:17px;font-weight:700;color:var(--cream);margin-bottom:10px;line-height:1.3}
+.ecosystem-card p{font-size:13px;color:rgba(245,239,224,0.6);line-height:1.6}
+
+/* ABOUT */
+.section-about{background:var(--cream);padding:100px 40px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto}
+.about-visual-container{position:relative}
+.about-float{position:absolute;background:white;border-radius:var(--radius-md);box-shadow:var(--shadow-float);padding:16px 20px;animation:float 4s ease-in-out infinite}
+.about-float-1{bottom:32px;right:-32px;animation-delay:0.5s}
+.about-float-2{top:40px;left:-24px;animation-delay:2s}
+.about-float-label{font-size:11px;color:var(--warm-gray);margin-bottom:4px}
+.about-float-val{font-size:18px;font-weight:800;color:var(--charcoal)}
+.about-float-sub{font-size:12px;color:var(--forest);font-weight:600}
+.about-title{font-family:var(--font-serif);font-size:clamp(28px,3.5vw,42px);color:var(--charcoal);line-height:1.3;margin-bottom:20px}
+.about-title em{font-style:italic;color:var(--forest)}
+.about-quote{background:var(--forest);padding:24px 28px;border-radius:var(--radius-md);margin-bottom:24px;position:relative}
+.about-quote::before{content:'"';font-family:var(--font-serif);font-size:72px;color:rgba(200,222,204,0.3);position:absolute;top:-10px;left:18px;line-height:1}
+.about-quote p{font-style:italic;font-family:var(--font-serif);font-size:16px;color:var(--cream);line-height:1.7;position:relative;z-index:1}
+.about-quote cite{display:block;margin-top:10px;font-style:normal;font-size:13px;font-weight:600;color:var(--sage-light);position:relative;z-index:1}
+.about-bio{font-size:16px;color:var(--warm-gray);line-height:1.8;margin-bottom:28px}
+.about-creds{display:flex;flex-direction:column;gap:10px}
+.about-cred{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--charcoal);font-weight:500}
+.about-cred-icon{width:32px;height:32px;border-radius:8px;background:var(--sage-light);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+
+/* SOCIAL PROOF */
+.section-social{background:var(--cream-mid);padding:80px 40px}
+.social-header{text-align:center;margin-bottom:48px}
+.instagram-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto}
+.ig-embed-wrap{border-radius:18px;overflow:hidden;background:white;box-shadow:0 4px 24px rgba(61,94,58,0.10);min-height:520px;display:flex;align-items:stretch}
+.ig-embed-wrap .instagram-media{border-radius:18px!important;width:100%!important;min-width:0!important;flex:1}
+.social-cta{text-align:center;margin-top:40px}
+.ig-tab{background:transparent;border:2px solid var(--sand);color:var(--warm-gray);font-family:var(--font-body);font-size:14px;font-weight:600;padding:10px 24px;border-radius:100px;cursor:pointer;transition:all 0.2s}
+.ig-tab:hover{border-color:var(--sage);color:var(--forest);background:var(--sage-light)}
+.ig-tab.active{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+
+/* CTA */
+.section-cta{background:var(--forest);padding:100px 40px;text-align:center;position:relative;overflow:hidden}
+.section-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(200,222,204,0.1) 0%,transparent 70%);pointer-events:none}
+.cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.cta-title{font-family:var(--font-serif);font-size:clamp(32px,4vw,52px);color:var(--cream);line-height:1.2;margin-bottom:20px}
+.cta-title em{font-style:italic;color:var(--sage-light)}
+.cta-desc{font-size:17px;color:rgba(245,239,224,0.75);margin-bottom:40px;line-height:1.7}
+.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-cta-primary{display:inline-flex;align-items:center;gap:8px;background:var(--cream);color:var(--forest);padding:18px 36px;border-radius:100px;font-size:17px;font-weight:800;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.2);transition:all 0.2s}
+.btn-cta-primary:hover{background:white;transform:translateY(-2px);box-shadow:0 8px 40px rgba(0,0,0,0.25)}
+.btn-cta-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--cream);padding:18px 32px;border-radius:100px;font-size:16px;font-weight:600;text-decoration:none;border:2px solid rgba(200,222,204,0.4);transition:all 0.2s}
+.btn-cta-secondary:hover{border-color:var(--sage-light);background:rgba(200,222,204,0.1)}
+.cta-note{margin-top:24px;font-size:13px;color:rgba(245,239,224,0.5)}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,0.6)}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand-name{font-size:18px;font-weight:800;color:rgba(245,239,224,0.8);margin-bottom:12px}
+.footer-brand p{font-size:13px;line-height:1.7;max-width:260px}
+.footer-col h4{color:rgba(245,239,224,0.9);font-size:14px;font-weight:700;margin-bottom:16px}
+.footer-col a{display:block;color:rgba(245,239,224,0.5);text-decoration:none;font-size:13px;margin-bottom:10px;transition:color 0.2s}
+.footer-col a:hover{color:rgba(245,239,224,0.9)}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;font-size:12px}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{padding:120px 20px 60px}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-visual{order:-1}
+  .problem-grid{grid-template-columns:1fr;gap:40px}
+  .section-features{padding:60px 20px}
+  .features-grid{grid-template-columns:1fr}
+  .feature-card-large{grid-column:span 1;grid-template-columns:1fr}
+  .ecosystem-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .about-float-1,.about-float-2{display:none}
+  .instagram-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:32px}
+  .section-problem,.section-ecosystem,.section-about,.section-social,.section-cta{padding:60px 20px}
+}
+@media(max-width:600px){
+  .ecosystem-grid,.footer-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <img src="Hexababy_Logo_Landscape.png" alt="HEXABABY" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span class="nav-logo-text" style="display:none">HEXABABY.</span>
+  </a>
+  <div class="nav-links">
+    <a href="#features">Fitur</a>
+    <a href="#ekosistem">Ekosistem</a>
+    <a href="#tentang">Tentang</a>
+    <a href="https://instagram.com/hexababy_world" target="_blank" style="color:var(--forest);font-weight:600;">@hexababy_world</a>
+    <a href="https://hexababy-app.vercel.app" target="_blank" class="nav-cta">Buka App →</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🌿 Dari Mama, Untuk Mama</div>
+      <h1 class="hero-title">Parenting berbasis <em>data</em> —</h1>
+      <div class="hero-title-sub">dimulai dari sini.</div>
+      <p class="hero-desc">Ketika angka bicara, keputusan jadi lebih mudah. HEXABABY hadir untuk mengubah kekhawatiran menjadi data — supaya Mama bisa parenting dengan confident, bukan sekadar asumsi.</p>
+      <div class="hero-actions">
+        <a href="https://hexababy-app.vercel.app" target="_blank" class="btn-primary">Coba HEXABABY App 🚀</a>
+        <a href="#features" class="btn-secondary">Lihat Fitur</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 460 500" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;display:block;margin:0 auto;filter:drop-shadow(0 8px 32px rgba(61,94,58,0.12))">
+        <defs><filter id="fs" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#3D5E3A" flood-opacity="0.12"/></filter></defs>
+        <ellipse cx="230" cy="250" rx="200" ry="215" fill="#C8DECC" opacity="0.27"/>
+        <ellipse cx="245" cy="235" rx="168" ry="185" fill="#F5EFE0" stroke="#C8DECC" stroke-width="1.5"/>
+        <ellipse cx="392" cy="78" rx="22" ry="12" fill="#7BA370" opacity="0.55" transform="rotate(-35 392 78)"/>
+        <ellipse cx="410" cy="60" rx="16" ry="10" fill="#3D5E3A" opacity="0.3" transform="rotate(-55 410 60)"/>
+        <ellipse cx="48" cy="310" rx="16" ry="9" fill="#7BA370" opacity="0.4" transform="rotate(20 48 310)"/>
+        <!-- Badge left: bar chart -->
+        <rect x="8" y="68" width="175" height="58" rx="16" fill="white" filter="url(#fs)"/>
+        <rect x="24" y="103" width="7" height="12" rx="2" fill="#3D5E3A" opacity="0.35"/>
+        <rect x="34" y="97" width="7" height="18" rx="2" fill="#3D5E3A" opacity="0.6"/>
+        <rect x="44" y="90" width="7" height="25" rx="2" fill="#3D5E3A"/>
+        <path d="M24 105 L51 88" stroke="#B85C38" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M46 86 L53 86 L53 93" stroke="#B85C38" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="68" y="91" font-size="12" fill="#2D2926" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Data bicara</text>
+        <text x="68" y="106" font-size="12" fill="#2D2926" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">lebih jelas</text>
+        <text x="68" y="120" font-size="10" fill="#6B5E52" font-family="Plus Jakarta Sans,sans-serif">dari asumsi manapun</text>
+        <!-- Badge right: shield -->
+        <rect x="280" y="68" width="170" height="58" rx="16" fill="white" filter="url(#fs)"/>
+        <circle cx="302" cy="97" r="13" fill="#C8DECC" opacity="0.5"/>
+        <path d="M302 84C302 84 294 87 294 93L294 100C294 106 302 110 302 110C302 110 310 106 310 100L310 93C310 87 302 84 302 84Z" fill="#3D5E3A" opacity="0.7"/>
+        <path d="M298 97L301 100L307 93" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="322" y="91" font-size="12" fill="#2D2926" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Berbasis</text>
+        <text x="322" y="106" font-size="12" fill="#2D2926" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">WHO &amp; IDAI</text>
+        <text x="322" y="120" font-size="10" fill="#6B5E52" font-family="Plus Jakarta Sans,sans-serif">Panduan terverifikasi</text>
+        <!-- App card -->
+        <rect x="96" y="145" width="268" height="262" rx="22" fill="white" stroke="#EDE5D0" stroke-width="1.5" filter="url(#fs)"/>
+        <rect x="96" y="145" width="268" height="60" rx="22" fill="#3D5E3A"/>
+        <rect x="96" y="183" width="268" height="22" fill="#3D5E3A"/>
+        <text x="230" y="169" font-size="13" fill="#F5EFE0" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">HEXABABY App</text>
+        <text x="230" y="186" font-size="10" fill="#C8DECC" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">MPASI Planner · Tracker · Journal</text>
+        <!-- Row 1 -->
+        <rect x="108" y="218" width="244" height="36" rx="11" fill="#F5EFE0"/>
+        <circle cx="126" cy="236" r="11" fill="#7BA370" opacity="0.3"/>
+        <line x1="122" y1="229" x2="122" y2="243" stroke="#3D5E3A" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M125 229L125 233Q129 235 125 238L125 243" stroke="#3D5E3A" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+        <line x1="129" y1="229" x2="129" y2="233" stroke="#3D5E3A" stroke-width="1.4" stroke-linecap="round"/>
+        <text x="145" y="232" font-size="11" fill="#3D5E3A" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Makan Siang</text>
+        <text x="145" y="246" font-size="9.5" fill="#6B5E52" font-family="Plus Jakarta Sans,sans-serif">Ayam cincang + brokoli + wortel</text>
+        <rect x="302" y="224" width="42" height="20" rx="10" fill="#C8DECC"/>
+        <text x="323" y="237" font-size="8.5" fill="#3D5E3A" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">✓ Log</text>
+        <!-- Row 2 -->
+        <rect x="108" y="260" width="244" height="36" rx="11" fill="#F5EFE0"/>
+        <circle cx="126" cy="278" r="11" fill="#B85C38" opacity="0.15"/>
+        <rect x="122.5" y="270" width="7" height="14" rx="3.5" fill="#3D5E3A" opacity="0.75"/>
+        <rect x="124" y="267" width="4" height="4" rx="1.5" fill="#3D5E3A" opacity="0.5"/>
+        <text x="145" y="274" font-size="11" fill="#3D5E3A" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">ASI / Sufor</text>
+        <text x="145" y="288" font-size="9.5" fill="#6B5E52" font-family="Plus Jakarta Sans,sans-serif">3x · Mood: Ceria</text>
+        <circle cx="215" cy="284" r="5" fill="none" stroke="#6B5E52" stroke-width="1.2"/>
+        <circle cx="213" cy="282.5" r="0.8" fill="#6B5E52"/><circle cx="217" cy="282.5" r="0.8" fill="#6B5E52"/>
+        <path d="M213 285.5Q215 287.5 217 285.5" stroke="#6B5E52" stroke-width="1" stroke-linecap="round" fill="none"/>
+        <rect x="302" y="266" width="42" height="20" rx="10" fill="#C8DECC"/>
+        <text x="323" y="279" font-size="8.5" fill="#3D5E3A" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">✓ Log</text>
+        <!-- Row 3 -->
+        <rect x="108" y="302" width="244" height="36" rx="11" fill="#F5EFE0"/>
+        <circle cx="126" cy="320" r="11" fill="#3D5E3A" opacity="0.12"/>
+        <path d="M122 313A9 9 0 1 0 122 327A6 6 0 1 1 122 313Z" fill="#3D5E3A" opacity="0.75"/>
+        <text x="145" y="316" font-size="11" fill="#3D5E3A" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Tidur Malam</text>
+        <text x="145" y="330" font-size="9.5" fill="#6B5E52" font-family="Plus Jakarta Sans,sans-serif">10.5 jam · Nyenyak</text>
+        <rect x="302" y="308" width="42" height="20" rx="10" fill="#C8DECC"/>
+        <text x="323" y="321" font-size="8.5" fill="#3D5E3A" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">✓ Log</text>
+        <!-- Insight bar -->
+        <rect x="108" y="344" width="244" height="55" rx="12" fill="#3D5E3A"/>
+        <rect x="120" y="358" width="4" height="8" rx="1" fill="#C8DECC" opacity="0.45"/>
+        <rect x="126" y="353" width="4" height="13" rx="1" fill="#C8DECC" opacity="0.7"/>
+        <rect x="132" y="348" width="4" height="18" rx="1" fill="#C8DECC"/>
+        <text x="142" y="362" font-size="11" fill="#C8DECC" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Insight Minggu Ini</text>
+        <text x="120" y="377" font-size="9.5" fill="rgba(245,239,224,0.85)" font-family="Plus Jakarta Sans,sans-serif">Asupan protein: Cukup · Variasi sayur: ↑</text>
+        <text x="120" y="391" font-size="8.5" fill="#C8DECC" font-family="Plus Jakarta Sans,sans-serif">Panduan berbasis WHO · IDAI · AAP</text>
+        <!-- Chip 1: leaf -->
+        <rect x="76" y="422" width="98" height="70" rx="18" fill="white" stroke="#EDE5D0" stroke-width="1.5" filter="url(#fs)"/>
+        <circle cx="125" cy="440" r="12" fill="#C8DECC" opacity="0.45"/>
+        <path d="M125 451C125 451 115 442 118 433C120 427 132 427 132 435C132 443 125 451 125 451Z" fill="#3D5E3A" opacity="0.8"/>
+        <path d="M122 446C121 441 121 436 124 432" stroke="white" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        <text x="125" y="465" font-size="11.5" fill="#3D5E3A" font-weight="800" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">MPASI</text>
+        <text x="125" y="477" font-size="9.5" fill="#7BA370" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">300+ menu</text>
+        <text x="125" y="488" font-size="8.5" fill="#B4B2A9" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">real food</text>
+        <!-- Chip 2: clipboard dark -->
+        <rect x="181" y="415" width="98" height="82" rx="18" fill="#3D5E3A" filter="url(#fs)"/>
+        <circle cx="230" cy="435" r="12" fill="rgba(255,255,255,0.1)"/>
+        <rect x="223" y="429" width="14" height="16" rx="3" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+        <rect x="226.5" y="427" width="7" height="4" rx="2" fill="rgba(255,255,255,0.45)"/>
+        <line x1="225.5" y1="434" x2="235.5" y2="434" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="225.5" y1="437.5" x2="235.5" y2="437.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="225.5" y1="441" x2="231" y2="441" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" stroke-linecap="round"/>
+        <text x="230" y="457" font-size="11.5" fill="#F5EFE0" font-weight="800" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">Tracker</text>
+        <text x="230" y="470" font-size="9.5" fill="#C8DECC" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">Harian &amp;</text>
+        <text x="230" y="482" font-size="9.5" fill="#C8DECC" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">mingguan</text>
+        <text x="230" y="492" font-size="8.5" fill="rgba(200,222,204,0.7)" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">Semua tercatat ✓</text>
+        <!-- Chip 3: speech bubble -->
+        <rect x="286" y="422" width="98" height="70" rx="18" fill="white" stroke="#EDE5D0" stroke-width="1.5" filter="url(#fs)"/>
+        <circle cx="335" cy="440" r="12" fill="#C8DECC" opacity="0.45"/>
+        <path d="M326 434Q326 428 335 428Q344 428 344 434Q344 440 340 441L340 445L336 441Q326 441 326 434Z" fill="#3D5E3A" opacity="0.8"/>
+        <line x1="330" y1="433" x2="340" y2="433" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+        <line x1="330" y1="436.5" x2="337.5" y2="436.5" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+        <text x="335" y="465" font-size="11.5" fill="#3D5E3A" font-weight="800" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">Bahasa</text>
+        <text x="335" y="477" font-size="9.5" fill="#7BA370" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">Milestone</text>
+        <text x="335" y="488" font-size="8.5" fill="#B4B2A9" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">kata per hari</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wavy-divider"><svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none"><path d="M0 0 C240 60 480 60 720 30 C960 0 1200 0 1440 40 L1440 60 L0 60 Z" fill="#2A4027"/></svg></div>
+
+<!-- PROBLEM -->
+<section class="section-problem">
+  <div class="section-inner">
+    <div class="problem-grid">
+      <div>
+        <div class="section-label" style="color:var(--sage-light)">🤝 Sistem support yang tepat</div>
+        <h2 class="problem-title">MPASI itu <em>berat</em> — kalau harus figuring out sendirian.</h2>
+        <p class="problem-desc">HEXABABY hadir untuk membantu Mama memanfaatkan setiap momen golden age si kecil — supaya pemenuhan nutrisi lebih terarah, tumbuh kembang lebih terpantau, dan setiap keputusan sesuai dengan tahapan usianya.</p>
+        <a href="#features" class="btn-secondary" style="color:var(--cream);border-color:rgba(200,222,204,0.4)">Lihat bagaimana →</a>
+      </div>
+      <div class="pain-points">
+        <div class="pain-point reveal"><div class="pain-point-icon">📋</div><div class="pain-point-text"><h4>Tracking yang terstruktur</h4><p>Journaling harian membuat pola terlihat — dari asupan, reaksi alergi, sampai tidur dan mood si kecil.</p></div></div>
+        <div class="pain-point reveal reveal-delay-1"><div class="pain-point-icon">📊</div><div class="pain-point-text"><h4>Data, bukan asumsi</h4><p>Angka tumbuh kembang berbasis WHO & IDAI membantu Mama masuk konsultasi dokter dengan fakta, bukan kekhawatiran samar.</p></div></div>
+        <div class="pain-point reveal reveal-delay-2"><div class="pain-point-icon">🧭</div><div class="pain-point-text"><h4>Navigasi informasi lebih mudah</h4><p>300+ menu MPASI dikurasi berdasarkan panduan pediatri — supaya Mama tidak perlu mulai dari nol setiap hari.</p></div></div>
+        <div class="pain-point reveal reveal-delay-3"><div class="pain-point-icon">🤝</div><div class="pain-point-text"><h4>Komunitas yang menguatkan</h4><p>Berbagi pengalaman nyata — bukan kompetisi, tapi support system yang membuat perjalanan MPASI terasa lebih ringan.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wavy-divider"><svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none"><path d="M0 60 C360 0 720 0 1080 30 C1260 45 1380 20 1440 0 L1440 60 L0 60 Z" fill="#F5EFE0"/></svg></div>
+
+<!-- FEATURES -->
+<section class="section-features" id="features">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label" style="color:var(--forest)">🚀 HEXABABY Super App</div>
+      <h2 class="section-title">Semua yang kamu butuhkan, <em>dalam satu app.</em></h2>
+      <p class="section-subtitle">Satu app untuk tracking, journaling, dan panduan MPASI — supaya Mama bisa fokus mendampingi si kecil tumbuh dengan penuh keyakinan.</p>
+    </div>
+    <div class="features-grid">
+      <!-- MPASI Planner large -->
+      <div class="feature-card feature-card-large reveal">
+        <div>
+          <span class="feature-emoji">🥦</span>
+          <div class="feature-tag green">Fitur Unggulan</div>
+          <h3>MPASI Planner</h3>
+          <p>300+ menu MPASI real food yang sudah dikurasi berdasarkan panduan WHO & IDAI. Filter per usia, alergen, dan tekstur — jadwal makan mingguan Mama langsung siap.</p>
+          <ul class="feature-list">
+            <li>Menu 6–24 bulan dengan variasi lengkap</li>
+            <li>Filter alergen (bebas telur, bebas susu, dll)</li>
+            <li>Panduan tekstur per tahapan usia</li>
+            <li>Shopping list otomatis dari meal plan</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div style="font-size:13px;font-weight:700;color:var(--forest);margin-bottom:16px">Menu Minggu Ini</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;gap:12px;background:var(--sage-light);border-radius:12px;padding:10px 14px"><span style="font-size:20px">🍳</span><div><div style="font-size:13px;font-weight:700;color:var(--forest)">Senin — Sarapan</div><div style="font-size:12px;color:var(--warm-gray)">Nasi tim hati ayam + labu kuning</div></div><span style="margin-left:auto;font-size:11px;font-weight:700;color:var(--forest);background:white;padding:3px 10px;border-radius:100px">18 bln ✓</span></div>
+            <div style="display:flex;align-items:center;gap:12px;background:var(--cream-mid);border-radius:12px;padding:10px 14px"><span style="font-size:20px">🐟</span><div><div style="font-size:13px;font-weight:700;color:var(--charcoal)">Selasa — Makan Siang</div><div style="font-size:12px;color:var(--warm-gray)">Ikan kembung kukus + bayam + tempe</div></div><span style="margin-left:auto;font-size:11px;font-weight:700;color:var(--terra);background:var(--terra-light);padding:3px 10px;border-radius:100px">Bebas telur</span></div>
+            <div style="display:flex;align-items:center;gap:12px;background:var(--cream-mid);border-radius:12px;padding:10px 14px"><span style="font-size:20px">🥕</span><div><div style="font-size:13px;font-weight:700;color:var(--charcoal)">Rabu — Snack</div><div style="font-size:12px;color:var(--warm-gray)">Pancake pisang + yogurt plain</div></div><span style="margin-left:auto;font-size:11px;font-weight:700;color:var(--forest);background:var(--sage-light);padding:3px 10px;border-radius:100px">Finger food</span></div>
+          </div>
+          <div style="margin-top:14px;padding:10px 14px;background:var(--forest);border-radius:12px;font-size:12px;color:var(--sage-light);font-weight:600;display:flex;align-items:center;gap:8px"><span>🛒</span> Shopping list 7 hari otomatis ter-generate</div>
+        </div>
+      </div>
+      <!-- Language Tracker -->
+      <div class="feature-card reveal reveal-delay-1">
+        <span class="feature-emoji">🗣️</span>
+        <div class="feature-tag green">Tumbuh Kembang</div>
+        <h3>Language Tracker</h3>
+        <p>Track kata-kata baru si kecil setiap hari. Visualisasi milestone bahasa berdasarkan panduan AAP.</p>
+        <ul class="feature-list"><li>Log kata baru dengan timestamp</li><li>Grafik perkembangan bahasa</li><li>Alert jika milestone terlambat</li></ul>
+      </div>
+      <!-- Journal -->
+      <div class="feature-card terra reveal reveal-delay-2">
+        <span class="feature-emoji">📔</span>
+        <div class="feature-tag terra">Daily Log</div>
+        <h3>Food & Health Journal</h3>
+        <p>Catat semua yang perlu dicatat — bukan hanya makanan. Pattern dari data harian inilah yang membuat konsultasi ke dokter jadi jauh lebih produktif.</p>
+        <ul class="feature-list"><li>Log asupan harian: makan utama, ASI/sufor, & snack</li><li>Trace reaksi alergi & kondisi kulit</li><li>Poop tracker & digestive health log</li><li>Sleep tracker & mood tracker si kecil</li></ul>
+      </div>
+      <!-- Analytics -->
+      <div class="feature-card sage reveal reveal-delay-1">
+        <span class="feature-emoji">📈</span>
+        <div class="feature-tag sage">Data & Insight</div>
+        <h3>Analytics Dashboard</h3>
+        <p>Kurva BB & TB berbasis WHO. Tren asupan nutrisi. Visual yang bisa langsung ditunjukkan ke dokter anak.</p>
+        <ul class="feature-list"><li>Kurva pertumbuhan WHO</li><li>Tren nutrisi mingguan/bulanan</li><li>Export PDF untuk konsultasi</li></ul>
+      </div>
+      <!-- Marketplace Coming Soon -->
+      <div class="feature-card reveal reveal-delay-2" style="background:var(--cream-mid);border:2px dashed var(--sand);position:relative;overflow:hidden">
+        <div style="position:absolute;top:18px;right:20px;background:var(--terra);color:white;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.05em">COMING SOON</div>
+        <span class="feature-emoji" style="filter:grayscale(0.3)">🛍️</span>
+        <div class="feature-tag" style="background:var(--sand);color:var(--warm-gray)">Marketplace</div>
+        <h3 style="color:var(--warm-gray)">HEXABABY Marketplace</h3>
+        <p style="color:var(--light-gray)">Produk MPASI real food yang sudah diverifikasi standar 7 poin — langsung bisa dibeli tanpa perlu baca label satu per satu.</p>
+        <ul class="feature-list" style="opacity:0.5"><li>Produk lolos kurasi @hexababygroup</li><li>Liten Yoghurt & pantry staples</li><li>Pengiriman ke seluruh Indonesia</li></ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px" class="reveal">
+      <a href="https://hexababy-app.vercel.app" target="_blank" class="btn-primary" style="font-size:17px;padding:18px 40px">Coba Gratis Sekarang →</a>
+      <p style="margin-top:16px;font-size:13px;color:var(--warm-gray)">Tidak perlu kartu kredit · Free tier tersedia</p>
+    </div>
+  </div>
+</section>
+
+<div class="wavy-divider"><svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none"><path d="M0 30 C360 60 720 0 1080 40 C1260 55 1380 30 1440 20 L1440 60 L0 60 Z" fill="#2A4027"/></svg></div>
+
+<!-- ECOSYSTEM -->
+<section class="section-ecosystem" id="ekosistem">
+  <div class="ecosystem-bg-blob ecosystem-bg-blob-1"></div>
+  <div class="ecosystem-bg-blob ecosystem-bg-blob-2"></div>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label" style="color:var(--sage-light)">🌿 Ekosistem HEXABABY</div>
+      <h2 class="section-title" style="color:var(--cream)">Satu brand. <em style="color:var(--sage-light)">Empat wajah.</em> Satu tujuan.</h2>
+      <p class="section-subtitle" style="color:rgba(245,239,224,0.65)">Dari edukasi MPASI sampai produk yang sudah diverifikasi — semuanya terhubung dalam ekosistem yang saling mendukung.</p>
+    </div>
+    <div class="ecosystem-grid">
+      <a href="https://instagram.com/hexababy_world" target="_blank" class="ecosystem-card reveal"><span class="ecosystem-card-icon">🥦</span><div class="ecosystem-card-handle">@hexababy_world</div><h3>Child Nutrition & Real Food</h3><p>Panduan MPASI real food berbasis data WHO & IDAI. Label reading, perbandingan produk, dan edukasi nutrisi anak yang disampaikan seperti teman.</p></a>
+      <a href="https://instagram.com/hexababy_playroom" target="_blank" class="ecosystem-card reveal reveal-delay-1"><span class="ecosystem-card-icon">🧠</span><div class="ecosystem-card-handle">@hexababy_playroom</div><h3>Stimulasi & Tumbuh Kembang</h3><p>Right-brain stimulation dan aktivitas kognitif untuk bayi 0–3 tahun. Dari pengalaman nyata mendampingi Hexa berkembang sesuai caranya sendiri.</p></a>
+      <a href="https://instagram.com/hexababygroup" target="_blank" class="ecosystem-card reveal reveal-delay-2"><span class="ecosystem-card-icon">🛒</span><div class="ecosystem-card-handle">@hexababygroup</div><h3>Produk Real Food Terkurasi</h3><p>Toko produk MPASI real food yang sudah diverifikasi standar 7 poin. Tidak perlu baca label — cukup pilih dari yang sudah lolos kurasi.</p></a>
+      <a href="https://instagram.com/litenyoghurt" target="_blank" class="ecosystem-card reveal reveal-delay-3"><span class="ecosystem-card-icon">🥛</span><div class="ecosystem-card-handle">@litenyoghurt</div><h3>Yoghurt Jersey Milk Pertama Indonesia</h3><p>A2 protein yang lebih mudah dicerna, probiotic alami, tanpa pengawet. Protein 18% lebih tinggi dari susu sapi biasa.</p></a>
+    </div>
+  </div>
+</section>
+
+<div class="wavy-divider"><svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none"><path d="M0 60 C240 10 600 50 960 20 C1200 5 1380 40 1440 60 L1440 0 L0 0 Z" fill="#F5EFE0"/></svg></div>
+
+<!-- ABOUT -->
+<section class="section-about" id="tentang">
+  <div class="about-grid">
+    <div class="about-visual-container reveal">
+      <div style="background:var(--forest);border-radius:var(--radius-xl);padding:48px 36px;position:relative;overflow:hidden;min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px">
+        <div style="position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:rgba(200,222,204,0.09);border-radius:60% 40% 70% 30% / 50% 60% 40% 60%"></div>
+        <div style="position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;background:rgba(200,222,204,0.07);border-radius:40% 60% 30% 70% / 60% 40% 60% 40%"></div>
+        <div style="position:relative;z-index:1;text-align:center">
+          <div style="font-size:28px;font-weight:800;color:var(--cream);letter-spacing:-0.02em;font-family:var(--font-body)">HEXABABY.</div>
+          <div style="font-style:italic;font-family:var(--font-serif);color:var(--sage-light);font-size:16px;margin-top:4px">dari mama, untuk mama</div>
+        </div>
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;width:100%">
+          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(200,222,204,0.2);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:14px">
+            <div style="width:40px;height:40px;background:var(--sage-light);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 17C10 17 3 12 3 7.5A7 7 0 0117 7.5C17 12 10 17 10 17z" fill="#3D5E3A" opacity="0.85"/><path d="M10 9.5C10 9.5 8.5 7 9 5C9.5 3.5 12 3.5 12 6C12 8 10 9.5 10 9.5Z" fill="white" opacity="0.55"/></svg></div>
+            <div><div style="font-size:13px;font-weight:700;color:var(--cream)">Real Food 3+ Tahun</div><div style="font-size:11px;color:rgba(200,222,204,0.7);margin-top:2px">Pejuang garis dua holistic</div></div>
+          </div>
+          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(200,222,204,0.2);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:14px">
+            <div style="width:40px;height:40px;background:var(--sage-light);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="3" width="12" height="14" rx="3" fill="#3D5E3A" opacity="0.75"/><line x1="7" y1="7" x2="13" y2="7" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="7" y1="10" x2="13" y2="10" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="7" y1="13" x2="10" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div><div style="font-size:13px;font-weight:700;color:var(--cream)">Berbasis WHO · IDAI · AAP</div><div style="font-size:11px;color:rgba(200,222,204,0.7);margin-top:2px">Data terverifikasi, bukan opini</div></div>
+          </div>
+          <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(200,222,204,0.2);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:14px">
+            <div style="width:40px;height:40px;background:var(--sage-light);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 15L6 10L9 12L13 6L17 9" stroke="#3D5E3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85"/><circle cx="17" cy="9" r="2" fill="#B85C38"/></svg></div>
+            <div><div style="font-size:13px;font-weight:700;color:var(--cream)">Pengalaman Nyata Bareng Hexa</div><div style="font-size:11px;color:rgba(200,222,204,0.7);margin-top:2px">18 bulan · thriving post alergi telur</div></div>
+          </div>
+        </div>
+        <a href="https://instagram.com/hexababy_world" target="_blank" style="position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(200,222,204,0.3);border-radius:100px;padding:10px 20px;text-decoration:none"><span style="font-size:13px;font-weight:600;color:var(--sage-light)">@hexababy_world</span><span style="font-size:11px;color:rgba(200,222,204,0.5)">→</span></a>
+      </div>
+      <div class="about-float about-float-1"><div class="about-float-label">Pengalaman real food</div><div class="about-float-val">3+ tahun</div><div class="about-float-sub">pejuang garis dua holistic</div></div>
+      <div class="about-float about-float-2"><div class="about-float-label">Hexa, sekarang</div><div class="about-float-val">18 bulan 🌿</div><div class="about-float-sub">thriving post alergi telur</div></div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <div class="section-label" style="color:var(--forest)">🌸 Tentang HEXABABY</div>
+      <h2 class="about-title">Lahir dari <em>pengalaman nyata,</em> bukan buku teks.</h2>
+      <div class="about-quote">
+        <p>"Waktu Hexa diagnosed alergi telur, hal pertama yang aku lakuin adalah... panic belanja ayam sebanyak-banyaknya. Kirain cukup ganti telur sama ayam, beres."</p>
+        <cite>— Mamiya, Founder HEXABABY</cite>
+      </div>
+      <p class="about-bio">Aku Mamiya — mama dari Hexa, bocah 18 bulan yang didiagnosa alergi telur di masa MPASI. Dari situ dimulai perjalanan riset panjang yang akhirnya jadi HEXABABY.</p>
+      <div class="about-creds">
+        <div class="about-cred"><div class="about-cred-icon">🌿</div>Penggiat real food selama 3+ tahun</div>
+        <div class="about-cred"><div class="about-cred-icon">🔬</div>Alumni pejuang garis dua dengan cara real food</div>
+        <div class="about-cred"><div class="about-cred-icon">🏪</div>Founder holistic & sustainable F&B sejak 2022</div>
+        <div class="about-cred"><div class="about-cred-icon">📊</div>Berbasis riset WHO, IDAI, AAP, ConsumerLab</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="section-social">
+  <div class="section-inner">
+    <div class="social-header reveal">
+      <div class="section-label" style="color:var(--forest);text-align:center">📸 Konten dari Ekosistem HEXABABY</div>
+      <h2 class="section-title">Konten yang <em>terbukti</em> resonates.</h2>
+      <p class="section-subtitle">Reel-reel terpopuler dari @hexababy_world dan @hexababy_playroom.</p>
+    </div>
+    <div class="ig-tabs reveal" style="display:flex;justify-content:center;gap:12px;margin-bottom:40px">
+      <button class="ig-tab active" onclick="switchTab('world')" id="tab-world">🥦 @hexababy_world</button>
+      <button class="ig-tab" onclick="switchTab('playroom')" id="tab-playroom">🧠 @hexababy_playroom</button>
+    </div>
+    <div class="instagram-grid" id="reels-world">
+      <div class="ig-embed-wrap reveal"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPNt3vJEkj0/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+      <div class="ig-embed-wrap reveal reveal-delay-1"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIbjMxfyH-A/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+      <div class="ig-embed-wrap reveal reveal-delay-2"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPqR7a7EmTz/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+    </div>
+    <div class="instagram-grid" id="reels-playroom" style="display:none">
+      <div class="ig-embed-wrap reveal"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSpDKX0kgL3/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+      <div class="ig-embed-wrap reveal reveal-delay-1"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQPLDtykg-y/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+      <div class="ig-embed-wrap reveal reveal-delay-2"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DWoW_i2SqR4/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+    </div>
+    <div class="social-cta reveal" id="social-cta-world"><a href="https://instagram.com/hexababy_world" target="_blank" class="btn-secondary" style="margin:0 auto;display:inline-flex">Follow @hexababy_world →</a></div>
+    <div class="social-cta reveal" id="social-cta-playroom" style="display:none"><a href="https://instagram.com/hexababy_playroom" target="_blank" class="btn-secondary" style="margin:0 auto;display:inline-flex">Follow @hexababy_playroom →</a></div>
+  </div>
+</section>
+<script async src="//www.instagram.com/embed.js"></script>
+
+<div class="wavy-divider"><svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none"><path d="M0 20 C360 80 720 0 1080 50 C1260 70 1380 30 1440 10 L1440 80 L0 80 Z" fill="#3D5E3A"/></svg></div>
+
+<!-- CTA -->
+<section class="section-cta">
+  <div class="cta-inner reveal">
+    <div style="font-size:48px;margin-bottom:20px">🌿</div>
+    <h2 class="cta-title">Siap mulai <em>parenting berbasis data?</em></h2>
+    <p class="cta-desc">Join ribuan mama Indonesia yang sudah pakai HEXABABY untuk MPASI yang lebih confident, terencana, dan berbasis riset nyata.</p>
+    <div class="cta-buttons">
+      <a href="https://hexababy-app.vercel.app" target="_blank" class="btn-cta-primary">🚀 Buka HEXABABY App</a>
+      <a href="https://instagram.com/hexababy_world" target="_blank" class="btn-cta-secondary">📸 Follow @hexababy_world</a>
+    </div>
+    <p class="cta-note">Free tier tersedia · Upgrade kapan saja · Tidak ada komitmen</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name">HEXABABY.</div>
+      <p>Parenting berbasis data untuk ibu urban Indonesia. Dari pengalaman nyata membesarkan Hexa.</p>
+      <div style="display:flex;gap:12px;margin-top:16px">
+        <a href="https://instagram.com/hexababy_world" target="_blank">Instagram</a>
+        <span style="color:rgba(255,255,255,0.15)">·</span>
+        <a href="https://hexababy-app.vercel.app" target="_blank">App</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>App</h4>
+      <a href="https://hexababy-app.vercel.app" target="_blank">HEXABABY Super App</a>
+      <a href="https://hexababy-app.vercel.app" target="_blank">MPASI Planner</a>
+      <a href="https://hexababy-app.vercel.app" target="_blank">Language Tracker</a>
+      <a href="https://hexababy-app.vercel.app" target="_blank">Food Journal</a>
+      <a href="https://hexababy-app.vercel.app" target="_blank">Analytics Dashboard</a>
+    </div>
+    <div class="footer-col">
+      <h4>Ekosistem</h4>
+      <a href="https://instagram.com/hexababy_world" target="_blank">@hexababy_world</a>
+      <a href="https://instagram.com/hexababy_playroom" target="_blank">@hexababy_playroom</a>
+      <a href="https://instagram.com/hexababygroup" target="_blank">@hexababygroup</a>
+      <a href="https://instagram.com/litenyoghurt" target="_blank">@litenyoghurt</a>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <a href="#tentang">Tentang</a>
+      <a href="#features">Fitur</a>
+      <a href="https://instagram.com/hexababy_world" target="_blank">Blog & Konten</a>
+      <a href="mailto:hello@hexababy.id">Kontak</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HEXABABY. All rights reserved.</span>
+    <span>hexababy.id · Made with 🌿 from Indonesia</span>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){var l=document.querySelector('.nav-links'),o=l.getAttribute('data-open')==='true';if(!o){l.style.cssText='display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);gap:16px;z-index:99';l.setAttribute('data-open','true')}else{l.style.display='none';l.setAttribute('data-open','false')}}
+function switchTab(a){var wg=document.getElementById('reels-world'),pg=document.getElementById('reels-playroom'),wc=document.getElementById('social-cta-world'),pc=document.getElementById('social-cta-playroom'),tw=document.getElementById('tab-world'),tp=document.getElementById('tab-playroom');if(a==='world'){wg.style.display='grid';pg.style.display='none';wc.style.display='block';pc.style.display='none';tw.classList.add('active');tp.classList.remove('active')}else{wg.style.display='none';pg.style.display='grid';wc.style.display='none';pc.style.display='block';tw.classList.remove('active');tp.classList.add('active');if(window.instgrm)window.instgrm.Embeds.process()}}
+var revealEls=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08,rootMargin:'0px 0px -20px 0px'});revealEls.forEach(function(el){obs.observe(el)})}else{revealEls.forEach(function(el){el.classList.add('visible')})}
+window.addEventListener('scroll',function(){document.getElementById('main-nav').style.boxShadow=window.scrollY>40?'0 4px 24px rgba(61,94,58,0.1)':'none'});
+</script>
+</body>
+</html>
