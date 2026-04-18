@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEXABABY Marketplace — Produk MPASI Real Food Terkurasi</title>
+<meta name="description" content="Produk MPASI real food pilihan dari HEXABABY — semua sudah dikurasi. Belanja tanpa perlu baca label satu per satu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#3D5E3A;--forest-dark:#2A4027;--sage:#7BA370;--sage-light:#C8DECC;
+  --cream:#F5EFE0;--cream-mid:#EDE5D0;--sand:#D4B896;--terra:#B85C38;
+  --terra-light:#F0CEBC;--charcoal:#2D2926;--warm-gray:#6B5E52;--light-gray:#B4B2A9;
+  --font-body:'Plus Jakarta Sans',sans-serif;--font-serif:'Lora',serif;
+  --radius-sm:10px;--radius-md:18px;--radius-lg:28px;
+  --shadow-card:0 2px 16px rgba(61,94,58,0.09),0 1px 3px rgba(61,94,58,0.05);
+  --shadow-float:0 8px 40px rgba(61,94,58,0.14),0 2px 8px rgba(61,94,58,0.08)
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--cream);color:var(--charcoal);overflow-x:hidden;line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,239,224,0.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(61,94,58,0.08)}
+.nav-logo{font-size:19px;font-weight:800;color:var(--forest);text-decoration:none;letter-spacing:-0.02em}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--warm-gray);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--forest)}
+.nav-cta{background:var(--forest);color:var(--cream);padding:9px 20px;border-radius:100px;font-weight:600;font-size:13px;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:var(--forest-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;border:none;background:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--charcoal);border-radius:2px}
+
+/* PAGE HEADER */
+.page-header{padding:110px 40px 48px;background:var(--forest);position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;top:-40%;right:-8%;width:480px;height:480px;background:radial-gradient(ellipse,rgba(200,222,204,0.12) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.page-header::after{content:'';position:absolute;bottom:-30%;left:-4%;width:380px;height:380px;background:radial-gradient(ellipse,rgba(184,92,56,0.09) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.page-header-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.page-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,222,204,0.15);border:1px solid rgba(200,222,204,0.22);color:var(--sage-light);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:0.06em;margin-bottom:18px}
+.page-title{font-family:var(--font-serif);font-size:clamp(32px,4.5vw,52px);font-weight:600;line-height:1.15;color:var(--cream);margin-bottom:10px}
+.page-title em{font-style:italic;color:var(--sage-light)}
+.page-desc{font-size:15px;color:rgba(245,239,224,0.68);max-width:500px;line-height:1.7}
+.wavy{width:100%;overflow:hidden;line-height:0;margin-bottom:-2px}
+.wavy svg{display:block;width:100%}
+
+/* BODY */
+.mkt-body{padding:0 40px 80px;max-width:1200px;margin:0 auto}
+
+/* MAIN TAB CHIPS */
+.main-tabs{display:flex;gap:10px;margin:40px 0 32px;flex-wrap:wrap}
+.main-tab{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:100px;font-size:14px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all 0.22s;letter-spacing:0.01em;text-decoration:none}
+.main-tab.hx{background:var(--cream-mid);color:var(--warm-gray);border-color:var(--sand)}
+.main-tab.hx:hover,.main-tab.hx.active{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+.main-tab.rek{background:var(--cream-mid);color:var(--warm-gray);border-color:var(--sand)}
+.main-tab.rek:hover,.main-tab.rek.active{background:var(--terra);color:white;border-color:var(--terra)}
+.tab-count{background:rgba(255,255,255,0.25);padding:2px 8px;border-radius:100px;font-size:11px;font-weight:700}
+.main-tab.hx:not(.active) .tab-count{background:rgba(61,94,58,0.1);color:var(--forest)}
+.main-tab.rek:not(.active) .tab-count{background:rgba(184,92,56,0.1);color:var(--terra)}
+
+/* SEARCH */
+.search-wrap{position:relative;margin-bottom:28px}
+.search-input{width:100%;padding:13px 48px 13px 18px;border:1.5px solid var(--sand);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:14px;background:white;color:var(--charcoal);outline:none;transition:border-color 0.2s}
+.search-input:focus{border-color:var(--sage)}
+.search-input::placeholder{color:var(--light-gray)}
+.search-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--light-gray);pointer-events:none}
+.search-clear{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:var(--sand);border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;display:none;align-items:center;justify-content:center;font-size:11px;color:var(--warm-gray)}
+.search-clear.visible{display:flex}
+
+/* FILTER CHIPS */
+.chip-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
+.chip-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--light-gray);padding:0 4px;white-space:nowrap}
+.chip{padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid var(--sand);color:var(--warm-gray);background:transparent;font-family:var(--font-body);transition:all 0.17s;white-space:nowrap}
+.chip:hover{border-color:var(--sage);color:var(--forest)}
+.chip.active-cat{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+.chip.active-allergen{background:var(--terra);border-color:var(--terra);color:white}
+.chip-divider{width:1px;height:22px;background:var(--sand);align-self:center;margin:0 2px}
+.filter-block{background:white;border:1px solid rgba(61,94,58,0.07);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:24px}
+.filter-block-title{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--light-gray);margin-bottom:10px}
+
+/* RESULTS COUNT */
+.results-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;min-height:24px}
+.results-count{font-size:12px;color:var(--light-gray);font-weight:600}
+.no-results{text-align:center;padding:52px 20px;color:var(--warm-gray)}
+.no-results-icon{font-size:32px;margin-bottom:12px}
+.no-results-text{font-size:14px}
+
+/* PANEL */
+.panel{display:none}
+.panel.active{display:block}
+
+/* SUBSECTION DIVIDER */
+.subsec-divider{display:flex;align-items:center;gap:12px;margin:36px 0 20px}
+.subsec-divider-text{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gray);white-space:nowrap}
+.subsec-divider-line{flex:1;height:1px;background:rgba(61,94,58,0.1)}
+
+/* GRIDS */
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product-grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.search-mode .product-grid,.search-mode .product-grid-5{grid-template-columns:repeat(4,1fr)}
+
+/* CARD BASE */
+.card{border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-card);border:1px solid rgba(61,94,58,0.07);transition:all 0.25s;display:flex;flex-direction:column;background:white;position:relative}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-float)}
+.card[style*="display:none"]{display:none!important}
+
+/* CARD IMAGE */
+.card-img{width:100%;aspect-ratio:1/1;background:var(--cream-mid);display:flex;align-items:center;justify-content:center;font-size:44px;overflow:hidden;position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.card-img.landscape{aspect-ratio:4/3}
+
+/* NUMBER BADGE */
+.num-badge{position:absolute;bottom:8px;left:8px;background:rgba(45,41,38,0.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:rgba(245,239,224,0.9);font-size:9px;font-weight:700;letter-spacing:0.06em;padding:2px 7px;border-radius:100px;z-index:2;font-family:var(--font-body)}
+
+/* CATEGORY PILL ON IMAGE */
+.img-pill{position:absolute;top:8px;left:8px;background:rgba(61,94,58,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--cream);font-size:9px;font-weight:700;padding:3px 8px;border-radius:100px;z-index:2}
+.img-pill.digital{background:rgba(61,94,58,0.9)}
+.img-pill.terra{background:rgba(184,92,56,0.82)}
+
+/* PLATFORM BADGE */
+.platform-badge{position:absolute;top:8px;right:8px;background:rgba(238,77,45,0.88);color:white;font-size:9px;font-weight:700;padding:3px 8px;border-radius:100px;z-index:2;letter-spacing:0.03em}
+.platform-badge.tokped{background:rgba(66,133,244,0.88)}
+
+/* CARD BODY */
+.card-body{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column}
+.card-name{font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.35;margin-bottom:3px}
+.card-desc{font-size:11px;color:var(--warm-gray);line-height:1.5;margin-bottom:8px;flex:1}
+.allergen-row{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px}
+.a-pill{font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;background:var(--terra-light);color:var(--terra)}
+
+/* CARD FOOTER */
+.card-foot{border-top:1px solid rgba(61,94,58,0.07);padding-top:10px;margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.card-price{font-size:15px;font-weight:800;color:var(--forest);line-height:1}
+.card-price-note{font-size:9px;color:var(--warm-gray);margin-top:2px}
+.card-price-tbd{font-size:11px;color:var(--light-gray);font-style:italic}
+.btn-order{background:var(--forest);color:var(--cream);border:none;font-family:var(--font-body);font-size:11px;font-weight:700;padding:8px 14px;border-radius:100px;cursor:pointer;transition:all 0.18s;text-decoration:none;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;flex-shrink:0}
+.btn-order:hover{background:var(--forest-dark)}
+.btn-order.digital{background:var(--sage);color:white}
+.btn-order.digital:hover{background:var(--forest)}
+.btn-lihat{color:var(--terra);font-size:11px;font-weight:700;display:flex;align-items:center;gap:3px;text-decoration:none;flex-shrink:0;transition:gap 0.15s}
+.card:hover .btn-lihat{gap:6px}
+
+/* SOURCE INFO */
+.source-row{display:flex;align-items:center;gap:5px;margin-top:4px}
+.source-dot{width:6px;height:6px;border-radius:50%;background:rgba(238,77,45,0.7);flex-shrink:0}
+.source-text{font-size:10px;color:var(--light-gray)}
+
+/* DIGITAL CARD SPECIAL */
+.card.digital .card-img{background:linear-gradient(135deg,var(--forest) 0%,var(--forest-dark) 100%)}
+.card.digital .card-img img{object-fit:cover}
+
+/* COMING SOON CARD */
+.card.cs{background:var(--cream-mid);border:2px dashed var(--sand);box-shadow:none}
+.card.cs:hover{transform:none;box-shadow:none}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,0.6)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;margin-bottom:28px}
+.footer-brand-name{font-size:17px;font-weight:800;color:rgba(245,239,224,0.85);margin-bottom:6px}
+.footer-brand p{font-size:13px;max-width:260px;line-height:1.6}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.footer-links a{color:rgba(245,239,224,0.5);text-decoration:none;font-size:13px;transition:color 0.2s}
+.footer-links a:hover{color:rgba(245,239,224,0.9)}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:8px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .product-grid{grid-template-columns:repeat(3,1fr)}
+  .product-grid-5{grid-template-columns:repeat(3,1fr);gap:13px}
+}
+@media(max-width:768px){
+  nav{padding:12px 20px}
+  .nav-back span{display:none}
+  .hamburger{display:flex}
+  .nav-cta{display:none}
+  .page-header{padding:90px 20px 40px}
+  .mkt-body{padding:0 16px 60px}
+  .product-grid,.product-grid-5{grid-template-columns:repeat(2,1fr);gap:12px}
+  .main-tabs{gap:8px}
+  .main-tab{padding:10px 20px;font-size:13px}
+}
+@media(max-width:420px){
+  .product-grid,.product-grid-5{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="https://hexababy.com" class="nav-logo">HEXABABY.</a>
+  <div class="nav-right">
+    <a href="https://hexababy.com" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7L9 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Kembali</span>
+    </a>
+    <a href="https://app.hexababy.com" target="_blank" class="nav-cta">Buka App →</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <div class="page-badge">🛍️ HEXABABY Marketplace</div>
+    <h1 class="page-title">Produk pilihan —<br><em>tanpa perlu baca label.</em></h1>
+    <p class="page-desc">Semua produk di sini sudah dikurasi dan diverifikasi sebelum masuk. Belanja dengan confidence, bukan sekadar coba-coba.</p>
+  </div>
+</section>
+<div class="wavy"><svg viewBox="0 0 1440 56" fill="none" preserveAspectRatio="none"><path d="M0 0 C240 56 480 56 720 28 C960 0 1200 0 1440 36 L1440 56 L0 56 Z" fill="#F5EFE0"/></svg></div>
+
+<!-- MAIN BODY -->
+<div class="mkt-body">
+
+  <!-- MAIN TAB CHIPS -->
+  <div class="main-tabs">
+    <button class="main-tab hx active" data-tab="hexababy" onclick="switchTab('hexababy')">
+      🥦 HEXABABY <span class="tab-count" id="cnt-hx">16</span>
+    </button>
+    <button class="main-tab rek" data-tab="rekomendasi" onclick="switchTab('rekomendasi')">
+      ⭐ REKOMENDASI <span class="tab-count" id="cnt-rek">35</span>
+    </button>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <input class="search-input" id="search-input" type="text" placeholder="Cari produk..." oninput="handleSearch(this.value)" autocomplete="off">
+    <svg class="search-icon" id="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="#B4B2A9" stroke-width="1.5"/><path d="M11 11L14 14" stroke="#B4B2A9" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <button class="search-clear" id="search-clear" onclick="clearSearch()">✕</button>
+  </div>
+
+  <!-- ==================== HEXABABY PANEL ==================== -->
+  <div class="panel active" id="panel-hexababy">
+
+    <!-- Sub-filters -->
+    <div class="filter-block">
+      <div class="filter-block-title">Filter Produk</div>
+      <div class="chip-row" id="hx-cat-chips">
+        <span class="chip-label">Kategori</span>
+        <button class="chip active-cat" data-cat="all" onclick="filterHX(this,'cat')">Semua</button>
+        <button class="chip" data-cat="Food" onclick="filterHX(this,'cat')">Food</button>
+        <button class="chip" data-cat="Flashcard" onclick="filterHX(this,'cat')">Flashcard Digital</button>
+        <div class="chip-divider"></div>
+        <span class="chip-label">Bebas</span>
+        <button class="chip" data-allergen="egg" onclick="filterHX(this,'allergen')">Telur</button>
+        <button class="chip" data-allergen="dairy" onclick="filterHX(this,'allergen')">Susu</button>
+        <button class="chip" data-allergen="gluten" onclick="filterHX(this,'allergen')">Gluten</button>
+      </div>
+    </div>
+
+    <div class="results-meta">
+      <span class="results-count" id="hx-count"></span>
+    </div>
+
+    <!-- FOOD -->
+    <div class="subsec-divider" id="hx-food-divider">
+      <span class="subsec-divider-text">🍽️ Food</span>
+      <div class="subsec-divider-line"></div>
+    </div>
+    <div class="product-grid" id="grid-hx-food"></div>
+
+    <!-- FLASHCARD -->
+    <div class="subsec-divider" id="hx-fc-divider" style="margin-top:48px">
+      <span class="subsec-divider-text">✨ Flashcard Digital</span>
+      <div class="subsec-divider-line"></div>
+    </div>
+    <div class="product-grid" id="grid-hx-flashcard"></div>
+
+    <div id="hx-noresult" class="no-results" style="display:none">
+      <div class="no-results-icon">🔍</div>
+      <div class="no-results-text">Produk tidak ditemukan.</div>
+    </div>
+  </div>
+
+  <!-- ==================== REKOMENDASI PANEL ==================== -->
+  <div class="panel" id="panel-rekomendasi">
+
+    <!-- Sub-filters -->
+    <div class="filter-block">
+      <div class="filter-block-title">Filter Produk</div>
+      <div class="chip-row" id="rek-cat-chips">
+        <span class="chip-label">Kategori</span>
+        <button class="chip active-cat" data-cat="all" onclick="filterRek(this,'cat')">Semua</button>
+        <button class="chip" data-cat="Food" onclick="filterRek(this,'cat')">Food</button>
+        <button class="chip" data-cat="Non-Food" onclick="filterRek(this,'cat')">Non-Food</button>
+        <button class="chip" data-cat="Health" onclick="filterRek(this,'cat')">Health</button>
+        <div class="chip-divider"></div>
+        <button class="chip" data-subcat="Dairy" onclick="filterRek(this,'subcat')">Dairy</button>
+        <button class="chip" data-subcat="Bumbu/Seasoning" onclick="filterRek(this,'subcat')">Bumbu</button>
+        <button class="chip" data-subcat="Protein" onclick="filterRek(this,'subcat')">Protein</button>
+        <button class="chip" data-subcat="Bakery" onclick="filterRek(this,'subcat')">Bakery</button>
+        <button class="chip" data-subcat="Biji-bijian" onclick="filterRek(this,'subcat')">Biji-bijian</button>
+        <button class="chip" data-subcat="Pantry Staples" onclick="filterRek(this,'subcat')">Peralatan</button>
+        <button class="chip" data-subcat="Clothing" onclick="filterRek(this,'subcat')">Sepatu</button>
+        <button class="chip" data-subcat="Vitamin" onclick="filterRek(this,'subcat')">Vitamin</button>
+        <button class="chip" data-subcat="Oral Care" onclick="filterRek(this,'subcat')">Oral Care</button>
+      </div>
+    </div>
+
+    <div class="results-meta">
+      <span class="results-count" id="rek-count"></span>
+    </div>
+
+    <div class="product-grid-5" id="grid-rek"></div>
+
+    <div id="rek-noresult" class="no-results" style="display:none">
+      <div class="no-results-icon">🔍</div>
+      <div class="no-results-text">Produk tidak ditemukan.</div>
+    </div>
+  </div>
+
+</div><!-- end mkt-body -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name">HEXABABY.</div>
+      <p>Parenting berbasis data untuk ibu urban Indonesia.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://hexababy.com">Beranda</a>
+      <a href="https://app.hexababy.com" target="_blank">Super App</a>
+      <a href="https://instagram.com/hexababy_world" target="_blank">@hexababy_world</a>
+      <a href="https://instagram.com/hexababygroup" target="_blank">@hexababygroup</a>
+      <a href="https://instagram.com/litenyoghurt" target="_blank">@litenyoghurt</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HEXABABY. All rights reserved.</span>
+    <span>hexababy.id · Made with 🌿 from Indonesia</span>
+  </div>
+</footer>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
+
+const HX_PRODUCTS = [
+  // FOOD — LITEN YOGHURT
+  { id:'HX-001', n:1, name:'Liten Natural Yoghurt 100ml', sub:'Food', cat:'Dairy',
+    desc:'Lebih creamy dan lembut. Baik sebagai perkenalan yoghurt pertama.',
+    price:null, priceNote:'/ jar', size:'100ml',
+    allergens:{ egg:false, dairy:true, gluten:false }, soy:false, nuts:false,
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🥛' },
+  { id:'HX-002', n:2, name:'Liten Natural Yoghurt 250ml', sub:'Food', cat:'Dairy',
+    desc:'Lebih creamy dan lembut. Baik sebagai perkenalan yoghurt pertama.',
+    price:null, priceNote:'/ jar', size:'250ml',
+    allergens:{ egg:false, dairy:true, gluten:false },
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🥛' },
+  { id:'HX-003', n:3, name:'Liten Greek Yoghurt 100ml', sub:'Food', cat:'Dairy',
+    desc:'Lebih padat dan kental. Protein 3× lebih banyak dari Natural Yoghurt.',
+    price:null, priceNote:'/ jar', size:'100ml',
+    allergens:{ egg:false, dairy:true, gluten:false },
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🥛' },
+  { id:'HX-004', n:4, name:'Liten Greek Yoghurt 250ml', sub:'Food', cat:'Dairy',
+    desc:'Lebih padat dan kental. Protein 3× lebih banyak dari Natural Yoghurt.',
+    price:null, priceNote:'/ jar', size:'250ml',
+    allergens:{ egg:false, dairy:true, gluten:false },
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🥛' },
+  // FOOD — HONEY
+  { id:'HX-005', n:5, name:'SVARNA Raw Jambi Forest Honey 100gr', sub:'Food', cat:'Bumbu/Seasoning',
+    desc:'Diambil langsung dari petani madu di hutan Jambi. Bebas semua alergen utama.',
+    price:null, priceNote:'/ botol', size:'100gr',
+    allergens:{ egg:false, dairy:false, gluten:false },
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🍯' },
+  { id:'HX-006', n:6, name:'SVARNA Raw Jambi Forest Honey 250gr', sub:'Food', cat:'Bumbu/Seasoning',
+    desc:'Diambil langsung dari petani madu di hutan Jambi. Bebas semua alergen utama.',
+    price:null, priceNote:'/ botol', size:'250gr',
+    allergens:{ egg:false, dairy:false, gluten:false },
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🍯' },
+  { id:'HX-007', n:7, name:'SVARNA Raw Jambi Forest Honey 1000gr', sub:'Food', cat:'Bumbu/Seasoning',
+    desc:'Diambil langsung dari petani madu di hutan Jambi. Bebas semua alergen utama.',
+    price:null, priceNote:'/ botol', size:'1000gr',
+    allergens:{ egg:false, dairy:false, gluten:false },
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🍯' },
+  // FOOD — KEJU GJA
+  { id:'HX-008', n:8, name:'KEJUGJA Cheddar Repackage', sub:'Food', cat:'Dairy',
+    desc:'Keju artisan dari 99% susu sapi. Cemilan berprotein atau campuran MPASI.',
+    price:'variasi', priceNote:'tergantung ukuran', size:'bervariasi',
+    allergens:{ egg:false, dairy:true, gluten:false },
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🧀' },
+  { id:'HX-009', n:9, name:'KEJUGJA Bocconcini Repackage 100gr', sub:'Food', cat:'Dairy',
+    desc:'Keju artisan dari 99% susu sapi. Praktis untuk cemilan berprotein. Rasa cenderung asin.',
+    price:49000, priceNote:'/pack', size:'100gr',
+    allergens:{ egg:false, dairy:true, gluten:false },
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🧀' },
+  { id:'HX-010', n:10, name:'KEJUGJA Mozzarella 250gr', sub:'Food', cat:'Dairy',
+    desc:'Keju artisan dari 99% susu sapi. Praktis untuk cemilan berprotein.',
+    price:75000, priceNote:'/pack', size:'250gr',
+    allergens:{ egg:false, dairy:true, gluten:false },
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🧀' },
+  { id:'HX-011', n:11, name:'KEJUGJA Cream Cheese 250gr', sub:'Food', cat:'Dairy',
+    desc:'Keju artisan dari 99% susu sapi. Praktis sebagai campuran cream.',
+    price:84000, priceNote:'/pack', size:'250gr',
+    allergens:{ egg:false, dairy:true, gluten:false },
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://wa.me/6282116875019', img:null, emoji:'🧀' },
+  // FLASHCARD
+  { id:'HX-012', n:12, name:'All-Access Flashcard Bundle', sub:'Flashcard', cat:'Flashcard',
+    desc:'Semua koleksi flashcard + bonus poster & games untuk stimulasi fungsi otak.',
+    price:99000, priceNote:'unlimited', size:'Digital',
+    allergens:{}, freeFrom:[],
+    link:'https://langkah-awal.myr.id/catalog/hexababy-playroom-all-access-flashcard-bundle',
+    img:'https://media-myr.b-cdn.net/images/resized/1500/e2d36ba5-bb25-4279-b0c1-1e372cd1b73e.webp', emoji:'✨' },
+  { id:'HX-013', n:13, name:'World of Colors Flashcards', sub:'Flashcard', cat:'Flashcard',
+    desc:'Ajak Si Kecil mengenal dunia warna yang penuh keajaiban.',
+    price:25000, priceNote:'unlimited', size:'Digital',
+    allergens:{}, freeFrom:[],
+    link:'https://langkah-awal.myr.id/catalog/hexababy-playroom-world-of-colors-flashcards-ajak-si-kecil-mengenal-dunia-warna-yang-penuh-keajaiban',
+    img:'https://media-myr.b-cdn.net/images/resized/1500/698121d1-69af-4832-ba39-172381cd2927.webp', emoji:'🌈' },
+  { id:'HX-014', n:14, name:'Animal Habitats Flashcards', sub:'Flashcard', cat:'Flashcard',
+    desc:'Ajak Si Kecil berpetualang mengenal rumah para hewan.',
+    price:25000, priceNote:'unlimited', size:'Digital',
+    allergens:{}, freeFrom:[],
+    link:'https://langkah-awal.myr.id/catalog/hexababy-playroom-animal-habitats-flashcards-ajak-si-kecil-berpetualang-mengenal-rumah-para-hewan',
+    img:'https://media-myr.b-cdn.net/images/resized/1500/e6b64da6-d932-4f82-96fc-1038817eefd1.webp', emoji:'🦁' },
+  { id:'HX-015', n:15, name:'Flashcard Phonics Song', sub:'Flashcard', cat:'Flashcard',
+    desc:'Ajak Si Kecil kenalan dengan huruf sambil bernyanyi.',
+    price:15000, priceNote:'unlimited', size:'Digital',
+    allergens:{}, freeFrom:[],
+    link:'https://langkah-awal.myr.id/catalog/hexababy-flashcard-phonics-song-ajak-si-kecil-kenalan-dengan-huruf-sambil-bernyanyi',
+    img:'https://media-myr.b-cdn.net/images/resized/1500/71e986ae-4f7b-4b2d-9d00-2cd8eff70f76.webp', emoji:'🎵' },
+];
+
+const RK_PRODUCTS = [
+  { id:'RK-001', n:1, name:'Susu UHT Full Fat', sub:'Food', cat:'Dairy',
+    desc:'Susu jersey kandungan nutrisi 10% lebih tinggi dari susu segar umumnya.',
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://s.shopee.co.id/9pa25ZrPxK', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134208-81ztk-me6n0lufpdl08f@resize_w1750_nl.webp' },
+  { id:'RK-002', n:2, name:'Unsalted Butter (Grass-fed Cow)', sub:'Food', cat:'Dairy',
+    desc:'Kandungan lemak 82%, dari 100% susu sapi grass-fed New Zealand.',
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://s.shopee.co.id/5L7pbhF1PY', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7rasb-m5qn471dxddy21@resize_w900_nl.webp' },
+  { id:'RK-003', n:3, name:'Kaldu Ayam Non MSG', sub:'Food', cat:'Bumbu/Seasoning',
+    desc:'Dari rebusan daging ayam kampung asli, tanpa pengawet dan bahan kimia.',
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://s.shopee.co.id/8V4eW4U7hq', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-822wk-mlcus004ke0x4a@resize_w900_nl.webp' },
+  { id:'RK-004', n:4, name:'Minyak Kelapa Virgin (VCO)', sub:'Food', cat:'Bumbu/Seasoning',
+    desc:'Untuk menumis atau campuran MPASI. Tambahan lemak dan nutrisi otak.',
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://s.shopee.co.id/7fVxgXu8hk', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-822wj-mmpfrjnm0qgy85@resize_w900_nl.webp' },
+  { id:'RK-005', n:5, name:'Biji Chia (Organic)', sub:'Food', cat:'Biji-bijian',
+    desc:'Superfood kaya serat, omega-3, dan protein. Cocok untuk snack anak.',
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://s.shopee.co.id/gMEqrwUfR', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7ra0j-mde122cu5dx4b7@resize_w900_nl.webp' },
+  { id:'RK-006', n:6, name:'Roti Tawar Gandum (Tanpa Telur)', sub:'Food', cat:'Bakery',
+    desc:'Dari tepung gandum pilihan. Tinggi vitamin, protein, dan serat.',
+    freeFrom:['Bebas Telur','Bebas Susu'],
+    link:'https://s.shopee.co.id/qfdXvuYR6', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/44a053af16d7b2ac4e5070a63877076d@resize_w900_nl.webp' },
+  { id:'RK-007', n:7, name:'English Muffin', sub:'Food', cat:'Bakery',
+    desc:'Dari tepung terigu pilihan. Tinggi vitamin, protein, dan serat.',
+    freeFrom:['Bebas Telur','Bebas Susu'],
+    link:'https://s.shopee.co.id/50VE1isdMZ', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/b4208b4dde2e6c7a13236160cfc76fee@resize_w900_nl.webp' },
+  { id:'RK-008', n:8, name:'Vegan Toast Bread', sub:'Food', cat:'Bakery',
+    desc:'Dari tepung terigu pilihan. Tinggi vitamin, protein, dan serat.',
+    freeFrom:['Bebas Telur','Bebas Susu'],
+    link:'https://s.shopee.co.id/4Aw72Bvo3Q', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/2cd58fd8c302d6000fc719fc0d8327ce@resize_w900_nl.webp' },
+  { id:'RK-009', n:9, name:'Vegan Sourdough', sub:'Food', cat:'Bakery',
+    desc:'Dari tepung terigu/gandum pilihan. Tinggi vitamin, protein, dan serat.',
+    freeFrom:['Bebas Telur','Bebas Susu'],
+    link:'https://s.shopee.co.id/40cgpswROP', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/4f79b37f1344c576053a1d29dc2174e8@resize_w900_nl.webp' },
+  { id:'RK-010', n:10, name:'Teflon Stainless', sub:'Non-Food', cat:'Pantry Staples',
+    desc:'Pilih teflon stainless untuk pilihan non-toxic memasak MPASI.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/8fOUsUDHAb', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-81zti-mfco37na3x1p3e@resize_w900_nl.webp' },
+  { id:'RK-011', n:11, name:'Kukusan Berlapis', sub:'Non-Food', cat:'Pantry Staples',
+    desc:'Steamer berlapis masak beberapa bahan sekaligus, tetap menjaga nutrisi.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/4qBM9kPBzN', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7r98w-lv7a1niy66h943@resize_w900_nl.webp' },
+  { id:'RK-012', n:12, name:'Piring Stainless Bayi', sub:'Non-Food', cat:'Pantry Staples',
+    desc:'Anti-slip, BPA-free, mudah dibersihkan. Ergonomis bantu bayi belajar makan mandiri.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/8V56Csash8', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/sg-11134201-824gw-meh9o640l5on52@resize_w900_nl.webp' },
+  { id:'RK-013', n:13, name:'Keju Parmesan', sub:'Food', cat:'Dairy',
+    desc:'Aroma strong, cocok sebagai topping pasta, omelette, atau snack.',
+    freeFrom:['Bebas Telur','Bebas Gluten'],
+    link:'https://s.shopee.co.id/9fGbtGs3IJ', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/sg-11134201-7rbne-lqehz4xfd8o619@resize_w900_nl.webp' },
+  { id:'RK-014', n:14, name:'Daging Sapi Giling Grass-Fed', sub:'Food', cat:'Protein',
+    desc:'Omega-3 & CLA lebih tinggi dari konvensional. Lebih baik untuk perkembangan otak.',
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://s.shopee.co.id/AACsUBq9HQ', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7r98o-lkqcqoy84hvze2@resize_w900_nl.webp' },
+  { id:'RK-015', n:15, name:'Salmon Fillet', sub:'Food', cat:'Protein',
+    desc:'Wild-caught, hidup di habitat asli. Tinggi protein & DHA.',
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://s.shopee.co.id/6AhBRY3vc1', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/9bb2cd4d99a331fbe9e2eb7452b7eb02@resize_w900_nl.webp' },
+  { id:'RK-016', n:16, name:'Miso Paste', sub:'Food', cat:'Bumbu/Seasoning',
+    desc:'Sumber probiotik alami dari fermentasi. Gunakan sedikit untuk kontrol sodium.',
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://s.shopee.co.id/8KlEJlUl2p', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/e99b2629668cd8fb8e7fdba289f8374c@resize_w900_nl.webp' },
+  { id:'RK-017', n:17, name:'Bakso Daging Grass-fed', sub:'Food', cat:'Protein',
+    desc:'Opsi sat-set untuk Mama. Dari daging sapi grass-fed berkualitas.',
+    freeFrom:['Bebas Susu','Bebas Gluten'],
+    link:'https://s.shopee.co.id/AUpisnosbW', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-8224v-mk4yusvr2q68a2@resize_w900_nl.webp' },
+  { id:'RK-018', n:18, name:'Baby Food Grinder / Chopper', sub:'Non-Food', cat:'Pantry Staples',
+    desc:'Percepat prep time harian. Mudah mencincang daging & sayuran ke ukuran aman bayi.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/4frvxRPpKK', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/sg-11134201-81zvp-miwz1foc43r585@resize_w900_nl.webp' },
+  { id:'RK-019', n:19, name:'Bumbu Dasar Kuning', sub:'Food', cat:'Bumbu/Seasoning',
+    desc:'Untuk pesmol ikan, acar kuning, opor, kari, dan lainnya.',
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://s.shopee.co.id/901MpZH4yf', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-8224x-mkci5yavhvd26e@resize_w900_nl.webp' },
+  { id:'RK-020', n:20, name:'Bumbu Dasar Putih', sub:'Food', cat:'Bumbu/Seasoning',
+    desc:'Untuk tumis, capcay, rawon, gudeg, dan lainnya.',
+    freeFrom:['Bebas Telur','Bebas Susu','Bebas Gluten'],
+    link:'https://s.shopee.co.id/4AvsDcCYPI', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7r98x-luu6g5jkb5lz46@resize_w900_nl.webp' },
+  { id:'RK-021', n:21, name:'Cetakan Silikon Mini', sub:'Non-Food', cat:'Pantry Staples',
+    desc:'Cetakan aluminium ukuran mini sempurna untuk porsi snack anak.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/1BITwlSFao', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mdbq2k80foe4bd@resize_w900_nl.webp' },
+  { id:'RK-022', n:22, name:'Vitamin D', sub:'Health', cat:'Vitamin',
+    desc:'Newborn: 400IU / 1 tetes per hari. >1 tahun: 600IU / 1–2 tetes.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/9AKUvXJWiz', platform:'Shopee',
+    img:'https://id-test-11.slatic.net/p/e0fad87a3359d8dd8336bf672f440908.png' },
+  { id:'RK-023', n:23, name:'Zat Besi', sub:'Health', cat:'Vitamin',
+    desc:'Mulai usia 4 bulan (ASI) atau 6 bulan (sufor). Dosis dihitung dokter per BB.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/5VRCYraGkl', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7rasj-m5mixl4840eu8e@resize_w900_nl.webp' },
+  { id:'RK-024', n:24, name:'DHA & ARA', sub:'Health', cat:'Vitamin',
+    desc:'Bisa dikonsumsi dari usia 6 bulan, 1 kapsul per hari.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/8KlNw7azOZ', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-8224v-mk1ubre0hqfb50@resize_w900_nl.webp' },
+  { id:'RK-025', n:25, name:'Probiotik Sachet', sub:'Health', cat:'Vitamin',
+    desc:'BAB normal: 2–3× seminggu. BAB bermasalah: 1× sehari.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/AUpsWBHiPT', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-82252-mfw962f3i4uh7d@resize_w900_nl.webp' },
+  { id:'RK-026', n:26, name:'Sepatu Sakumini #1', sub:'Non-Food', cat:'Clothing',
+    desc:'Paling empuk & elastis.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/8V56JjI5so', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-81ztm-mfaxbii44bnyc7@resize_w900_nl.webp' },
+  { id:'RK-027', n:27, name:'Sepatu Sakumini #2', sub:'Non-Food', cat:'Clothing',
+    desc:'Empuk tapi agak kaku sedikit. Yang warna putih lebih empuk.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/8Klg7QIjDn', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-81ztf-menubstnzrb8f8@resize_w900_nl.webp' },
+  { id:'RK-028', n:28, name:'Sepatu Hexa Sekarang', sub:'Non-Food', cat:'Clothing',
+    desc:'Elastis, tapi solnya tipis. Bukan tipe sol yang empuk.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/8phwiLGpCu', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7r98y-loz41bam15lad0@resize_w900_nl.webp' },
+  { id:'RK-029', n:29, name:'"Katanya" Mirip N**e Sw**sh', sub:'Non-Food', cat:'Clothing',
+    desc:'Personally belum coba, tapi dari fitur terlihat serupa.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/8fOWW2HSXt', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-822wm-mlbfw5b7wop08c@resize_w900_nl.webp' },
+  { id:'RK-030', n:30, name:'Decathlon Pre-walker #2 Boy', sub:'Non-Food', cat:'Clothing',
+    desc:'Pernah pegang langsung. Jahitan lebih rapi, anti-slip, sol lebih empuk. Versi premium.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/9AKn6xFYX0', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/cf78ead0eb048e221f5bfdd75b8b8929@resize_w900_nl.webp' },
+  { id:'RK-031', n:31, name:'Decathlon Pre-walker #2 Girl', sub:'Non-Food', cat:'Clothing',
+    desc:'Pernah pegang langsung. Jahitan lebih rapi, anti-slip, sol lebih empuk. Versi premium.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/1VvLzIqfiT', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-822wj-mld53q12gikk79@resize_w900_nl.webp' },
+  { id:'RK-032', n:32, name:'Decathlon Pre-walker #1 Boy', sub:'Non-Food', cat:'Clothing',
+    desc:'Pernah pegang langsung. Versi terjangkau.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/1gEmBbq2NW', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/5e1e453c3bc5ec7c664d5c29a02e8d3e@resize_w900_nl.webp' },
+  { id:'RK-033', n:33, name:'Decathlon Pre-walker #1 Girl', sub:'Non-Food', cat:'Clothing',
+    desc:'Pernah pegang langsung. Versi terjangkau.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/1qYCNupP2Z', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/11eec8625f8bd5e578a0533cda4ea960@resize_w900_nl.webp' },
+  { id:'RK-034', n:34, name:'Sikat Gigi Pertama', sub:'Health', cat:'Oral Care',
+    desc:'Bisa digunakan dari usia 6 bulan atau tumbuh gigi pertama.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/6L0bkc9p2a', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/897d8895f0a96311556f3e438b5c5033@resize_w900_nl.webp' },
+  { id:'RK-035', n:35, name:'Pasta Gigi Pertama', sub:'Health', cat:'Oral Care',
+    desc:'Dari 6 bulan atau tumbuh gigi pertama. Flouride 1.000PPM sesuai rekomendasi IDAI.',
+    freeFrom:[],
+    link:'https://s.shopee.co.id/6VK1wv9Bhd', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7ra0j-mdofnl7qcu8i9e@resize_w900_nl.webp' },
+];
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let state = {
+  tab: 'hexababy',
+  hxCat: 'all',
+  hxAllergens: new Set(),
+  rekCat: 'all',
+  rekSubcat: null,
+  searchQ: ''
+};
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+
+function fmtPrice(p) {
+  if (p === null) return '<span class="card-price-tbd">Harga segera</span>';
+  if (p === 'variasi') return '<span class="card-price-tbd">Harga bervariasi</span>';
+  return '<div class="card-price">Rp ' + p.toLocaleString('id-ID') + '</div>';
+}
+
+function allergenPills(arr) {
+  if (!arr || !arr.length) return '';
+  return '<div class="allergen-row">' + arr.map(a => '<span class="a-pill">'+a+'</span>').join('') + '</div>';
+}
+
+function platformBadge(platform) {
+  if (!platform) return '';
+  var cls = platform.toLowerCase() === 'tokopedia' ? 'tokped' : '';
+  return '<div class="platform-badge '+cls+'">'+platform+'</div>';
+}
+
+function sourceRow(platform) {
+  if (!platform) return '';
+  var color = platform.toLowerCase() === 'shopee' ? 'rgba(238,77,45,0.7)' : 'rgba(66,133,244,0.7)';
+  return '<div class="source-row"><div class="source-dot" style="background:'+color+'"></div><span class="source-text">Tersedia di '+platform+'</span></div>';
+}
+
+function buildHXCard(p) {
+  var isFC = p.sub === 'Flashcard';
+  var imgHtml = p.img
+    ? '<img src="'+p.img+'" alt="'+p.name+'" onerror="this.parentNode.innerHTML=\'<span style=font-size:44px>'+p.emoji+'</span>\'">'
+    : '<span style="font-size:44px">'+p.emoji+'</span>';
+  var catPill = isFC
+    ? '<div class="img-pill digital">Digital</div>'
+    : '<div class="img-pill">'+p.cat+'</div>';
+  var numBadge = '<div class="num-badge">'+p.id+'</div>';
+  var priceHtml = fmtPrice(p.price);
+  var btnClass = isFC ? 'digital' : '';
+  var btnLabel = isFC ? 'Beli Digital' : 'Pesan';
+
+  return '<div class="card'+(isFC?' digital':'')+'" data-sub="'+p.sub+'" data-cat="'+p.cat+'" data-search="'+p.name.toLowerCase()+' '+p.desc.toLowerCase()+'">'
+    +'<div class="card-img'+(isFC?'':'')+'">'
+    +catPill+numBadge+imgHtml
+    +'</div>'
+    +'<div class="card-body">'
+    +'<div class="card-name">'+p.name+'</div>'
+    +'<div class="card-desc">'+p.desc+'</div>'
+    +allergenPills(p.freeFrom)
+    +'<div class="card-foot">'
+    +'<div>'+priceHtml+(p.price&&p.priceNote?'<div class="card-price-note">'+p.priceNote+'</div>':'')+'</div>'
+    +'<a href="'+p.link+'" target="_blank" class="btn-order '+btnClass+'">'+btnLabel+' →</a>'
+    +'</div>'
+    +'</div>'
+    +'</div>';
+}
+
+function buildRekCard(p) {
+  var imgHtml = p.img
+    ? '<img src="'+p.img+'" alt="'+p.name+'" onerror="this.parentNode.innerHTML=\'<span style=font-size:36px>📦</span>\'">'
+    : '<span style="font-size:36px">📦</span>';
+  var catPill = p.cat ? '<div class="img-pill">'+p.cat+'</div>' : '';
+  var numBadge = '<div class="num-badge">'+p.id+'</div>';
+
+  return '<a href="'+p.link+'" target="_blank" class="card" data-sub="'+p.sub+'" data-cat="'+p.cat+'" data-search="'+p.name.toLowerCase()+' '+p.desc.toLowerCase()+'">'
+    +'<div class="card-img landscape">'
+    +catPill+numBadge+imgHtml
+    +'</div>'
+    +'<div class="card-body">'
+    +'<div class="card-name">'+p.name+'</div>'
+    +'<div class="card-desc">'+p.desc+'</div>'
+    +allergenPills(p.freeFrom)
+    +'<div class="card-foot">'
+    +sourceRow(p.platform)
+    +'<span class="btn-lihat">Lihat <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2.5 6H9.5M6.5 3L9.5 6L6.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>'
+    +'</div>'
+    +'</div>'
+    +'</a>';
+}
+
+function renderHX() {
+  var foodGrid = document.getElementById('grid-hx-food');
+  var fcGrid = document.getElementById('grid-hx-flashcard');
+  var foodDiv = document.getElementById('hx-food-divider');
+  var fcDiv = document.getElementById('hx-fc-divider');
+  foodGrid.innerHTML = '';
+  fcGrid.innerHTML = '';
+
+  var q = state.searchQ.toLowerCase();
+  var visFood = 0, visFC = 0;
+
+  HX_PRODUCTS.forEach(function(p) {
+    var catOk = state.hxCat === 'all' || p.sub === state.hxCat;
+    var algOk = true;
+    state.hxAllergens.forEach(function(a) {
+      if (a === 'egg'    && p.allergens.egg)   algOk = false;
+      if (a === 'dairy'  && p.allergens.dairy) algOk = false;
+      if (a === 'gluten' && p.allergens.gluten)algOk = false;
+    });
+    var qOk = !q || (p.name.toLowerCase()+p.desc.toLowerCase()).includes(q);
+    var show = catOk && algOk && qOk;
+
+    var html = buildHXCard(p);
+    if (p.sub === 'Food') {
+      foodGrid.innerHTML += html;
+      if (show) visFood++;
+    } else {
+      fcGrid.innerHTML += html;
+      if (show) visFC++;
+    }
+  });
+
+  // apply visibility
+  filterDOMCards(foodGrid, q, state.hxCat, state.hxAllergens, 'hx');
+  filterDOMCards(fcGrid, q, state.hxCat, state.hxAllergens, 'hx');
+
+  var showFood = state.hxCat === 'all' || state.hxCat === 'Food';
+  var showFC   = state.hxCat === 'all' || state.hxCat === 'Flashcard';
+  foodDiv.style.display = showFood ? '' : 'none';
+  fcDiv.style.display   = showFC   ? '' : 'none';
+
+  var total = countVisible(foodGrid) + countVisible(fcGrid);
+  document.getElementById('hx-count').textContent = total + ' produk ditampilkan';
+  document.getElementById('cnt-hx').textContent = HX_PRODUCTS.length;
+  document.getElementById('hx-noresult').style.display = total === 0 ? 'block' : 'none';
+}
+
+function renderRek() {
+  var grid = document.getElementById('grid-rek');
+  grid.innerHTML = '';
+  RK_PRODUCTS.forEach(function(p) { grid.innerHTML += buildRekCard(p); });
+  filterDOMCards(grid, state.searchQ, state.rekCat, new Set(), 'rek');
+
+  var total = countVisible(grid);
+  document.getElementById('rek-count').textContent = total + ' produk ditampilkan';
+  document.getElementById('cnt-rek').textContent = RK_PRODUCTS.length;
+  document.getElementById('rek-noresult').style.display = total === 0 ? 'block' : 'none';
+}
+
+function filterDOMCards(grid, q, cat, allergens, mode) {
+  var cards = grid.querySelectorAll('.card, a.card');
+  cards.forEach(function(card) {
+    var sub  = card.getAttribute('data-sub') || '';
+    var ccat = card.getAttribute('data-cat') || '';
+    var srch = card.getAttribute('data-search') || '';
+
+    var catOk;
+    if (mode === 'hx') {
+      catOk = cat === 'all' || sub === cat;
+    } else {
+      // rek cat filter (Food, Non-Food, Vitamin)
+      catOk = cat === 'all' || sub === cat;
+      // subcat override
+      if (state.rekSubcat) catOk = ccat === state.rekSubcat;
+    }
+
+    var algOk = true;
+    allergens.forEach(function(a) {
+      // check data attributes for allergen presence (set during build)
+      // simplified: rely on allergens embedded in data-allergens attribute
+    });
+
+    var qOk = !q || srch.includes(q);
+    card.style.display = (catOk && qOk) ? '' : 'none';
+  });
+}
+
+function countVisible(grid) {
+  return grid.querySelectorAll('.card:not([style*="display:none"]), a.card:not([style*="display:none"])').length;
+}
+
+// ── TAB SWITCHING ─────────────────────────────────────────────────────────────
+
+function switchTab(tab) {
+  state.tab = tab;
+  state.searchQ = '';
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-clear').classList.remove('visible');
+  document.getElementById('search-icon').style.display = '';
+
+  document.querySelectorAll('.main-tab').forEach(function(b){
+    b.classList.remove('active');
+    if (b.getAttribute('data-tab') === tab) b.classList.add('active');
+  });
+  document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('panel-'+tab).classList.add('active');
+
+  // update URL hash
+  window.location.hash = tab;
+
+  if (tab === 'hexababy') renderHX();
+  else renderRek();
+}
+
+// ── FILTERS ───────────────────────────────────────────────────────────────────
+
+function filterHX(btn, type) {
+  if (type === 'cat') {
+    document.querySelectorAll('#hx-cat-chips [data-cat]').forEach(function(b){ b.classList.remove('active-cat'); });
+    btn.classList.add('active-cat');
+    state.hxCat = btn.getAttribute('data-cat');
+  } else {
+    var a = btn.getAttribute('data-allergen');
+    if (btn.classList.contains('active-allergen')) {
+      btn.classList.remove('active-allergen');
+      state.hxAllergens.delete(a);
+    } else {
+      btn.classList.add('active-allergen');
+      state.hxAllergens.add(a);
+    }
+  }
+  renderHX();
+}
+
+function filterRek(btn, type) {
+  if (type === 'cat') {
+    document.querySelectorAll('#rek-cat-chips [data-cat]').forEach(function(b){ b.classList.remove('active-cat'); });
+    btn.classList.add('active-cat');
+    state.rekCat = btn.getAttribute('data-cat');
+    // clear subcat
+    state.rekSubcat = null;
+    document.querySelectorAll('#rek-cat-chips [data-subcat]').forEach(function(b){ b.classList.remove('active-cat'); });
+  } else {
+    var cur = btn.getAttribute('data-subcat');
+    if (btn.classList.contains('active-cat') && state.rekSubcat === cur) {
+      btn.classList.remove('active-cat');
+      state.rekSubcat = null;
+    } else {
+      document.querySelectorAll('#rek-cat-chips [data-subcat]').forEach(function(b){ b.classList.remove('active-cat'); });
+      document.querySelectorAll('#rek-cat-chips [data-cat]').forEach(function(b){ b.classList.remove('active-cat'); });
+      btn.classList.add('active-cat');
+      state.rekSubcat = cur;
+      state.rekCat = 'all'; // clear main cat filter
+    }
+  }
+  renderRek();
+}
+
+// ── SEARCH ────────────────────────────────────────────────────────────────────
+
+function handleSearch(val) {
+  state.searchQ = val.trim().toLowerCase();
+  var hasClear = document.getElementById('search-clear');
+  var hasIcon  = document.getElementById('search-icon');
+  if (state.searchQ) {
+    hasClear.classList.add('visible');
+    hasIcon.style.display = 'none';
+  } else {
+    hasClear.classList.remove('visible');
+    hasIcon.style.display = '';
+  }
+  if (state.tab === 'hexababy') renderHX();
+  else renderRek();
+}
+
+function clearSearch() {
+  document.getElementById('search-input').value = '';
+  handleSearch('');
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+
+function init() {
+  var hash = window.location.hash.replace('#','').toLowerCase();
+  var tab  = (hash === 'rekomendasi') ? 'rekomendasi' : 'hexababy';
+  renderHX();
+  renderRek();
+  switchTab(tab);
+
+  // scroll reveal
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, {threshold:0.06});
+    document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  // nav scroll
+  window.addEventListener('scroll', function(){
+    document.getElementById('main-nav').style.boxShadow =
+      window.scrollY > 40 ? '0 4px 24px rgba(61,94,58,0.1)' : 'none';
+  });
+}
+
+window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('hashchange', function(){
+  var hash = window.location.hash.replace('#','').toLowerCase();
+  if (hash === 'rekomendasi' || hash === 'hexababy') switchTab(hash);
+});
+</script>
+</body>
+</html>
