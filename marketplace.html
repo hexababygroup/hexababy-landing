@@ -78,6 +78,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:fl
 .chip-divider{width:1px;height:22px;background:var(--sand);align-self:center;margin:0 2px}
 .filter-block{background:white;border:1px solid rgba(61,94,58,0.07);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:24px}
 .filter-block-title{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--light-gray);margin-bottom:10px}
+/* SELECT DROPDOWN */
+.rek-select-row{display:flex;align-items:center;gap:10px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(61,94,58,0.07)}
+.filter-select{padding:7px 34px 7px 14px;border-radius:100px;border:1.5px solid var(--sand);font-family:var(--font-body);font-size:12px;font-weight:600;color:var(--warm-gray);background:white;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none;transition:all 0.2s;min-width:200px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 4L6 8L10 4' stroke='%23A8967A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.filter-select:focus{border-color:var(--sage)}
+.filter-select.has-value{border-color:var(--forest);color:var(--forest);background-color:rgba(61,94,58,0.04);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 4L6 8L10 4' stroke='%233D5E3A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
 
 /* RESULTS COUNT */
 .results-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;min-height:24px}
@@ -185,15 +190,7 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
   .main-tab{padding:10px 20px;font-size:13px}
 }
 @media(max-width:420px){
-  .product-grid,.product-grid-5,.search-mode .product-grid,.search-mode .product-grid-5{grid-template-columns:repeat(2,1fr);gap:8px}
-  .product-grid .card,.product-grid-5 .card{min-width:0}
-  .card-body{padding:8px 10px 10px}
-  .card-name{font-size:12px;line-height:1.3;overflow-wrap:anywhere}
-  .card-desc{font-size:10px;line-height:1.45;margin-bottom:6px;overflow-wrap:anywhere}
-  .card-price{font-size:13px}
-  .card-price-note{font-size:8px}
-  .allergen-row{gap:3px;margin-bottom:6px}
-  .a-pill{font-size:8px;padding:1px 6px;line-height:1.25;max-width:100%;box-sizing:border-box;overflow-wrap:anywhere}
+  .product-grid,.product-grid-5{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -236,7 +233,7 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
 
   <!-- SEARCH -->
   <div class="search-wrap">
-    <input class="search-input" id="search-input" type="text" placeholder="Cari produk..." oninput="handleSearch(this.value)" autocomplete="off">
+    <input class="search-input" id="search-input" type="text" placeholder="Cari nama atau ID produk (contoh: RK-036, HX-012)..." oninput="handleSearch(this.value)" autocomplete="off">
     <svg class="search-icon" id="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="#B4B2A9" stroke-width="1.5"/><path d="M11 11L14 14" stroke="#B4B2A9" stroke-width="1.5" stroke-linecap="round"/></svg>
     <button class="search-clear" id="search-clear" onclick="clearSearch()">✕</button>
   </div>
@@ -296,16 +293,35 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
         <button class="chip" data-cat="Food" onclick="filterRek(this,'cat')">Food</button>
         <button class="chip" data-cat="Non-Food" onclick="filterRek(this,'cat')">Non-Food</button>
         <button class="chip" data-cat="Health" onclick="filterRek(this,'cat')">Health</button>
-        <div class="chip-divider"></div>
-        <button class="chip" data-subcat="Dairy" onclick="filterRek(this,'subcat')">Dairy</button>
-        <button class="chip" data-subcat="Bumbu/Seasoning" onclick="filterRek(this,'subcat')">Bumbu</button>
-        <button class="chip" data-subcat="Protein" onclick="filterRek(this,'subcat')">Protein</button>
-        <button class="chip" data-subcat="Bakery" onclick="filterRek(this,'subcat')">Bakery</button>
-        <button class="chip" data-subcat="Biji-bijian" onclick="filterRek(this,'subcat')">Biji-bijian</button>
-        <button class="chip" data-subcat="Pantry Staples" onclick="filterRek(this,'subcat')">Peralatan</button>
-        <button class="chip" data-subcat="Clothing" onclick="filterRek(this,'subcat')">Sepatu</button>
-        <button class="chip" data-subcat="Vitamin" onclick="filterRek(this,'subcat')">Vitamin</button>
-        <button class="chip" data-subcat="Oral Care" onclick="filterRek(this,'subcat')">Oral Care</button>
+        <button class="chip" data-cat="Toys" onclick="filterRek(this,'cat')">🧸 Mainan</button>
+      </div>
+      <div class="rek-select-row">
+        <span class="chip-label">Filter</span>
+        <select id="rek-subcat-select" class="filter-select" onchange="filterRekSelect(this.value)">
+          <option value="">Semua sub-kategori</option>
+          <optgroup label="— Food">
+            <option value="Dairy">Dairy</option>
+            <option value="Bumbu/Seasoning">Bumbu &amp; Seasoning</option>
+            <option value="Protein">Protein</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Biji-bijian">Biji-bijian</option>
+          </optgroup>
+          <optgroup label="— Non-Food">
+            <option value="Pantry Staples">Peralatan Masak</option>
+            <option value="Clothing">Sepatu Bayi</option>
+          </optgroup>
+          <optgroup label="— Health">
+            <option value="Vitamin">Vitamin &amp; Suplemen</option>
+            <option value="Oral Care">Oral Care</option>
+          </optgroup>
+          <optgroup label="— Mainan (Usia)">
+            <option value="6+ Bulan">6+ Bulan</option>
+            <option value="9+ Bulan">9+ Bulan</option>
+            <option value="12+ Bulan">12+ Bulan</option>
+            <option value="18+ Bulan">18+ Bulan</option>
+            <option value="24+ Bulan">24+ Bulan</option>
+          </optgroup>
+        </select>
       </div>
     </div>
 
@@ -313,7 +329,19 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
       <span class="results-count" id="rek-count"></span>
     </div>
 
+    <!-- Main products (Food / Non-Food / Health) -->
+    <div class="subsec-divider" id="rek-main-divider">
+      <span class="subsec-divider-text">🛒 Food & Non-Food</span>
+      <div class="subsec-divider-line"></div>
+    </div>
     <div class="product-grid-5" id="grid-rek"></div>
+
+    <!-- Toys section -->
+    <div class="subsec-divider" id="rek-toys-divider" style="margin-top:48px">
+      <span class="subsec-divider-text">🧸 Mainan & Stimulasi</span>
+      <div class="subsec-divider-line"></div>
+    </div>
+    <div class="product-grid-5" id="grid-rek-toys"></div>
 
     <div id="rek-noresult" class="no-results" style="display:none">
       <div class="no-results-icon">🔍</div>
@@ -620,6 +648,108 @@ const RK_PRODUCTS = [
     freeFrom:[],
     link:'https://s.shopee.co.id/6VK1wv9Bhd', platform:'Shopee',
     img:'https://down-id.img.susercontent.com/file/id-11134207-7ra0j-mdofnl7qcu8i9e@resize_w900_nl.webp' },
+  // TOYS — STACKING & SORTING
+  { id:'RK-036', n:36, name:'Blocks Stack 2x2x2', sub:'Toys', cat:'12+ Bulan',
+    desc:'Open-ended toy termurah. Stack ke atas, kasih contoh dulu ke baby. Kombinasi beberapa size.',
+    freeFrom:[], link:'https://s.shopee.co.id/5fkzl6RQnx', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/5a99588e60819634c73a04e37524d2b0@resize_w900_nl.webp' },
+  { id:'RK-037', n:37, name:'Blocks Stack 3x3x3', sub:'Toys', cat:'12+ Bulan',
+    desc:'Open-ended toy termurah. Stack ke atas, kasih contoh dulu ke baby. Kombinasi beberapa size.',
+    freeFrom:[], link:'https://s.shopee.co.id/5VRZYnS48w', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/5a99588e60819634c73a04e37524d2b0@resize_w900_nl.webp' },
+  { id:'RK-038', n:38, name:'Blocks Stack 5x5x5', sub:'Toys', cat:'12+ Bulan',
+    desc:'Open-ended toy termurah. Stack ke atas, kasih contoh dulu ke baby. Kombinasi beberapa size.',
+    freeFrom:[], link:'https://s.shopee.co.id/5L89MUShTv', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/5a99588e60819634c73a04e37524d2b0@resize_w900_nl.webp' },
+  { id:'RK-039', n:39, name:'Animal Figure', sub:'Toys', cat:'6+ Bulan',
+    desc:'Teman main sensory play.',
+    freeFrom:[], link:'https://s.shopee.co.id/1VvQolwQe9', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-822wg-mmycroxcwe883d@resize_w900_nl.webp' },
+  { id:'RK-040', n:40, name:'Shape Puzzle', sub:'Toys', cat:'6+ Bulan',
+    desc:'Latih motorik halus dan belajar shape. Pilih yang 3 bentuk.',
+    freeFrom:[], link:'https://s.shopee.co.id/1gEr14vnJC', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7r98w-lzty5kl93cp4e4@resize_w900_nl.webp' },
+  { id:'RK-041', n:41, name:'4 Knob Puzzle', sub:'Toys', cat:'12+ Bulan',
+    desc:'Target 18 bulan sudah paham shape dan matchmaking.',
+    freeFrom:[], link:'https://s.shopee.co.id/1qYHDNv9yF', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/sg-11134201-7rbky-lqlp967d2f476c@resize_w900_nl.webp' },
+  { id:'RK-042', n:42, name:'Stacking Cup Toys', sub:'Toys', cat:'9+ Bulan',
+    desc:'Target 18 bulan bisa stack 4 cups ke atas.',
+    freeFrom:[], link:'https://s.shopee.co.id/5fkzmpiZGJ', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7rasa-m0l1ivap0m30c6@resize_w900_nl.webp' },
+  { id:'RK-043', n:43, name:'Ring Susun', sub:'Toys', cat:'6+ Bulan',
+    desc:'Target 12 bulan bisa menggenggam dan paham instruksi masukin ring ke towernya.',
+    freeFrom:[], link:'https://s.shopee.co.id/AADP96RR8C', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134201-23030-sgqpo8ru9uov40@resize_w900_nl.webp' },
+  { id:'RK-044', n:44, name:'Object Sorting Set', sub:'Toys', cat:'12+ Bulan',
+    desc:'Latih kategorisasi warna. Target 18 bulan bisa pisah benda per warna ke wadah yang sesuai.',
+    freeFrom:[], link:'https://s.shopee.co.id/10zRlLQfNU', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/361fa6622eed57d6238c5f378d9d01a2@resize_w900_nl.webp' },
+  { id:'RK-045', n:45, name:'Ember Warna Warni', sub:'Toys', cat:'12+ Bulan',
+    desc:'Versi lebih besar dari sorting bins. Cocok untuk sortir blok, bola, atau benda rumahan.',
+    freeFrom:[], link:'https://s.shopee.co.id/4VZJwR2Pvs', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/356e0698799d7bd910026ad75f2d2797@resize_w900_nl.webp' },
+  { id:'RK-046', n:46, name:'Shape Sorter Box', sub:'Toys', cat:'12+ Bulan',
+    desc:'Masukkan bentuk ke lubang yang cocok. Target 15 bulan bisa matchkan lingkaran, segitiga, persegi.',
+    freeFrom:[], link:'https://s.shopee.co.id/3g0CwPgRpx', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134201-7r98x-lrft07pmm30va6@resize_w900_nl.webp' },
+  // TOYS — PATTERN & MATH
+  { id:'RK-047', n:47, name:'Pattern Blocks', sub:'Toys', cat:'18+ Bulan',
+    desc:'Kepingan geometris warna-warni untuk buat pola. Fondasi langsung kemampuan aritmatika.',
+    freeFrom:[], link:'https://s.shopee.co.id/7KtVJWtyew', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134201-7r98z-lnv44srmjtzd08@resize_w900_nl.webp' },
+  { id:'RK-048', n:48, name:'Magnetic Tiles', sub:'Toys', cat:'18+ Bulan',
+    desc:'Versi transparan dari pattern blocks. Eksplorasi warna, bentuk, dan pola.',
+    freeFrom:[], link:'https://s.shopee.co.id/9fHQ5yScR5', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/sg-11134201-82608-mkcbifrsne9x70@resize_w900_nl.webp' },
+  { id:'RK-049', n:49, name:'Alat Meronce (Beads)', sub:'Toys', cat:'18+ Bulan',
+    desc:'Manik besar dengan tali untuk buat pola warna berurutan. Latih motorik halus + patterning.',
+    freeFrom:[], link:'https://s.shopee.co.id/8V5SjRKIia', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/4a9713c3775dee54e51cedd265a00ae1@resize_w900_nl.webp' },
+  { id:'RK-050', n:50, name:'Alat Meronce (Hexa)', sub:'Toys', cat:'18+ Bulan',
+    desc:'Tema tertentu untuk dironce dengan tali. Latih motorik halus + patterning.',
+    freeFrom:[], link:'https://s.shopee.co.id/2VoFZ0oVrN', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134201-7r98o-lkjkkna1sumt72@resize_w900_nl.webp' },
+  { id:'RK-051', n:51, name:'Pegboard Silinder', sub:'Toys', cat:'18+ Bulan',
+    desc:'Tancapkan pasak berwarna ke papan berlubang. Latih visual patterning dan koordinasi mata-tangan.',
+    freeFrom:[], link:'https://s.shopee.co.id/9paqIj38D7', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7ras8-m1rufz3anovt3b@resize_w900_nl.webp' },
+  { id:'RK-052', n:52, name:'3 Pieces Puzzle', sub:'Toys', cat:'12+ Bulan',
+    desc:'Puzzle 3 keping besar untuk stimulasi kemampuan pola anak.',
+    freeFrom:[], link:'https://s.shopee.co.id/30kWADWOwu', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/sg-11134201-22100-1cgbzom6u6iveb@resize_w900_nl.webp' },
+  { id:'RK-053', n:53, name:'3D Shape Puzzle', sub:'Toys', cat:'12+ Bulan',
+    desc:'Pasangkan dua bagian bentuk 3D. Lebih challenging dari shape sorter biasa — spatial reasoning lebih dalam.',
+    freeFrom:[], link:'https://s.shopee.co.id/4VZJx8J0ZX', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7rash-m2jb6hpj4w6xc6@resize_w900_nl.webp' },
+  { id:'RK-054', n:54, name:'Montessori Practical Life Set', sub:'Toys', cat:'18+ Bulan',
+    desc:'Set cangkir ukur, corong, dan wadah menuang. Bangun pemahaman volume lewat sensory play.',
+    freeFrom:[], link:'https://s.shopee.co.id/8AScJwkwuu', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-81ztd-mfo8xr384d8q1b@resize_w900_nl.webp' },
+  { id:'RK-055', n:55, name:'Timbangan Montessori', sub:'Toys', cat:'24+ Bulan',
+    desc:'Timbangan dua sisi untuk bandingkan berat benda. Perkenalkan konsep lebih berat/ringan secara konkret.',
+    freeFrom:[], link:'https://s.shopee.co.id/8AScLcDSmO', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7rasb-m5bqvppdq1du7c@resize_w900_nl.webp' },
+  { id:'RK-056', n:56, name:'Wooden Color Sorting', sub:'Toys', cat:'12+ Bulan',
+    desc:'Latih kategorisasi warna berbagai bentuk. Target 18 bulan bisa pisah per warna.',
+    freeFrom:[], link:'https://s.shopee.co.id/7fWLhi2rMH', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m8vela9ttq8d83@resize_w900_nl.webp' },
+  { id:'RK-057', n:57, name:'2 Pieces Puzzle Magnet', sub:'Toys', cat:'12+ Bulan',
+    desc:'Puzzle 2 keping dengan magnet, bisa ditempel di kulkas.',
+    freeFrom:[], link:'https://s.shopee.co.id/5q4hXTzrCi', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/sg-11134201-7reqa-m2j1fslseo2ea3@resize_w900_nl.webp' },
+  { id:'RK-058', n:58, name:'Abacus', sub:'Toys', cat:'6+ Bulan',
+    desc:'Sempoa manik besar berwarna. Bangun number sense lewat manipulasi fisik.',
+    freeFrom:[], link:'https://s.shopee.co.id/8Km2XpqJ3D', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-82251-mk7wda3sga9t1b@resize_w900_nl.webp' },
+  { id:'RK-059', n:59, name:'Counting Beads', sub:'Toys', cat:'24+ Bulan',
+    desc:'Manik-manik dengan jumlah untuk stimulasi konsep angka.',
+    freeFrom:[], link:'https://s.shopee.co.id/2BBPB1NF1s', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/97fc50c411cdda6bbbee9a1fedd34483@resize_w900_nl.webp' },
+  { id:'RK-060', n:60, name:'Feed the Animals', sub:'Toys', cat:'24+ Bulan',
+    desc:'Stimulasi konsep angka dalam cara yang fun.',
+    freeFrom:[], link:'https://s.shopee.co.id/8Km2WQ6fpK', platform:'Shopee',
+    img:'https://down-id.img.susercontent.com/file/id-11134207-82252-mh80ih8udb7z57@resize_w900_nl.webp' },
 ];
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
@@ -670,7 +800,7 @@ function buildHXCard(p) {
   var btnClass = isFC ? 'digital' : '';
   var btnLabel = isFC ? 'Beli Digital' : 'Pesan';
 
-  return '<div class="card'+(isFC?' digital':'')+'" data-sub="'+p.sub+'" data-cat="'+p.cat+'" data-search="'+p.name.toLowerCase()+' '+p.desc.toLowerCase()+'">'
+  return '<div class="card'+(isFC?' digital':'')+'" data-sub="'+p.sub+'" data-cat="'+p.cat+'" data-search="'+p.id.toLowerCase()+' '+p.name.toLowerCase()+' '+p.desc.toLowerCase()+'">'
     +'<div class="card-img'+(isFC?'':'')+'">'
     +catPill+numBadge+imgHtml
     +'</div>'
@@ -693,7 +823,7 @@ function buildRekCard(p) {
   var catPill = p.cat ? '<div class="img-pill">'+p.cat+'</div>' : '';
   var numBadge = '<div class="num-badge">'+p.id+'</div>';
 
-  return '<a href="'+p.link+'" target="_blank" class="card" data-sub="'+p.sub+'" data-cat="'+p.cat+'" data-search="'+p.name.toLowerCase()+' '+p.desc.toLowerCase()+'">'
+  return '<a href="'+p.link+'" target="_blank" class="card" data-sub="'+p.sub+'" data-cat="'+p.cat+'" data-search="'+p.id.toLowerCase()+' '+p.name.toLowerCase()+' '+p.desc.toLowerCase()+'">'
     +'<div class="card-img landscape">'
     +catPill+numBadge+imgHtml
     +'</div>'
@@ -757,12 +887,42 @@ function renderHX() {
 }
 
 function renderRek() {
-  var grid = document.getElementById('grid-rek');
+  var grid      = document.getElementById('grid-rek');
+  var toysGrid  = document.getElementById('grid-rek-toys');
+  var mainDiv   = document.getElementById('rek-main-divider');
+  var toysDiv   = document.getElementById('rek-toys-divider');
   grid.innerHTML = '';
-  RK_PRODUCTS.forEach(function(p) { grid.innerHTML += buildRekCard(p); });
-  filterDOMCards(grid, state.searchQ, state.rekCat, new Set(), 'rek');
+  toysGrid.innerHTML = '';
 
-  var total = countVisible(grid);
+  var q = state.searchQ.toLowerCase();
+
+  RK_PRODUCTS.forEach(function(p) {
+    var html = buildRekCard(p);
+    if (p.sub === 'Toys') {
+      toysGrid.innerHTML += html;
+    } else {
+      grid.innerHTML += html;
+    }
+  });
+
+  filterDOMCards(grid,      q, state.rekCat, new Set(), 'rek');
+  filterDOMCards(toysGrid,  q, state.rekCat, new Set(), 'rek');
+
+  // Section visibility
+  var catFilter = state.rekCat;
+  var showMain  = catFilter === 'all' || catFilter !== 'Toys';
+  var showToys  = catFilter === 'all' || catFilter === 'Toys';
+  // If a subcat filter is active for an age group (6+/12+/etc), show only toys section
+  if (state.rekSubcat && ['6+ Bulan','9+ Bulan','12+ Bulan','18+ Bulan','24+ Bulan'].includes(state.rekSubcat)) {
+    showMain = false;
+    showToys = true;
+  }
+  mainDiv.style.display  = showMain ? '' : 'none';
+  grid.style.display     = showMain ? '' : 'none';
+  toysDiv.style.display  = showToys ? '' : 'none';
+  toysGrid.style.display = showToys ? '' : 'none';
+
+  var total = (showMain ? countVisible(grid) : 0) + (showToys ? countVisible(toysGrid) : 0);
   document.getElementById('rek-count').textContent = total + ' produk ditampilkan';
   document.getElementById('cnt-rek').textContent = RK_PRODUCTS.length;
   document.getElementById('rek-noresult').style.display = total === 0 ? 'block' : 'none';
@@ -808,6 +968,10 @@ function switchTab(tab) {
   document.getElementById('search-input').value = '';
   document.getElementById('search-clear').classList.remove('visible');
   document.getElementById('search-icon').style.display = '';
+  // reset rek dropdown
+  var sel = document.getElementById('rek-subcat-select');
+  if (sel) { sel.value = ''; sel.classList.remove('has-value'); }
+  state.rekSubcat = null;
 
   document.querySelectorAll('.main-tab').forEach(function(b){
     b.classList.remove('active');
@@ -848,21 +1012,32 @@ function filterRek(btn, type) {
     document.querySelectorAll('#rek-cat-chips [data-cat]').forEach(function(b){ b.classList.remove('active-cat'); });
     btn.classList.add('active-cat');
     state.rekCat = btn.getAttribute('data-cat');
-    // clear subcat
+    // clear subcat + reset dropdown
     state.rekSubcat = null;
-    document.querySelectorAll('#rek-cat-chips [data-subcat]').forEach(function(b){ b.classList.remove('active-cat'); });
+    var sel = document.getElementById('rek-subcat-select');
+    if (sel) { sel.value = ''; sel.classList.remove('has-value'); }
+  }
+  renderRek();
+}
+
+function filterRekSelect(val) {
+  state.rekSubcat = val || null;
+  var sel = document.getElementById('rek-subcat-select');
+  if (sel) sel.classList.toggle('has-value', !!val);
+
+  var ageGroups = ['6+ Bulan','9+ Bulan','12+ Bulan','18+ Bulan','24+ Bulan'];
+  if (val && ageGroups.includes(val)) {
+    // Auto-activate Mainan category chip
+    document.querySelectorAll('#rek-cat-chips [data-cat]').forEach(function(b){ b.classList.remove('active-cat'); });
+    var toysBtn = document.querySelector('#rek-cat-chips [data-cat="Toys"]');
+    if (toysBtn) toysBtn.classList.add('active-cat');
+    state.rekCat = 'Toys';
   } else {
-    var cur = btn.getAttribute('data-subcat');
-    if (btn.classList.contains('active-cat') && state.rekSubcat === cur) {
-      btn.classList.remove('active-cat');
-      state.rekSubcat = null;
-    } else {
-      document.querySelectorAll('#rek-cat-chips [data-subcat]').forEach(function(b){ b.classList.remove('active-cat'); });
-      document.querySelectorAll('#rek-cat-chips [data-cat]').forEach(function(b){ b.classList.remove('active-cat'); });
-      btn.classList.add('active-cat');
-      state.rekSubcat = cur;
-      state.rekCat = 'all'; // clear main cat filter
-    }
+    // Non-age subcat: reset cat to all
+    document.querySelectorAll('#rek-cat-chips [data-cat]').forEach(function(b){ b.classList.remove('active-cat'); });
+    var allBtn = document.querySelector('#rek-cat-chips [data-cat="all"]');
+    if (allBtn) allBtn.classList.add('active-cat');
+    state.rekCat = 'all';
   }
   renderRek();
 }
