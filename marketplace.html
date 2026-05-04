@@ -185,12 +185,21 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
   .nav-cta{display:none}
   .page-header{padding:90px 20px 40px}
   .mkt-body{padding:0 16px 60px}
-  .product-grid,.product-grid-5{grid-template-columns:repeat(2,1fr);gap:12px}
+  .product-grid,.product-grid-5,
+  .search-mode .product-grid,.search-mode .product-grid-5{grid-template-columns:repeat(2,1fr);gap:12px}
   .main-tabs{gap:8px}
   .main-tab{padding:10px 20px;font-size:13px}
 }
-@media(max-width:420px){
-  .product-grid,.product-grid-5{grid-template-columns:1fr}
+@media (max-width: 640px) {
+  .product-grid,
+  .product-grid-5,
+  .search-mode .product-grid,
+  .search-mode .product-grid-5 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card-name { font-size: 12px; }
+  .card-desc { font-size: 10px; }
+  .card-body { padding: 10px 11px 12px; }
+  .card-img,
+  .card-img.landscape { aspect-ratio: 1/1; }
 }
 </style>
 </head>
