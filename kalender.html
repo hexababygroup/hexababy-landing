@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalender Aktivitas Harian — Inspirasi Setiap Hari | HEXABABY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#3D5E3A;--forest-dark:#2A4027;--sage:#7BA370;--sage-light:#C8DECC;
+  --cream:#F5EFE0;--cream-mid:#EDE5D0;--sand:#D4B896;--terra:#B85C38;
+  --terra-light:#F0CEBC;--charcoal:#2D2926;--warm-gray:#6B5E52;--light-gray:#B4B2A9;
+  --font-body:'Plus Jakarta Sans',sans-serif;--font-serif:'Lora',serif;
+  --radius-sm:10px;--radius-md:18px;--radius-lg:28px;
+  --shadow-card:0 2px 16px rgba(61,94,58,0.09),0 1px 3px rgba(61,94,58,0.05);
+  --shadow-float:0 8px 40px rgba(61,94,58,0.14),0 2px 8px rgba(61,94,58,0.08)
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--cream);color:var(--charcoal);overflow-x:hidden;line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,239,224,0.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(61,94,58,0.08);transition:box-shadow 0.3s}
+.nav-logo{font-size:19px;font-weight:800;color:var(--forest);text-decoration:none;letter-spacing:-0.02em}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--warm-gray);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--forest)}
+.nav-cta{background:var(--forest);color:var(--cream);padding:9px 20px;border-radius:100px;font-weight:600;font-size:13px;text-decoration:none}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;border:none;background:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--charcoal);border-radius:2px}
+
+/* PAGE HEADER */
+.page-header{padding:110px 40px 52px;background:var(--forest);position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;top:-40%;right:-8%;width:480px;height:480px;background:radial-gradient(ellipse,rgba(200,222,204,0.12) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.page-header::after{content:'';position:absolute;bottom:-30%;left:-4%;width:380px;height:380px;background:radial-gradient(ellipse,rgba(184,92,56,0.09) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.page-header-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.page-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,222,204,0.15);border:1px solid rgba(200,222,204,0.22);color:var(--sage-light);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:0.06em;margin-bottom:18px}
+.page-title{font-family:var(--font-serif);font-size:clamp(32px,4.5vw,52px);font-weight:600;line-height:1.15;color:var(--cream);margin-bottom:10px}
+.page-title em{font-style:italic;color:var(--sage-light)}
+.page-desc{font-size:15px;color:rgba(245,239,224,0.68);max-width:520px;line-height:1.7}
+.wavy{width:100%;overflow:hidden;line-height:0;margin-bottom:-2px}
+.wavy svg{display:block;width:100%}
+
+/* BODY */
+.cal-body{padding:0 40px 80px;max-width:1200px;margin:0 auto}
+
+/* TODAY + FREE DL — mobile-first row */
+/* TODAY card — desktop full-width stacked */
+.top-cards{display:flex;flex-direction:column;gap:14px;margin-bottom:14px}
+.today-card{background:var(--forest);border-radius:var(--radius-lg);padding:28px 32px;display:flex;align-items:center;gap:28px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(61,94,58,0.25)}
+.today-card::before{content:'';position:absolute;top:-40%;right:-5%;width:280px;height:280px;background:radial-gradient(ellipse,rgba(200,222,204,0.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.today-date-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,222,204,0.6);margin-bottom:5px}
+.today-date-row{display:flex;align-items:baseline;gap:10px}
+.today-date-num{font-size:40px;font-weight:800;color:var(--cream);line-height:1}
+.today-date-month{font-size:12px;font-weight:700;color:rgba(200,222,204,0.7);text-transform:uppercase;letter-spacing:0.06em}
+.today-act-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,222,204,0.5);margin-bottom:3px}
+.today-act-name{font-family:var(--font-serif);font-style:italic;font-size:22px;font-weight:600;color:var(--cream);line-height:1.25;margin-bottom:4px}
+.today-act-meta{font-size:13px;color:rgba(200,222,204,0.7);line-height:1.5}
+.today-date-block{text-align:center;flex-shrink:0;background:rgba(255,255,255,0.1);border-radius:var(--radius-sm);padding:14px 22px;min-width:80px}
+.today-divider{width:1px;height:56px;background:rgba(200,222,204,0.2);flex-shrink:0}
+.today-info-block{flex:1;position:relative;z-index:1}
+.btn-today{background:var(--terra);color:white;border:none;font-family:var(--font-body);font-size:12px;font-weight:700;padding:10px 22px;border-radius:100px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.2s;position:relative;z-index:1}
+.btn-today:hover{background:#a04e2e;transform:translateY(-1px)}
+
+.free-dl-card{background:white;border-radius:var(--radius-lg);border:1.5px dashed var(--sand);padding:20px 28px;display:flex;align-items:center;gap:20px}
+.free-dl-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);margin-bottom:3px}
+.free-dl-icon-row{display:flex;align-items:center;gap:12px;flex:1}
+.free-dl-icon{font-size:26px;flex-shrink:0}
+.free-dl-title{font-size:14px;font-weight:700;color:var(--charcoal);line-height:1.35}
+.free-dl-desc{font-size:12px;color:var(--warm-gray);line-height:1.5}
+.btn-dl{background:var(--forest);color:var(--cream);padding:10px 22px;border-radius:100px;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background 0.2s}
+.btn-dl:hover{background:var(--forest-dark)}
+
+/* PROGRESS */
+.progress-wrap{background:white;border-radius:var(--radius-sm);padding:13px 18px;margin-bottom:14px;box-shadow:var(--shadow-card);border:1px solid rgba(61,94,58,0.07)}
+.progress-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+.progress-label{font-size:12px;font-weight:700;color:var(--charcoal)}
+.progress-month-tag{font-size:11px;color:var(--warm-gray)}
+.progress-track{height:5px;background:var(--cream-mid);border-radius:100px;overflow:hidden}
+.progress-fill{height:100%;background:var(--forest);border-radius:100px;transition:width 0.9s ease;width:0%}
+
+/* CALENDAR BOX */
+.cal-box{background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-card);border:1px solid rgba(61,94,58,0.07);overflow:hidden}
+.cal-topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 24px 14px;border-bottom:1px solid rgba(61,94,58,0.07)}
+.cal-nav-group{display:flex;align-items:center;gap:4px}
+.cal-nav-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--sand);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--warm-gray);transition:all 0.18s}
+.cal-nav-btn:hover{border-color:var(--forest);color:var(--forest);background:rgba(61,94,58,0.05)}
+.cal-month-title{font-size:17px;font-weight:800;color:var(--charcoal);margin:0 12px;min-width:148px;text-align:center}
+.cal-today-btn{font-size:12px;font-weight:700;color:var(--forest);background:transparent;border:1.5px solid var(--sage-light);padding:5px 14px;border-radius:100px;cursor:pointer;font-family:var(--font-body);transition:all 0.18s}
+.cal-today-btn:hover{background:var(--sage-light)}
+.cal-topbar-meta{display:flex;align-items:center;gap:10px}
+.cal-theme-chip{display:inline-flex;align-items:center;gap:5px;background:var(--sage-light);color:var(--forest);padding:4px 11px;border-radius:100px;font-size:11px;font-weight:700}
+.dow-row{display:grid;grid-template-columns:repeat(7,1fr);background:rgba(61,94,58,0.025);border-bottom:1px solid rgba(61,94,58,0.06)}
+.dow-cell{text-align:center;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--light-gray);padding:10px 0}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
+
+/* Day cells */
+.day-cell{border-right:1px solid rgba(61,94,58,0.06);border-bottom:1px solid rgba(61,94,58,0.06);padding:10px 10px 8px;cursor:pointer;transition:background 0.15s;min-height:86px;display:flex;flex-direction:column;gap:3px;position:relative}
+.day-cell:hover{background:rgba(61,94,58,0.04)}
+.day-cell.empty{background:rgba(0,0,0,0.012);cursor:default;pointer-events:none}
+.day-cell.today-cell{background:rgba(184,92,56,0.04)}
+.day-cell.today-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--terra)}
+.day-cell.selected-cell{background:rgba(61,94,58,0.06);outline:2px solid var(--forest);outline-offset:-2px}
+.day-cell:nth-child(7n){border-right:none}
+.dc-row{display:flex;align-items:center;justify-content:space-between;gap:3px}
+.dc-num{font-size:13px;font-weight:800;color:var(--charcoal);flex-shrink:0}
+.day-cell.today-cell .dc-num{color:var(--terra)}
+.dc-song-dots{flex-shrink:0;font-size:7px;letter-spacing:1px;line-height:1}
+.dc-act{font-size:11px;font-weight:600;color:var(--charcoal);line-height:1.3;flex:1}
+.dc-pill{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;letter-spacing:0.02em;align-self:flex-start;margin-top:1px}
+.pill-sensory{background:rgba(200,222,204,0.6);color:#1e4a1c}
+.pill-creative{background:var(--terra-light);color:var(--terra)}
+.pill-cognitive{background:var(--cream-mid);color:var(--warm-gray)}
+.pill-matching{background:rgba(123,163,112,0.18);color:var(--forest)}
+.pill-motor{background:rgba(212,184,150,0.4);color:#5a3e1a}
+.pill-celebration{background:var(--terra);color:white}
+.wk1{border-left:3px solid #8AB892}
+.wk2{border-left:3px solid #C4A87A}
+.wk3{border-left:3px solid #7AB098}
+.wk4{border-left:3px solid #D4896A}
+.cal-empty-state{grid-column:1/-1;text-align:center;padding:56px 20px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.cal-empty-icon{font-size:34px}
+.cal-empty-title{font-size:16px;font-weight:800;color:var(--charcoal)}
+.cal-empty-desc{font-size:13px;color:var(--warm-gray);max-width:280px;line-height:1.6}
+.cal-empty-chip{background:var(--sage-light);color:var(--forest);padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;margin-top:4px}
+
+/* DETAIL PANEL */
+.detail-panel{margin-top:16px;background:white;border-radius:var(--radius-lg);box-shadow:var(--shadow-float);border:1px solid rgba(61,94,58,0.07);overflow:hidden;max-height:0;opacity:0;transition:max-height 0.45s ease,opacity 0.3s ease;pointer-events:none}
+.detail-panel.open{max-height:2800px;opacity:1;pointer-events:all}
+
+/* Panel header */
+.dp-header{display:flex;align-items:center;gap:18px;padding:20px 28px 18px;border-bottom:1px solid rgba(61,94,58,0.08);background:rgba(61,94,58,0.02)}
+.dp-date-num{font-size:44px;font-weight:800;color:var(--forest);line-height:1;min-width:52px;text-align:center;flex-shrink:0}
+.dp-header-info{flex:1}
+.dp-day-str{font-size:15px;font-weight:700;color:var(--charcoal);margin-bottom:5px}
+.dp-chips{display:flex;gap:6px;flex-wrap:wrap}
+.dp-chip{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:3px 11px;border-radius:100px}
+.dp-chip-week{background:var(--sage-light);color:var(--forest)}
+.dp-chip-letter{background:var(--cream-mid);color:var(--warm-gray);font-style:italic;font-family:var(--font-serif)}
+.dp-chip-easy{background:rgba(200,222,204,0.7);color:#1e4a1c}
+.dp-chip-medium{background:#FEF4DC;color:#7a4e00}
+.dp-chip-advanced{background:var(--terra-light);color:var(--terra)}
+.dp-close{width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,0.05);border:none;cursor:pointer;font-size:14px;color:var(--warm-gray);flex-shrink:0}
+.dp-close:hover{background:rgba(0,0,0,0.1)}
+
+/* PRODUCT CARDS — under header, before activities */
+.dp-product-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:18px 28px;border-bottom:1px solid rgba(61,94,58,0.08);background:rgba(245,239,224,0.4)}
+.hx-card{border-radius:var(--radius-md);padding:16px;display:flex;flex-direction:column;gap:8px;border:1.5px solid;transition:transform 0.18s,box-shadow 0.18s}
+.hx-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-float)}
+.hx-card-phonics{background:var(--forest);border-color:var(--forest-dark)}
+.hx-card-bundle{background:var(--charcoal);border-color:#1a1714}
+.hx-card-best{display:inline-flex;align-items:center;background:rgba(184,92,56,0.85);color:white;font-size:9px;font-weight:800;padding:3px 10px;border-radius:100px;letter-spacing:0.08em;text-transform:uppercase;align-self:flex-start}
+.hx-card-label{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(200,222,204,0.65)}
+.hx-card-name{font-size:14px;font-weight:800;color:var(--cream);line-height:1.3}
+.hx-card-desc{font-size:11px;color:rgba(200,222,204,0.7);line-height:1.5;flex:1}
+.hx-card-price-orig{font-size:12px;color:rgba(200,222,204,0.45);text-decoration:line-through;line-height:1.2;margin-bottom:1px}
+.hx-card-price{font-size:22px;font-weight:800;color:var(--cream);line-height:1}
+.hx-card-price-badge{display:inline-flex;align-items:center;background:var(--terra);color:white;font-size:9px;font-weight:800;padding:2px 8px;border-radius:100px;letter-spacing:0.06em;margin-bottom:4px}
+.hx-card-file{font-size:10px;color:rgba(200,222,204,0.5);margin-top:-4px}
+.btn-hx-get{background:var(--terra);color:white;border:none;font-family:var(--font-body);font-size:11px;font-weight:700;padding:8px 16px;border-radius:100px;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.15s;align-self:flex-start;margin-top:2px}
+.btn-hx-get:hover{background:#a04e2e}
+
+/* ACTIVITIES — Pagi + Sore side by side */
+.dp-body{display:grid;grid-template-columns:1fr 1fr}
+.dp-col{padding:22px 28px}
+.dp-col-pagi{background:rgba(255,250,230,0.6);border-right:1px solid rgba(61,94,58,0.08)}
+.dp-col-sore{background:rgba(240,248,242,0.6)}
+
+/* Activity section headers */
+.dp-section-head{display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:var(--radius-sm);margin-bottom:14px}
+.dp-section-head-pagi{background:#FFF3C4;border:1px solid #F5D87A}
+.dp-section-head-sore{background:#D6EDD8;border:1px solid #9AC89E}
+.dp-section-emoji{font-size:18px;flex-shrink:0}
+.dp-section-title-wrap{}
+.dp-section-time{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gray);line-height:1}
+.dp-section-name{font-size:14px;font-weight:800;color:var(--charcoal);line-height:1.2;margin-top:1px}
+
+.dp-act-desc{font-size:13px;color:var(--warm-gray);line-height:1.65;margin-bottom:14px}
+.dp-sub-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--light-gray);margin-bottom:7px}
+.dp-step-list{list-style:none;margin-bottom:14px;counter-reset:step}
+.dp-step-list li{font-size:12px;color:var(--warm-gray);padding:5px 0 5px 26px;position:relative;border-bottom:1px solid rgba(61,94,58,0.05);line-height:1.55;counter-increment:step}
+.dp-step-list li:last-child{border:none}
+.dp-step-list li::before{content:counter(step);position:absolute;left:0;top:5px;width:17px;height:17px;background:var(--sage-light);color:var(--forest);border-radius:50%;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;text-align:center;line-height:17px}
+.dp-mat-list{list-style:none}
+.dp-mat-list li{font-size:12px;color:var(--warm-gray);padding:4px 0 4px 14px;position:relative;border-bottom:1px solid rgba(61,94,58,0.05)}
+.dp-mat-list li:last-child{border:none}
+.dp-mat-list li::before{content:"·";position:absolute;left:0;color:var(--sage);font-weight:700;font-size:16px;line-height:1.1}
+
+/* Phonics details in pagi col */
+.dp-phonics-ref{margin-top:12px;background:rgba(200,222,204,0.25);border:1px solid rgba(200,222,204,0.5);border-radius:var(--radius-sm);padding:10px 12px}
+.dp-phonics-ref-label{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--forest);margin-bottom:5px}
+.dp-phonics-ref-desc{font-size:12px;color:var(--warm-gray);line-height:1.55}
+
+/* RECOMMENDATIONS */
+.dp-rek-section{border-top:1px solid rgba(61,94,58,0.08);padding:20px 28px 20px}
+.dp-rek-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.dp-rek-title-wrap{}
+.dp-rek-title{font-size:13px;font-weight:800;color:var(--charcoal);margin-bottom:2px}
+.dp-rek-desc{font-size:12px;color:var(--warm-gray)}
+.dp-rek-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px;margin-bottom:16px}
+.btn-kurasi{display:inline-flex;align-items:center;gap:6px;background:var(--cream-mid);border:1.5px solid var(--sand);color:var(--forest);font-family:var(--font-body);font-size:12px;font-weight:700;padding:10px 18px;border-radius:100px;cursor:pointer;text-decoration:none;transition:all 0.18s;width:100%;justify-content:center}
+.btn-kurasi:hover{background:var(--sage-light);border-color:var(--sage)}
+
+/* Product cards */
+.prod-card{border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-card);border:1px solid rgba(61,94,58,0.07);transition:all 0.25s;display:flex;flex-direction:column;background:white;cursor:pointer}
+.prod-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-float)}
+.prod-card-img{width:100%;aspect-ratio:1/1;background:var(--cream-mid);overflow:hidden;position:relative;flex-shrink:0}
+.prod-card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.prod-platform-badge{position:absolute;top:7px;right:7px;background:rgba(238,77,45,0.9);color:white;font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;z-index:2}
+.prod-card-body{padding:10px 12px 12px;flex:1;display:flex;flex-direction:column;gap:4px}
+.prod-card-name{font-size:12px;font-weight:700;color:var(--charcoal);line-height:1.35;flex:1}
+.prod-card-pid{font-size:10px;color:var(--light-gray)}
+.prod-card-foot{margin-top:6px}
+.btn-lihat{display:block;text-align:center;background:var(--terra);color:white;border:none;font-family:var(--font-body);font-size:11px;font-weight:700;padding:7px;border-radius:100px;cursor:pointer;text-decoration:none;transition:background 0.18s}
+.btn-lihat:hover{background:#a04e2e}
+
+/* CTA */
+.section-cta{background:var(--forest);padding:80px 40px;text-align:center;position:relative;overflow:hidden}
+.section-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(200,222,204,0.1) 0%,transparent 70%);pointer-events:none}
+.cta-inner{position:relative;z-index:1;max-width:580px;margin:0 auto}
+.cta-title{font-family:var(--font-serif);font-size:clamp(28px,3.5vw,44px);color:var(--cream);line-height:1.2;margin-bottom:14px}
+.cta-title em{font-style:italic;color:var(--sage-light)}
+.cta-desc{font-size:16px;color:rgba(245,239,224,0.7);margin-bottom:32px;line-height:1.7}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-cta-primary{display:inline-flex;align-items:center;gap:8px;background:var(--cream);color:var(--forest);padding:16px 32px;border-radius:100px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 4px 24px rgba(0,0,0,0.2);transition:all 0.2s}
+.btn-cta-primary:hover{background:white;transform:translateY(-2px)}
+.btn-cta-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--cream);padding:15px 28px;border-radius:100px;font-size:14px;font-weight:600;text-decoration:none;border:2px solid rgba(200,222,204,0.35);transition:all 0.2s}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,0.6)}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand-name{font-size:18px;font-weight:800;color:rgba(245,239,224,0.8);margin-bottom:12px}
+.footer-brand p{font-size:13px;line-height:1.7;max-width:260px}
+.footer-col h4{color:rgba(245,239,224,0.9);font-size:14px;font-weight:700;margin-bottom:16px}
+.footer-col a{display:block;color:rgba(245,239,224,0.5);text-decoration:none;font-size:13px;margin-bottom:10px;transition:color 0.2s}
+.footer-col a:hover{color:rgba(245,239,224,0.9)}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;font-size:12px;flex-wrap:wrap;gap:8px}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:600px){.footer-inner{grid-template-columns:1fr}}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav{padding:12px 20px}
+  .hamburger{display:flex}
+  .nav-cta{display:none}
+  .page-header{padding:90px 20px 40px}
+  .cal-body{padding:0 16px 60px}
+
+  /* Today + free DL — mobile compact */
+  .top-cards { flex-direction: column; gap: 12px; }
+  .today-card { flex-direction: column; align-items: flex-start; padding: 22px 20px; gap: 16px; }
+  .today-date-block { padding: 8px 16px; min-width: auto; display: inline-block; }
+  .today-date-num { font-size: 32px; }
+  .today-date-month { font-size: 11px; }
+  .today-divider { display: none; }
+  .today-act-name { font-size: 20px; margin-bottom: 6px; }
+  .today-act-meta { font-size: 13px; }
+  .btn-today { width: 100%; padding: 12px; font-size: 13px; text-align: center; margin-top: 4px; }
+  .free-dl-card { flex-direction: column; align-items: flex-start; padding: 20px; gap: 16px; }
+  .free-dl-icon-row { align-items: flex-start; }
+  .free-dl-icon { font-size: 24px; }
+  .free-dl-title { font-size: 14px; margin-bottom: 4px; }
+  .free-dl-desc { font-size: 12px; }
+  .btn-dl { width: 100%; padding: 12px; font-size: 13px; text-align: center; white-space: normal; }
+
+  /* Calendar topbar */
+  .cal-topbar{padding:12px 16px;flex-wrap:wrap;gap:8px}
+  .cal-month-title{font-size:15px;min-width:unset}
+
+  /* Calendar cells mobile */
+  .day-cell{min-height:60px;padding:6px 4px 5px}
+  .dc-num{font-size:12px}
+  .dc-act{font-size:9.5px;font-weight:600}
+  .dc-pill{display:none}
+  .dc-song-dots{display:none}
+
+  /* Detail panel */
+  .dp-header{padding:16px 18px}
+  .dp-date-num{font-size:36px;min-width:44px}
+  .dp-day-str{font-size:13px}
+  .dp-product-cards{grid-template-columns:1fr 1fr;padding:14px 18px;gap:10px}
+  .hx-card-name{font-size:13px}
+  .hx-card-price{font-size:16px}
+  .hx-card-desc{font-size:10px}
+  .dp-body{grid-template-columns:1fr}
+  .dp-col-pagi{border-right:none;border-bottom:1px solid rgba(61,94,58,0.08)}
+  .dp-col{padding:16px 18px}
+
+  /* Rek grid 2-col mobile (Shopee style) */
+  .dp-rek-section{padding:16px 18px 18px}
+  .dp-rek-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .prod-card-name{font-size:11px}
+}
+
+@media(max-width:380px){
+  .dp-product-cards{grid-template-columns:1fr}
+  .dp-rek-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="https://hexababy.com" class="nav-logo">HEXABABY.</a>
+  <div class="nav-right">
+    <a href="https://hexababy.com" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7L9 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Beranda</span>
+    </a>
+    <a href="https://app.hexababy.com" target="_blank" class="nav-cta">Buka App →</a>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <div class="page-badge">📅 Kalender Aktivitas Harian</div>
+    <h1 class="page-title">Hari ini mau ngapain<br><em>sama si kecil?</em></h1>
+    <p class="page-desc">Setiap hari ada aktivitas yang sudah dikurasi untuk anak 1–3 tahun. Tinggal buka, tinggal main — tanpa perlu riset dari nol.</p>
+  </div>
+</section>
+<div class="wavy"><svg viewBox="0 0 1440 56" fill="none" preserveAspectRatio="none"><path d="M0 0 C240 56 480 56 720 28 C960 0 1200 0 1440 36 L1440 56 L0 56 Z" fill="#F5EFE0"/></svg></div>
+
+<div class="cal-body">
+
+  <div class="top-cards reveal">
+    <div class="today-card">
+      <div class="today-date-block">
+        <div class="today-date-num" id="todayNum">1</div>
+        <div class="today-date-month" id="todayMonthLbl">Jun 2026</div>
+      </div>
+      <div class="today-divider"></div>
+      <div class="today-info-block">
+        <div class="today-date-label">Aktivitas Hari Ini</div>
+        <div class="today-act-name" id="todayActName">—</div>
+        <div class="today-act-meta" id="todayActMeta">—</div>
+      </div>
+      <button class="btn-today" id="btnJumpToday">Lihat detail →</button>
+    </div>
+    <div class="free-dl-card">
+      <div class="free-dl-eyebrow">Gratis · Coba Dulu Sebelum Beli</div>
+      <div class="free-dl-icon-row">
+        <div class="free-dl-icon">📄</div>
+        <div>
+          <div class="free-dl-title">Download Dot Marker Letter A</div>
+          <div class="free-dl-desc">1 halaman printable — langsung bisa main hari ini. Gratis tanpa perlu daftar.</div>
+        </div>
+      </div>
+      <a href="https://drive.google.com/file/d/1ZTWc5Jgzepk_FyBdt-dz7Mr70wr9PqFE/view?usp=sharing" target="_blank" class="btn-dl">Download Gratis →</a>
+    </div>
+  </div>
+
+  <div class="progress-wrap reveal reveal-delay-1" id="progressWrap" style="display:none">
+    <div class="progress-meta">
+      <span class="progress-label" id="progressLabel">0 dari 30 hari selesai</span>
+      <span class="progress-month-tag">Juni 2026 · Phonics Month</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+
+  <div class="cal-box reveal">
+    <div class="cal-topbar">
+      <div class="cal-nav-group">
+        <button class="cal-nav-btn" id="btnPrev" onclick="navigateMonth(-1)">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M6.5 1.5L3.5 5L6.5 8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="cal-month-title" id="calMonthTitle">Juni 2026</div>
+        <button class="cal-nav-btn" id="btnNext" onclick="navigateMonth(1)">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M3.5 1.5L6.5 5L3.5 8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="cal-topbar-meta">
+        <div class="cal-theme-chip" id="calThemeChip">✨ Phonics</div>
+        <button class="cal-today-btn" onclick="goToToday()">Hari ini</button>
+      </div>
+    </div>
+    <div class="dow-row">
+      <div class="dow-cell">Sen</div><div class="dow-cell">Sel</div><div class="dow-cell">Rab</div>
+      <div class="dow-cell">Kam</div><div class="dow-cell">Jum</div><div class="dow-cell">Sab</div><div class="dow-cell">Min</div>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+  </div>
+
+  <div class="detail-panel" id="detailPanel">
+
+    <div class="dp-header">
+      <div class="dp-date-num" id="dpNum"></div>
+      <div class="dp-header-info">
+        <div class="dp-day-str" id="dpDayStr"></div>
+        <div class="dp-chips" id="dpChips"></div>
+      </div>
+      <button class="dp-close" onclick="closeDetail()">✕</button>
+    </div>
+
+    <div class="dp-product-cards">
+      <div class="hx-card hx-card-phonics">
+        <div class="hx-card-label">HEXABABY · Phonics Set</div>
+        <div class="hx-card-name">Phonics Set<br>30 Hari Belajar Huruf</div>
+        <div class="hx-card-file" id="dpHxFile"></div>
+        <div class="hx-card-desc">Semua printable untuk 30 hari aktivitas Juni 2026 termasuk Touch & Feel, Dot Marker, Pinch Game, Velcro Tree & lebih banyak lagi.</div>
+        <div class="hx-card-price-badge">🔥 DISKON</div><div class="hx-card-price-orig">Rp 149.000</div><div class="hx-card-price">Rp 49.000</div>
+        <a href="https://langkah-awal.myr.id/catalog/hexababy-phonics-set-30-hari-belajar-huruf" target="_blank" class="btn-hx-get">Dapatkan →</a>
+      </div>
+      <div class="hx-card hx-card-bundle">
+        <div class="hx-card-best">⭐ BEST DEAL</div>
+        <div class="hx-card-label">HEXABABY · All Access</div>
+        <div class="hx-card-name">All Access Bundle</div>
+        <div class="hx-card-desc">Termasuk: Flashcards, Posters, Phonics Set &amp; More Activities — akses lengkap semua produk digital.</div>
+        <div class="hx-card-price-badge">⭐ BEST DEAL</div><div class="hx-card-price-orig">Rp 499.000</div><div class="hx-card-price">Rp 99.000</div>
+        <a href="https://langkah-awal.myr.id/catalog/hexababy-phonics-set-30-hari-belajar-huruf" target="_blank" class="btn-hx-get">Dapatkan →</a>
+      </div>
+    </div>
+
+    <div class="dp-body">
+      <div class="dp-col dp-col-pagi">
+        <div class="dp-section-head dp-section-head-pagi">
+          <div class="dp-section-emoji">☀️</div>
+          <div class="dp-section-title-wrap">
+            <div class="dp-section-time">Pagi</div>
+            <div class="dp-section-name">Phonics Song</div>
+          </div>
+        </div>
+        <div class="dp-act-desc" id="dpLvDesc"></div>
+        <div class="dp-phonics-ref" id="dpLvRef">
+          <div class="dp-phonics-ref-label">Material yang dibutuhkan</div>
+          <div class="dp-phonics-ref-desc" id="dpLvMatsText"></div>
+        </div>
+      </div>
+      <div class="dp-col dp-col-sore">
+        <div class="dp-section-head dp-section-head-sore">
+          <div class="dp-section-emoji">🌤️</div>
+          <div class="dp-section-title-wrap">
+            <div class="dp-section-time">Sore · Aktivitas</div>
+            <div class="dp-section-name" id="dpActTitle">—</div>
+            <div id="dpHxFileInline" style="font-size:10px;color:var(--forest);font-weight:700;margin-top:3px;opacity:0.75;letter-spacing:0.03em"></div>
+          </div>
+        </div>
+        <div class="dp-act-desc" id="dpActDesc"></div>
+        <div class="dp-sub-label">Cara bermain</div>
+        <ol class="dp-step-list" id="dpActSteps"></ol>
+        <div class="dp-sub-label" style="margin-top:10px">Bahan dibutuhkan</div>
+        <ul class="dp-mat-list" id="dpActMats"></ul>
+      </div>
+    </div>
+
+    <div class="dp-rek-section">
+      <div class="dp-rek-header">
+        <div class="dp-rek-title-wrap">
+          <div class="dp-rek-title">🛒 Rekomendasi Alat &amp; Bahan</div>
+          <div class="dp-rek-desc">Produk pilihan — klik untuk lihat &amp; beli di Shopee</div>
+        </div>
+      </div>
+      <div class="dp-rek-grid" id="dpRekGrid"></div>
+      <a href="https://www.hexababy.com/marketplace#rekomendasi" target="_blank" class="btn-kurasi">
+        <span>🌿</span> Cek Kurasi Produk by Hexababy Lainnya
+      </a>
+    </div>
+
+  </div></div><div class="wavy" style="margin-top:60px"><svg viewBox="0 0 1440 56" fill="none" preserveAspectRatio="none"><path d="M0 36 C240 0 480 0 720 28 C960 56 1200 56 1440 20 L1440 56 L0 56 Z" fill="#3D5E3A"/></svg></div>
+
+<section class="section-cta">
+  <div class="cta-inner reveal">
+    <div style="font-size:40px;margin-bottom:16px">🌿</div>
+    <h2 class="cta-title">Satu aktivitas hari ini lebih baik dari <em>rencana sempurna besok.</em></h2>
+    <p class="cta-desc">Dapatkan Phonics Set dan mulai main hari ini bersama si kecil.</p>
+    <div class="cta-buttons">
+      <a href="https://langkah-awal.myr.id/catalog/hexababy-phonics-set-30-hari-belajar-huruf" target="_blank" class="btn-cta-primary">📦 Dapatkan Phonics Set — Rp 49.000</a>
+      <a href="https://app.hexababy.com" target="_blank" class="btn-cta-secondary">Buka App Hexababy →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name">HEXABABY.</div>
+      <p>Parenting berbasis data untuk ibu urban Indonesia. Dari pengalaman nyata membesarkan Hexa.</p>
+      <div style="display:flex;gap:12px;margin-top:16px">
+        <a href="https://instagram.com/hexababy_world" target="_blank">Instagram</a>
+        <span style="color:rgba(255,255,255,0.15)">·</span>
+        <a href="https://app.hexababy.com" target="_blank">App</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>App</h4>
+      <a href="https://app.hexababy.com" target="_blank">HEXABABY Super App</a>
+      <a href="https://app.hexababy.com" target="_blank">MPASI Planner</a>
+      <a href="https://app.hexababy.com" target="_blank">Language Tracker</a>
+      <a href="https://app.hexababy.com" target="_blank">Food Journal</a>
+      <a href="https://app.hexababy.com" target="_blank">Analytics Dashboard</a>
+    </div>
+    <div class="footer-col">
+      <h4>Ekosistem</h4>
+      <a href="https://instagram.com/hexababy_world" target="_blank">@hexababy_world</a>
+      <a href="https://instagram.com/hexababy_playroom" target="_blank">@hexababy_playroom</a>
+      <a href="https://instagram.com/hexababygroup" target="_blank">@hexababygroup</a>
+      <a href="https://instagram.com/litenyoghurt" target="_blank">@litenyoghurt</a>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <a href="https://hexababy.com">Beranda</a>
+      <a href="https://hexababy.com/marketplace">Marketplace</a>
+      <a href="https://hexababy.com/kalender">Kalender Aktivitas</a>
+      <a href="mailto:hello@hexababy.com">Kontak</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HEXABABY. All rights reserved.</span>
+    <span>hexababy.com · Made with 🌿 from Indonesia</span>
+  </div>
+</footer>
+
+<script>
+const MAYAR="https://langkah-awal.myr.id/catalog/hexababy-phonics-set-30-hari-belajar-huruf";
+const FREE_DL="https://drive.google.com/file/d/1ZTWc5Jgzepk_FyBdt-dz7Mr70wr9PqFE/view?usp=sharing";
+const MARKETPLACE="https://www.hexababy.com/marketplace#rekomendasi";
+const DAYS_DATA=[{"n": 1, "dn": "Senin", "l": "A, a", "lv": "Easy", "act": "Touch & Feel Phonics Card", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Tempel kapas bulat mengikuti bentuk huruf A di kartu. Anak menelusuri tekstur lembut sambil Mama sebut bunyi /ae/ — cara paling natural memperkenalkan huruf pertama lewat sentuhan.", "steps": ["Cetak kartu huruf A, tempel kapas bulat mengikuti bentuk huruf.", "Berikan kartu ke anak.", "Tunjukkan cara menelusuri dari atas mengikuti garis huruf.", "Mama sebut bunyi /ae/ setiap kali anak menelusuri."], "mats": ["Kapas bulat", "Lem kertas"], "hxFile": "2A. Touch & Feel Phonics A6 Card", "rek": [{"name": "Kapas Bulat", "img": "https://down-id.img.susercontent.com/file/id-11134207-81ztf-mf282oh2m9l7ab@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/902GoURHrQ", "pid": "RK-108"}, {"name": "Pompom Balls", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0s-mdcri01ji5ko2e@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/W3igthiHt", "pid": "RK-109"}, {"name": "Lem Kertas Kuat", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98p-lm8qg3239cmc3b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOe81oNt", "pid": "RK-110"}]}, {"n": 2, "dn": "Selasa", "l": "B, b", "lv": "Easy", "act": "Dot Marker Letter", "cat": "motor", "pillar": "Motorik", "cel": false, "desc": "Isi outline huruf B dengan dot marker, pompom, atau sticker bulat. Melatih motorik halus sambil mengenal bentuk huruf B.", "steps": ["Siapkan sheet huruf B.", "Tunjukkan cara mengisi lingkaran arena.", "Anak isi tiap lingkaran satu per satu dengan marker, sticker, atau pompom.", "Sebut bunyi /b/ bersama saat selesai."], "mats": ["Bingo dot marker / dot sticker warna / pompom balls"], "hxFile": "5A. Dot Phonics A6 (A-L)", "rek": [{"name": "Washable Dot Marker", "img": "https://down-id.img.susercontent.com/file/57cf06eb8c3805775a4f38435f0b4fdc@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7fWt6B3bBj", "pid": "RK-067"}, {"name": "Dot Sticker Warna", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7rbma-lpoummkpx58l97@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDStwAnYO", "pid": "RK-068"}, {"name": "Pompom Balls", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0s-mdcri01ji5ko2e@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/W3igthiHt", "pid": "RK-109"}]}, {"n": 3, "dn": "Rabu", "l": "A - F", "lv": "Medium", "act": "Letter Matching Pinch Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Cocokkan huruf di jepitan kayu dengan huruf yang sama di base board A-F, lalu jepitkan di tepinya. Melatih matching dan motorik halus sekaligus.", "steps": ["Cetak base board A-F dan potongan huruf.", "Tempel potongan huruf ke jepitan pakai hot glue (Mama yang kerjakan).", "Taruh base board di meja, sebar jepitan di sebelahnya.", "Anak cocokkan huruf di jepitan ke base board, jepitkan di tepi kertas.", "Lepas semua, acak, ulangi."], "mats": ["Jepitan kayu kecil 4cm (26 pcs)", "Hot glue gun mini"], "hxFile": "4. Letter Matching Pinch Game", "rek": [{"name": "Jepitan Kayu Kecil", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0p-mbrsab8bt85sac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/6VKvig03yE", "pid": "RK-069"}, {"name": "Hot Glue Gun Mini + Isi", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m9tl9kyx1d8365@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/8fPQIqiyqI", "pid": "RK-070"}]}, {"n": 4, "dn": "Kamis", "l": "A - F", "lv": "Medium", "act": "Sensory & Find the Letter", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Masak agar-agar biru, sembunyikan huruf A-F dan figurin binatang di dasar wadah, lalu tuang dan tunggu set. Anak rogoh jelly, temukan huruf, cocokkan ke flashcard referensi di meja.", "steps": ["Masak agar-agar, tambah pewarna makanan biru.", "Taruh figurin binatang di dasar wadah.", "Letakkan huruf A-F di atas figurin.", "Tuang agar-agar perlahan, masukkan kulkas minimal 2 jam.", "Tempel flashcard referensi A-F di meja.", "Anak rogoh jelly, temukan huruf, sebut bunyinya, cocokkan ke flashcard."], "mats": ["Agar-agar plain (tanpa rasa)", "Pewarna makanan biru", "Loyang / wadah bening", "Figurin binatang kecil (opsional)"], "hxFile": "7. Sensory Guideline", "rek": [{"name": "Gelatin Sapi", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0n-mbrrzt2tgshffd@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/1VwFsoOgfG", "pid": "RK-111"}, {"name": "Animal Figurine", "img": "https://down-id.img.susercontent.com/file/id-11134207-822wg-mmycroxcwe883d@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/1VvQolwQe9", "pid": "RK-039"}, {"name": "Sensory Bin Transparan", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7qvg2-liibvjsczxmu0f@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/2qRdMSG0si", "pid": "RK-079"}, {"name": "Sensory Mat (Art Mat)", "img": "https://down-id.img.susercontent.com/file/id-11134207-822wj-mo97ne14v9500a@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8ma9s5", "pid": "RK-080"}, {"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}]}, {"n": 5, "dn": "Jumat", "l": "A - F", "lv": "Medium", "act": "Post-it Matching Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Tempel post-it huruf A-F secara acak di whiteboard. Anak memindahkan tiap post-it ke posisi huruf yang sama di poster referensi.", "steps": ["Tulis huruf A-F masing-masing di satu post-it.", "Tempel acak di whiteboard.", "Pasang poster referensi di dekatnya.", "Anak ambil post-it satu per satu, cari huruf yang cocok di poster, tempel di sebelahnya."], "mats": ["Sticky notes", "Spidol marker"], "hxFile": "8. Poster Phonics", "rek": [{"name": "Sticky Notes", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mc53iua29tlr30@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOX5Xcx0", "pid": "RK-074"}, {"name": "Spidol Marker", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7reqc-m8n2bo0rysowa0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApYFN6iTX", "pid": "RK-107"}, {"name": "Frame Poster Tanpa Paku", "img": "https://down-id.img.susercontent.com/file/id-11134207-82251-mhsuixtw3u9vd7@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5q5EvrsVjZ", "pid": "RK-087"}]}, {"n": 6, "dn": "Sabtu", "l": "A - F", "lv": "Medium", "act": "Egg Letter Match", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Taruh huruf A-F di dalam telur plastik, tutup kembali. Anak buka telur satu per satu dan cocokkan hurufnya ke flashcard di meja.", "steps": ["Taruh huruf A-F di dalam tiap telur, tutup kembali.", "Taruh semua telur di keranjang.", "Tempel flashcard A-F di meja.", "Anak ambil satu telur, buka, lihat hurufnya, cocokkan ke flashcard yang tepat."], "mats": ["Plastic Easter eggs warna (minimal 6 pcs)", "Keranjang rotan kecil"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Plastic Easter Eggs", "img": "https://down-id.img.susercontent.com/file/id-11134207-8224v-mho2s39d181x01@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/3B4TksjzRA", "pid": "RK-075"}, {"name": "Wooden Alphabet Puzzle", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m9lb5f1ai5f1df@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/902GhkaAIa", "pid": "RK-078"}, {"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Keranjang Rotan Kecil", "img": "https://down-id.img.susercontent.com/file/sg-11134201-8261x-mm75jc5lv2md76@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/1qZ6HYgsAC", "pid": "RK-112"}]}, {"n": 7, "dn": "Minggu", "l": "A - F", "lv": "Medium", "act": "Letter Fruit Velcro Tree", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Petik buah huruf A-F dari tumpukan dan tempelkan ke pohon di posisi huruf yang cocok menggunakan tack-it atau double tape.", "steps": ["Cetak dan laminate pohon A-F beserta potongan buah.", "Pasang tack-it atau double tape di bagian tengah belakang setiap buah.", "Sebar buah di meja, pasang pohon di dinding.", "Anak ambil satu buah, temukan posisi huruf yang cocok di pohon, tempelkan."], "mats": ["Tack-it / double tape"], "hxFile": "3. Letter Fruit Velcro Matchmaking", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 8, "dn": "Senin", "l": "C, c", "lv": "Medium", "act": "Touch & Feel Phonics Card", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Tempel daun kering atau pasir mengikuti lekukan huruf C. Tekstur kasar alami berbeda dari kapas minggu lalu - kontras sensori memperkuat memori bentuk huruf di otak anak.", "steps": ["Tempel daun kering atau pasir mengikuti lekukan huruf C.", "Berikan kartu ke anak.", "Tunjukkan arah penelusuran dari atas, melingkar ke kiri, turun ke bawah.", "Mama sebut bunyi /k/ setiap kali anak selesai menelusuri."], "mats": ["Daun kering / pasir halus", "Lem kertas"], "hxFile": "2A. Touch & Feel Phonics A6 Card", "rek": [{"name": "Lem Kertas Kuat", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98p-lm8qg3239cmc3b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOe81oNt", "pid": "RK-110"}]}, {"n": 9, "dn": "Selasa", "l": "D, d", "lv": "Medium", "act": "Dot Marker Letter", "cat": "motor", "pillar": "Motorik", "cel": false, "desc": "Isi outline huruf D dengan dot sticker atau pompom. Perhatikan bentuk setengah lingkaran D - ajak anak isi area lengkung kanan dulu baru tiang kiri.", "steps": ["Siapkan sheet huruf D.", "Tunjukkan struktur tiang kiri lurus dan lengkung kanan.", "Anak isi lingkaran arena di area lengkung dulu, baru tiang.", "Sebut bunyi /d/ bersama saat selesai."], "mats": ["Dot sticker warna / pompom balls"], "hxFile": "5A. Dot Phonics A6 (A-L)", "rek": [{"name": "Washable Dot Marker", "img": "https://down-id.img.susercontent.com/file/57cf06eb8c3805775a4f38435f0b4fdc@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7fWt6B3bBj", "pid": "RK-067"}, {"name": "Dot Sticker Warna", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7rbma-lpoummkpx58l97@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDStwAnYO", "pid": "RK-068"}, {"name": "Pompom Balls", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0s-mdcri01ji5ko2e@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/W3igthiHt", "pid": "RK-109"}]}, {"n": 10, "dn": "Rabu", "l": "g - m", "lv": "Medium", "act": "Letter Fruit Velcro Tree", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Petik buah jeruk bergambar huruf g-m dan tempel ke pohon huruf yang cocok. Range huruf lebih banyak dari minggu lalu.", "steps": ["Cetak dan laminate pohon g-m beserta potongan buah jeruk.", "Pasang tack-it atau double tape di belakang setiap buah.", "Sebar buah di meja, pasang pohon di dinding.", "Anak ambil satu buah, temukan posisi huruf yang cocok di pohon, tempelkan."], "mats": ["Tack-it / double tape"], "hxFile": "3. Letter Fruit Velcro Matchmaking", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 11, "dn": "Kamis", "l": "G - M", "lv": "Advanced", "act": "Find Letter with Magnet", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Tempel flashcard huruf G-M di whiteboard sebagai target. Anak cari huruf magnet yang cocok dari tumpukan dan tempelkan ke papan.", "steps": ["Tempel flashcard G-M di whiteboard sebagai target.", "Sebar semua magnetic letters di meja.", "Anak pilih huruf magnet yang cocok untuk tiap kartu target.", "Tempelkan huruf magnet di sebelah flashcard yang sesuai."], "mats": ["Magnetic alphabet letter set A-Z (upper+lower)", "Whiteboard magnetic"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Whiteboard Magnetic", "img": "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mfme4igkcphkac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOVlZCFv", "pid": "RK-077"}]}, {"n": 12, "dn": "Jumat", "l": "G - M", "lv": "Advanced", "act": "Letter Matching Pinch Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Gunakan set pinch game dengan huruf G-M. Anak cocokkan dan jepitkan jepitan ke base board.", "steps": ["Siapkan base board G-M di meja.", "Sebar jepitan huruf G-M.", "Anak cocokkan huruf di jepitan ke base board, jepitkan di tepinya.", "Coba tantangan ringan: siapa paling cepat selesai?"], "mats": ["Jepitan kayu kecil 4cm (26 pcs)"], "hxFile": "4. Letter Matching Pinch Game", "rek": [{"name": "Jepitan Kayu Kecil", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0p-mbrsab8bt85sac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/6VKvig03yE", "pid": "RK-069"}, {"name": "Hot Glue Gun Mini + Isi", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m9tl9kyx1d8365@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/8fPQIqiyqI", "pid": "RK-070"}]}, {"n": 13, "dn": "Sabtu", "l": "G - M", "lv": "Advanced", "act": "Post-it Matching Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Post-it matching untuk huruf G-M. Format familiar dari minggu lalu - anak biasanya lebih cepat dan lebih percaya diri kali ini.", "steps": ["Tulis huruf G-M di post-it, satu huruf per kertas.", "Tempel acak di whiteboard.", "Anak ambil satu per satu, temukan huruf yang cocok di poster.", "Tempel post-it di sebelah huruf yang cocok di poster."], "mats": ["Sticky notes", "Spidol marker"], "hxFile": "8. Poster Phonics", "rek": [{"name": "Sticky Notes", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mc53iua29tlr30@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOX5Xcx0", "pid": "RK-074"}, {"name": "Spidol Marker", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7reqc-m8n2bo0rysowa0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApYFN6iTX", "pid": "RK-107"}]}, {"n": 14, "dn": "Minggu", "l": "G, H, I", "lv": "Advanced", "act": "Letter Puzzle", "cat": "cognitive", "pillar": "Kognitif", "cel": false, "desc": "Print kartu Puzzle Letter Matching - cocokkan G kapital ke g kecil, lalu ke gambar grape. Lakukan hal sama untuk H dan I.", "steps": ["Cetak dan potong kartu Puzzle Letter Matching untuk G, H, I.", "Tempel kartu referensi di dinding dengan tack-it.", "Anak cocokkan huruf kecil (g, h, i) ke kapitalnya.", "Cocokkan gambar ke huruf yang sesuai.", "Saat semua terpasang, sebut bunyi tiap huruf bersama."], "mats": ["Tack-it / double tape / velcro tape"], "hxFile": "6. PUZZLE LETTER MATCHING", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 15, "dn": "Senin", "l": "E, e", "lv": "Medium", "act": "Touch & Feel Phonics Card", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Tempel benang wol di tiap garis huruf E. Tiga garis horizontal yang berbulu mengikuti urutan atas-tengah-bawah - membantu otak merekam arah penulisan lewat tekstur.", "steps": ["Tempel benang wol di tiap garis huruf E dengan urutan garis atas, tengah, bawah.", "Berikan kartu ke anak.", "Tunjukkan urutan penelusuran: garis atas, tengah, bawah.", "Anak telusuri sambil Mama sebut bunyi /e/ setiap kali."], "mats": ["Benang wol", "Lem kertas"], "hxFile": "2A. Touch & Feel Phonics A6 Card", "rek": [{"name": "Benang Wol", "img": "https://down-id.img.susercontent.com/file/id-11134207-8224q-mkj6ljkzqbk467@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5L905nNlKt", "pid": "RK-117"}, {"name": "Lem Kertas Kuat", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98p-lm8qg3239cmc3b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOe81oNt", "pid": "RK-110"}]}, {"n": 16, "dn": "Selasa", "l": "F, f", "lv": "Medium", "act": "Dot Marker Letter", "cat": "motor", "pillar": "Motorik", "cel": false, "desc": "Isi outline huruf F dengan dot marker atau sticker. Ajak anak isi garis atas dulu, tengah, baru turun ke bawah.", "steps": ["Siapkan sheet huruf F.", "Tunjukkan struktur garis atas, garis tengah, tiang bawah.", "Anak isi tiap lingkaran arena dari atas ke bawah sesuai urutan.", "Sebut bunyi /f/ bersama saat selesai."], "mats": ["Bingo dot marker / dot sticker warna"], "hxFile": "5A. Dot Phonics A6 (A-L)", "rek": [{"name": "Washable Dot Marker", "img": "https://down-id.img.susercontent.com/file/57cf06eb8c3805775a4f38435f0b4fdc@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7fWt6B3bBj", "pid": "RK-067"}, {"name": "Dot Sticker Warna", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7rbma-lpoummkpx58l97@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDStwAnYO", "pid": "RK-068"}, {"name": "Pompom Balls", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0s-mdcri01ji5ko2e@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/W3igthiHt", "pid": "RK-109"}]}, {"n": 17, "dn": "Rabu", "l": "N - T", "lv": "Medium", "act": "Sensory & Find the Letter", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Rendam bihun kering dengan pewarna hijau lalu sembunyikan huruf N-T di dalamnya. Anak mengaduk, meraba, dan menemukan huruf satu per satu, lalu cocokkan ke kartu referensi di meja.", "steps": ["Rendam bihun kering di air hangat + pewarna hijau selama 15-20 menit, tiriskan.", "Taruh bihun di wadah, sembunyikan huruf N-T di dalamnya.", "Tempel kartu referensi N-T di meja.", "Anak aduk dan rogoh bihun, temukan huruf satu per satu.", "Tiap huruf ditemukan: sebut bunyinya, cocokkan ke kartu referensi."], "mats": ["Bihun kering", "Pewarna makanan hijau", "Sensory bin / wadah"], "hxFile": "7. Sensory Guideline", "rek": [{"name": "Bihun Kering", "img": "https://down-id.img.susercontent.com/file/9b02df708080054bfc60a73498e52170@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSQI6N7zu", "pid": "RK-116"}, {"name": "Sensory Bin Transparan", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7qvg2-liibvjsczxmu0f@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/2qRdMSG0si", "pid": "RK-079"}, {"name": "Sensory Mat (Art Mat)", "img": "https://down-id.img.susercontent.com/file/id-11134207-822wj-mo97ne14v9500a@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8ma9s5", "pid": "RK-080"}]}, {"n": 18, "dn": "Kamis", "l": "N - T", "lv": "Advanced", "act": "Letter Fruit Velcro Tree", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Petik buah mangga bergambar huruf n-t ke pohon yang cocok. Range huruf semakin lebar.", "steps": ["Cetak dan laminate pohon n-t beserta potongan buah mangga.", "Pasang tack-it atau double tape di belakang setiap buah.", "Sebar buah di meja, pasang pohon di dinding.", "Anak ambil satu buah, temukan posisi huruf yang cocok di pohon, tempelkan.", "Boleh bagi dua sesi jika perlu istirahat di tengah."], "mats": ["Tack-it / double tape"], "hxFile": "3. Letter Fruit Velcro Matchmaking", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 19, "dn": "Jumat", "l": "N - T", "lv": "Advanced", "act": "Find Letter with Magnet", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Magnet hunt untuk huruf N-T. Huruf N dan M mirip secara visual - bagus untuk melatih diskriminasi bentuk yang lebih teliti.", "steps": ["Tempel flashcard N-T di whiteboard sebagai target.", "Sebar magnetic letters di meja.", "Anak cari huruf magnet yang cocok satu per satu.", "Tempelkan ke papan di sebelah flashcard yang sesuai.", "Perhatikan khusus saat anak memilih antara N dan M."], "mats": ["Magnetic alphabet letter set A-Z (upper+lower)", "Whiteboard magnetic"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Whiteboard Magnetic", "img": "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mfme4igkcphkac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOVlZCFv", "pid": "RK-077"}]}, {"n": 20, "dn": "Sabtu", "l": "N - T", "lv": "Advanced", "act": "Egg Letter Match", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Egg match untuk huruf N-T. Perhatikan huruf mana yang masih ragu - ulang bunyi huruf itu secara perlahan saat anak menemukannya.", "steps": ["Tulis huruf N-T di dalam tiap telur.", "Taruh di keranjang.", "Tempel flashcard N-T di meja.", "Anak buka telur satu per satu, cocokkan ke flashcard yang tepat.", "Untuk huruf yang masih ragu, ulangi bunyinya pelan-pelan bersama."], "mats": ["Plastic Easter eggs warna (minimal 7 pcs)", "Keranjang rotan kecil"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Plastic Easter Eggs", "img": "https://down-id.img.susercontent.com/file/id-11134207-8224v-mho2s39d181x01@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/3B4TksjzRA", "pid": "RK-075"}, {"name": "Wooden Alphabet Puzzle", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m9lb5f1ai5f1df@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/902GhkaAIa", "pid": "RK-078"}, {"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Keranjang Rotan Kecil", "img": "https://down-id.img.susercontent.com/file/sg-11134201-8261x-mm75jc5lv2md76@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/1qZ6HYgsAC", "pid": "RK-112"}]}, {"n": 21, "dn": "Minggu", "l": "N, O, P", "lv": "Advanced", "act": "Letter Puzzle", "cat": "cognitive", "pillar": "Kognitif", "cel": false, "desc": "Print kartu Puzzle Letter Matching - cocokkan N, O, P kapital ke huruf kecilnya lalu ke gambar yang sesuai.", "steps": ["Cetak dan potong kartu Puzzle Letter Matching untuk N, O, P.", "Tempel kartu referensi di papan dengan tack-it.", "Sebelum mulai, tanya anak: ini bentuknya mirip apa?", "Anak cocokkan huruf kecil (n, o, p) ke kapitalnya.", "Cocokkan gambar ke huruf yang sesuai, sebut bunyi tiap huruf bersama."], "mats": ["Tack-it / double tape / velcro tape"], "hxFile": "6. PUZZLE LETTER MATCHING", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 22, "dn": "Senin", "l": "G, g", "lv": "Advanced", "act": "Touch & Feel Phonics Card", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Tempel amplas halus mengikuti bentuk huruf G. Lekukan unik G benar-benar terasa di ujung jari lewat tekstur kasar.", "steps": ["Tempel amplas halus mengikuti bentuk huruf G.", "Berikan kartu ke anak.", "Tunjukkan arah penelusuran melingkar dari atas ke kiri, turun, masuk ke kanan.", "Mama sebut bunyi /g/ setiap kali anak menelusuri penuh."], "mats": ["Amplas halus (grade 220+)", "Lem kertas"], "hxFile": "2A. Touch & Feel Phonics A6 Card", "rek": [{"name": "Amplas Halus Grade 220", "img": "https://down-id.img.susercontent.com/file/id-11134207-81ztm-meqlx2ooxz42a9@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5flqUPMUev", "pid": "RK-115"}, {"name": "Lem Kertas Kuat", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98p-lm8qg3239cmc3b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOe81oNt", "pid": "RK-110"}]}, {"n": 23, "dn": "Selasa", "l": "H, h", "lv": "Advanced", "act": "Dot Marker Letter", "cat": "motor", "pillar": "Motorik", "cel": false, "desc": "Isi outline huruf H dengan dot marker. Dua tiang vertikal dan satu garis tengah - ajak anak isi dengan urutan tiang kiri dulu, baru kanan, baru tengah.", "steps": ["Siapkan sheet huruf H.", "Tunjukkan struktur tiang kiri, tiang kanan, sambungan tengah.", "Anak isi lingkaran arena mulai dari tiang kiri dulu.", "Lanjut tiang kanan, baru isi garis tengah.", "Sebut bunyi /h/ bersama."], "mats": ["Bingo dot marker / dot sticker warna"], "hxFile": "5A. Dot Phonics A6 (A-L)", "rek": [{"name": "Washable Dot Marker", "img": "https://down-id.img.susercontent.com/file/57cf06eb8c3805775a4f38435f0b4fdc@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7fWt6B3bBj", "pid": "RK-067"}, {"name": "Dot Sticker Warna", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7rbma-lpoummkpx58l97@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDStwAnYO", "pid": "RK-068"}, {"name": "Pompom Balls", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0s-mdcri01ji5ko2e@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/W3igthiHt", "pid": "RK-109"}]}, {"n": 24, "dn": "Rabu", "l": "U - Z", "lv": "Advanced", "act": "Letter Matching Pinch Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Pinch game untuk huruf U-Z, set penutup alfabet. Mulai dari U, V, W yang punya pola visual mirip.", "steps": ["Siapkan base board U-Z di meja.", "Sebar jepitan huruf U-Z.", "Mulai dari U, V, W - tunjukkan perbedaan bentuknya sebelum mulai.", "Anak cocokkan huruf di jepitan ke base board, jepitkan di tepinya."], "mats": ["Jepitan kayu kecil 4cm (26 pcs)"], "hxFile": "4. Letter Matching Pinch Game", "rek": [{"name": "Jepitan Kayu Kecil", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0p-mbrsab8bt85sac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/6VKvig03yE", "pid": "RK-069"}, {"name": "Hot Glue Gun Mini + Isi", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m9tl9kyx1d8365@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/8fPQIqiyqI", "pid": "RK-070"}]}, {"n": 25, "dn": "Kamis", "l": "U - Z", "lv": "Advanced", "act": "Find Letter with Magnet", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Magnet hunt untuk huruf U-Z. Huruf X dan Y paling jarang dilatih - berikan lebih banyak waktu saat anak menemukannya.", "steps": ["Tempel flashcard U-Z di whiteboard.", "Sebar magnetic letters di meja.", "Anak cari tiap huruf magnet yang cocok, tempelkan ke papan.", "Untuk X dan Y, sebut bunyinya lebih pelan dan berulang."], "mats": ["Magnetic alphabet letter set A-Z (upper+lower)", "Whiteboard magnetic"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Whiteboard Magnetic", "img": "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mfme4igkcphkac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOVlZCFv", "pid": "RK-077"}]}, {"n": 26, "dn": "Jumat", "l": "U - Z", "lv": "Advanced", "act": "Post-it Matching Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Post-it matching untuk huruf U-Z. Ini set terakhir alfabet - setelah selesai, lihat semua post-it yang terpasang bersama sebagai momen kecil perayaan.", "steps": ["Tulis huruf U-Z di post-it.", "Tempel acak di whiteboard.", "Anak pindahkan ke posisi yang cocok di poster referensi.", "Saat semua selesai, lihat bersama dan sebut huruf U sampai Z keras-keras."], "mats": ["Sticky notes", "Spidol marker"], "hxFile": "8. Poster Phonics", "rek": [{"name": "Sticky Notes", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mc53iua29tlr30@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOX5Xcx0", "pid": "RK-074"}, {"name": "Spidol Marker", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7reqc-m8n2bo0rysowa0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApYFN6iTX", "pid": "RK-107"}]}, {"n": 27, "dn": "Sabtu", "l": "U - Z", "lv": "Advanced", "act": "Letter Fruit Velcro Tree", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Petik buah kakao bergambar huruf u-z dan tempel ke pohon terakhir. Saat semua buah terpasang, sebut semua huruf dari u sampai z bersama.", "steps": ["Cetak dan laminate pohon u-z beserta potongan buah kakao.", "Pasang tack-it atau double tape di belakang setiap buah.", "Sebar buah di meja, pasang pohon di dinding.", "Anak petik satu per satu dan tempel ke pohon yang cocok.", "Saat semua terpasang, tunjuk dari u sampai z dan sebut bunyinya bersama."], "mats": ["Tack-it / double tape"], "hxFile": "3. Letter Fruit Velcro Matchmaking", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 28, "dn": "Minggu", "l": "U - Z", "lv": "Advanced", "act": "Egg Letter Match", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Egg match untuk huruf U-Z, melengkapi 26 huruf yang sudah dijelajahi bulan ini. Buka telur terakhir bersama sebagai penutup yang seru.", "steps": ["Tulis huruf U-Z di dalam tiap telur.", "Taruh di keranjang.", "Tempel flashcard U-Z di meja.", "Anak buka telur satu per satu, cocokkan ke flashcard.", "Telur terakhir = 26 huruf selesai, rayakan!"], "mats": ["Plastic Easter eggs warna (minimal 6 pcs)", "Keranjang rotan kecil"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Plastic Easter Eggs", "img": "https://down-id.img.susercontent.com/file/id-11134207-8224v-mho2s39d181x01@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/3B4TksjzRA", "pid": "RK-075"}, {"name": "Wooden Alphabet Puzzle", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m9lb5f1ai5f1df@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/902GhkaAIa", "pid": "RK-078"}, {"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Keranjang Rotan Kecil", "img": "https://down-id.img.susercontent.com/file/sg-11134201-8261x-mm75jc5lv2md76@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/1qZ6HYgsAC", "pid": "RK-112"}]}, {"n": 29, "dn": "Senin", "l": "A - M", "lv": "Advanced", "act": "Sensory & Find the Letter", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Sembunyikan buah huruf A-M di dalam jagung popcorn kering. Anak merogoh, menemukan buah huruf, sebut bunyinya, lalu langsung tempel ke pohon di dinding.", "steps": ["Pasang pohon huruf A-F dan G-M di dinding.", "Pastikan tack-it sudah terpasang di belakang semua buah huruf A-M.", "Kubur semua buah huruf A-M di dalam jagung popcorn di keranjang.", "Anak rogoh jagung, temukan buah huruf, sebut bunyinya.", "Langsung tempel buah ke pohon yang sesuai."], "mats": ["Jagung popcorn kering", "Keranjang / sensory bin"], "hxFile": "7. Sensory Guideline", "rek": [{"name": "Jagung Kering (Bahan Sensory)", "img": "https://down-id.img.susercontent.com/file/id-11134207-81zti-me1v1j5ys3r972@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/2Vomy08V17", "pid": "RK-081"}, {"name": "Sensory Bin Transparan", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7qvg2-liibvjsczxmu0f@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/2qRdMSG0si", "pid": "RK-079"}, {"name": "Sensory Mat (Art Mat)", "img": "https://down-id.img.susercontent.com/file/id-11134207-822wj-mo97ne14v9500a@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8ma9s5", "pid": "RK-080"}]}, {"n": 30, "dn": "Selasa", "l": "N - Z", "lv": "Advanced", "act": "Sensory & Find the Letter", "cat": "sensory", "pillar": "Sensori", "cel": true, "desc": "Sembunyikan buah huruf N-Z di dalam kacang hitam kering. Anak merogoh, menemukan buah huruf, sebut bunyinya, lalu langsung tempel ke pohon. Penutup 30 hari phonics!", "steps": ["Pasang pohon huruf N-T dan U-Z di dinding.", "Pastikan tack-it sudah terpasang di belakang semua buah huruf N-Z.", "Kubur semua buah huruf N-Z di dalam kacang hitam di keranjang.", "Anak rogoh kacang, temukan buah huruf, sebut bunyinya.", "Tempel ke pohon. Saat semua selesai: 30 hari phonics tuntas!"], "mats": ["Kacang hitam kering", "Keranjang / sensory bin"], "hxFile": "7. Sensory Guideline", "rek": [{"name": "Kedelai Hitam (Bahan Sensory)", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r991-ly1i5ic8w71oc5@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/6L1VX9n1T8", "pid": "RK-082"}, {"name": "Sensory Bin Transparan", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7qvg2-liibvjsczxmu0f@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/2qRdMSG0si", "pid": "RK-079"}, {"name": "Sensory Mat (Art Mat)", "img": "https://down-id.img.susercontent.com/file/id-11134207-822wj-mo97ne14v9500a@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8ma9s5", "pid": "RK-080"}]}];
+
+const MONTHS_META={
+  '2026-5':{name:'Mei 2026',theme:null,days:31,startDow:4},
+  '2026-6':{name:'Juni 2026',theme:'✨ Phonics',days:30,startDow:0},
+  '2026-7':{name:'Juli 2026',theme:'🔢 Numbers',days:31,startDow:2,coming:true},
+  '2026-8':{name:'Agustus 2026',theme:'🎨 Colors',days:31,startDow:5,coming:true},
+  '2026-9':{name:'September 2026',theme:'🐾 Animals',days:30,startDow:1,coming:true},
+};
+const LV_DESC={
+  Easy:'Nyanyikan saja. Fokus mendengar bunyi huruf — belum butuh respon aktif dari anak. Rekomendasi: "Phonics Song 2" di YouTube (Dave & Ava atau Super Simple Songs).',
+  Medium:'Nyanyikan + tunjuk setiap huruf di Phonics Poster sambil berjalan. Bangun koneksi visual–auditori. Poster tempel setinggi mata anak.',
+  Advanced:'Nyanyikan + high-speed flashcard drill — 1 kartu per detik, sebut bunyinya keras. Anak boleh ikut sebut, boleh diam dulu.'
+};
+const LV_MATS={
+  Easy:'Tidak perlu material apapun.',
+  Medium:'Hexababy Phonics Poster A–Z (tempel di dinding, setinggi mata anak).',
+  Advanced:'Hexababy Phonics Flashcard Set (A–Z uppercase + lowercase).'
+};
+const WN={1:'Minggu 1',2:'Minggu 2',3:'Minggu 3',4:'Minggu 4'};
+const SD={Easy:{d:'●',c:'#C8DECC'},Medium:{d:'●●',c:'#FAC775'},Advanced:{d:'●●●',c:'#F4A0B5'}};
+const WB={1:'wk1',2:'wk2',3:'wk3',4:'wk4'};
+const LVC={Easy:'dp-chip-easy',Medium:'dp-chip-medium',Advanced:'dp-chip-advanced'};
+function gw(n){return n<=7?1:n<=14?2:n<=21?3:4}
+function mkey(y,m){return y+'-'+m}
+function prevK(y,m){var pm=m-1,py=y;if(pm<1){pm=12;py--;}return py+'-'+pm;}
+function nextK(y,m){var nm=m+1,ny=y;if(nm>12){nm=1;ny++;}return ny+'-'+nm;}
+var now=new Date(),curY=2026,curM=6;
+var isJune26=(now.getFullYear()===2026&&now.getMonth()===5);
+var todayN=isJune26?now.getDate():1;
+
+// Today card
+(function(){
+  var d=DAYS_DATA.find(function(x){return x.n===todayN;})||DAYS_DATA[0];
+  document.getElementById('todayNum').textContent=d.n;
+  document.getElementById('todayActName').textContent=d.act+(d.cel?' 🎉':'');
+  var pre=d.desc.substring(0,58)+(d.desc.length>58?'…':'');
+  document.getElementById('todayActMeta').textContent='Huruf '+d.l+' · '+pre;
+  document.getElementById('btnJumpToday').onclick=function(){
+    curY=2026;curM=6;renderCal();
+    setTimeout(function(){
+      var cells=document.querySelectorAll('.day-cell:not(.empty)');
+      cells.forEach(function(c,i){if(DAYS_DATA[i]&&DAYS_DATA[i].n===d.n)openDetail(DAYS_DATA[i],c);});
+    },80);
+  };
+})();
+
+// Progress
+if(isJune26){
+  document.getElementById('progressWrap').style.display='block';
+  var done=Math.max(0,now.getDate()-1);
+  document.getElementById('progressLabel').textContent=done+' dari 30 hari selesai';
+  setTimeout(function(){document.getElementById('progressFill').style.width=((done/30)*100)+'%';},400);
+}
+
+function renderCal(){
+  var key=mkey(curY,curM),meta=MONTHS_META[key];
+  var grid=document.getElementById('calGrid');
+  grid.innerHTML='';closeDetail();
+  document.getElementById('calMonthTitle').textContent=meta?meta.name:(curM+'/'+curY);
+  var chip=document.getElementById('calThemeChip');
+  if(meta&&meta.theme){chip.style.display='inline-flex';chip.textContent=meta.theme+(meta.coming?' · Segera':'');}
+  else chip.style.display='none';
+  var pk=prevK(curY,curM),nk=nextK(curY,curM);
+  document.getElementById('btnPrev').style.opacity=MONTHS_META[pk]?'1':'0.3';
+  document.getElementById('btnPrev').style.pointerEvents=MONTHS_META[pk]?'auto':'none';
+  document.getElementById('btnNext').style.opacity=MONTHS_META[nk]?'1':'0.3';
+  document.getElementById('btnNext').style.pointerEvents=MONTHS_META[nk]?'auto':'none';
+  if(meta&&meta.coming){
+    var e=document.createElement('div');e.className='cal-empty-state';
+    e.innerHTML='<div class="cal-empty-icon">🔒</div><div class="cal-empty-title">'+meta.name+' belum tersedia</div><div class="cal-empty-desc">Tema: '+meta.theme+'. Ikuti @hexababy_playroom untuk dapat notifikasi duluan.</div><div class="cal-empty-chip">Segera hadir</div>';
+    grid.appendChild(e);return;
+  }
+  if(!meta||key!=='2026-6'){
+    var e2=document.createElement('div');e2.className='cal-empty-state';
+    e2.innerHTML='<div class="cal-empty-icon">📅</div><div class="cal-empty-title">Belum ada aktivitas untuk bulan ini</div>';
+    grid.appendChild(e2);return;
+  }
+  for(var i=0;i<meta.startDow;i++){var em=document.createElement('div');em.className='day-cell empty';grid.appendChild(em);}
+  DAYS_DATA.forEach(function(d){
+    var w=gw(d.n);
+    var isToday=(isJune26&&d.n===now.getDate());
+    var c=document.createElement('div');
+    var cls='day-cell '+WB[w];
+    if(isToday)cls+=' today-cell';
+    c.className=cls;
+    var sd=SD[d.lv]||{d:'●',c:'#ccc'};
+    var pillCls=d.cel?'pill-celebration':'pill-'+d.cat;
+    var pillTxt=d.cel?'🎉':''+d.pillar;
+    c.innerHTML='<div class="dc-row"><span class="dc-num">'+d.n+'</span><span class="dc-song-dots" style="color:'+sd.c+'">'+sd.d+'</span></div><div class="dc-act">'+d.act+'</div><span class="dc-pill '+pillCls+'">'+pillTxt+'</span>';
+    c.onclick=(function(dd){return function(){openDetail(dd,c);};})(d);
+    grid.appendChild(c);
+  });
+  var rem=(meta.startDow+meta.days)%7;
+  if(rem)for(var j=0;j<7-rem;j++){var ef=document.createElement('div');ef.className='day-cell empty';grid.appendChild(ef);}
+}
+function navigateMonth(dir){
+  var nk=dir===-1?prevK(curY,curM):nextK(curY,curM);
+  if(!MONTHS_META[nk])return;
+  var p=nk.split('-');curY=+p[0];curM=+p[1];renderCal();
+}
+function goToToday(){curY=2026;curM=6;renderCal();setTimeout(function(){var t=document.querySelector('.today-cell');if(t)t.scrollIntoView({behavior:'smooth',block:'center'});},80);}
+
+var activeCell=null;
+function openDetail(d,cellEl){
+  if(activeCell)activeCell.classList.remove('selected-cell');
+  if(activeCell===cellEl){activeCell=null;closeDetail();return;}
+  activeCell=cellEl;cellEl.classList.add('selected-cell');
+  var w=gw(d.n);
+  document.getElementById('dpNum').textContent=d.n;
+  document.getElementById('dpDayStr').textContent=d.dn+', '+d.n+' Juni 2026';
+  var lvc=LVC[d.lv]||'dp-chip-easy';
+  document.getElementById('dpChips').innerHTML=
+    '<span class="dp-chip dp-chip-week">'+WN[w]+(d.cel?' · 🎉':'')+'</span>'+
+    '<span class="dp-chip dp-chip-letter">Huruf '+d.l+'</span>'+
+    '<span class="dp-chip '+lvc+'">'+d.lv+'</span>';
+  // HX file
+  document.getElementById('dpHxFile').textContent='Termasuk: '+d.hxFile;
+  // Pagi
+  document.getElementById('dpLvDesc').textContent=LV_DESC[d.lv]||'';
+  document.getElementById('dpLvMatsText').textContent=LV_MATS[d.lv]||'';
+  // Sore
+  document.getElementById('dpActTitle').textContent=d.act+(d.cel?' · Celebration 🎉':'');
+  document.getElementById('dpHxFileInline').textContent=d.hxFile?'📁 File: '+d.hxFile:'';
+  document.getElementById('dpActDesc').textContent=d.desc;
+  document.getElementById('dpActSteps').innerHTML=(d.steps||[]).map(function(s){return'<li>'+s+'</li>';}).join('');
+  document.getElementById('dpActMats').innerHTML=(d.mats||[]).map(function(m){return'<li>'+m+'</li>';}).join('');
+  // Rek cards
+  var rg=document.getElementById('dpRekGrid');rg.innerHTML='';
+  (d.rek||[]).forEach(function(item){
+    var pid=item.pid?('<div class="prod-card-pid">ID: '+item.pid+'</div>'):'';
+    var card=document.createElement('div');card.className='prod-card';
+    card.innerHTML='<div class="prod-card-img"><img src="'+item.img+'" alt="'+item.name+'" loading="lazy" onerror="this.parentNode.style.background=&quot;var(--cream-mid)&quot;"><span class="prod-platform-badge">Shopee</span></div><div class="prod-card-body"><div class="prod-card-name">'+item.name+'</div>'+pid+'<div class="prod-card-foot"><a href="'+item.shopee+'" target="_blank" class="btn-lihat">Lihat Produk →</a></div></div>';
+    rg.appendChild(card);
+  });
+  var panel=document.getElementById('detailPanel');
+  panel.classList.add('open');
+  setTimeout(function(){
+    var isMob=window.innerWidth<768;
+    if(isMob){var top=panel.getBoundingClientRect().top+window.scrollY-76;window.scrollTo({top:top,behavior:'smooth'});}
+    else panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+  },100);
+}
+function closeDetail(){
+  document.getElementById('detailPanel').classList.remove('open');
+  if(activeCell){activeCell.classList.remove('selected-cell');activeCell=null;}
+}
+renderCal();
+var revEls=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+  revEls.forEach(function(el){obs.observe(el);});
+}else{revEls.forEach(function(el){el.classList.add('visible');});}
+window.addEventListener('scroll',function(){document.getElementById('main-nav').style.boxShadow=window.scrollY>40?'0 4px 24px rgba(61,94,58,0.1)':'none';});
+</script>
+</body>
+</html>
