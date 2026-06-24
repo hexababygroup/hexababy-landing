@@ -12,16 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --forest:#3D5E3A;--forest-dark:#2A4027;--sage:#7BA370;--sage-light:#C8DECC;
-  --cream:#F5EFE0;--cream-mid:#EDE5D0;--sand:#D4B896;
-  --terra:#B85C38;--terra-light:#F0CEBC;
-  --charcoal:#2D2926;--warm-gray:#6B5E52;--light-gray:#B4B2A9;
-  --font-body:'Plus Jakarta Sans',sans-serif;--font-serif:'Lora',serif;
-  --radius-sm:12px;--radius-md:20px;--radius-lg:32px;--radius-xl:48px;
-  --shadow-card:0 4px 24px rgba(61,94,58,0.10),0 1px 4px rgba(61,94,58,0.06);
-  --shadow-float:0 8px 40px rgba(61,94,58,0.14),0 2px 8px rgba(61,94,58,0.08)
-}
+:root{--forest:#3D5E3A;--forest-dark:#2A4027;--sage:#7BA370;--sage-light:#C8DECC;--cream:#F5EFE0;--cream-mid:#EDE5D0;--sand:#D4B896;--terra:#B85C38;--terra-light:#F0CEBC;--charcoal:#2D2926;--warm-gray:#6B5E52;--light-gray:#B4B2A9;--font-body:'Plus Jakarta Sans',sans-serif;--font-serif:'Lora',serif;--radius-sm:12px;--radius-md:20px;--radius-lg:32px;--radius-xl:48px;--shadow-card:0 4px 24px rgba(61,94,58,0.10),0 1px 4px rgba(61,94,58,0.06);--shadow-float:0 8px 40px rgba(61,94,58,0.14),0 2px 8px rgba(61,94,58,0.08)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);background:var(--cream);color:var(--charcoal);overflow-x:hidden;line-height:1.6}
@@ -31,7 +22,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-logo img{height:28px;width:auto}
 .nav-logo-text{font-size:20px;font-weight:800;color:var(--forest);letter-spacing:-0.02em}
-.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links{display:flex;align-items:center;gap:32px}
 .nav-links a{font-size:14px;font-weight:500;color:var(--warm-gray);text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--forest)}
 .nav-cta{background:var(--forest)!important;color:var(--cream)!important;padding:10px 22px;border-radius:100px;font-weight:600;font-size:14px;transition:background 0.2s,transform 0.15s!important}
@@ -46,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .btn-secondary:hover{background:var(--sage-light);transform:translateY(-2px)}
 
 /* HERO */
-.hero{padding:140px 40px 100px;position:relative;overflow:hidden;display:flex;align-items:center;background:var(--cream)}
+.hero{min-height:100vh;padding:140px 40px 80px;position:relative;overflow:hidden;display:flex;align-items:center}
 .hero-blob{position:absolute;pointer-events:none;z-index:0}
 .hero-blob-1{top:-100px;right:-120px;width:600px;height:600px;background:radial-gradient(ellipse,var(--sage-light) 0%,transparent 70%);border-radius:60% 40% 70% 30% / 50% 60% 40% 60%;opacity:0.5;animation:morphBlob1 12s ease-in-out infinite}
 .hero-blob-2{bottom:-80px;left:-100px;width:500px;height:450px;background:radial-gradient(ellipse,var(--terra-light) 0%,transparent 70%);border-radius:40% 60% 30% 70% / 60% 40% 60% 40%;opacity:0.4;animation:morphBlob2 10s ease-in-out infinite}
@@ -75,7 +66,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .section-subtitle{font-size:17px;color:var(--warm-gray);max-width:540px;margin:0 auto;line-height:1.7}
 .section-header{text-align:center;margin-bottom:64px}
 
-/* PROBLEM — forest bg */
+/* PROBLEM */
 .section-problem{background:var(--forest);padding:80px 40px;position:relative;overflow:hidden}
 .section-problem::before{content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;background:radial-gradient(ellipse,rgba(200,222,204,0.12) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -89,15 +80,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .pain-point-text h4{color:var(--cream);font-size:15px;font-weight:600;margin-bottom:4px}
 .pain-point-text p{color:rgba(245,239,224,0.65);font-size:13px;line-height:1.5}
 
-/* FEATURES — cream bg */
+/* FEATURES */
 .section-features{background:var(--cream);padding:100px 40px}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .feature-card{background:white;border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-card);border:1px solid rgba(61,94,58,0.06);transition:all 0.3s;position:relative;overflow:hidden}
 .feature-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-float)}
 .feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--forest);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
 .feature-card.terra::before{background:var(--terra)}
 .feature-card.sage::before{background:var(--sage)}
-.feature-card-large{grid-column:span 3;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.feature-card-large{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
 .feature-emoji{font-size:36px;margin-bottom:20px;display:block}
 .feature-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:14px}
 .feature-tag.green{background:var(--sage-light);color:var(--forest)}
@@ -110,7 +101,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .feature-list li::before{content:'✓';display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--sage-light);color:var(--forest);font-size:11px;font-weight:700;flex-shrink:0}
 .feature-visual{background:var(--cream);border-radius:var(--radius-md);padding:24px;overflow:hidden}
 
-/* ECOSYSTEM — forest-dark bg */
+/* ECOSYSTEM */
 .section-ecosystem{background:var(--forest-dark);padding:100px 40px;position:relative;overflow:hidden}
 .ecosystem-bg-blob{position:absolute;pointer-events:none;width:600px;height:400px;background:radial-gradient(ellipse,rgba(200,222,204,0.08) 0%,transparent 70%)}
 .ecosystem-bg-blob-1{top:-100px;right:-100px}
@@ -125,7 +116,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .ecosystem-card h3{font-size:17px;font-weight:700;color:var(--cream);margin-bottom:10px;line-height:1.3}
 .ecosystem-card p{font-size:13px;color:rgba(245,239,224,0.6);line-height:1.6}
 
-/* ABOUT — cream bg */
+/* ABOUT */
 .section-about{background:var(--cream);padding:100px 40px}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto}
 .about-visual-container{position:relative}
@@ -146,43 +137,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .about-cred{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--charcoal);font-weight:500}
 .about-cred-icon{width:32px;height:32px;border-radius:8px;background:var(--sage-light);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
 
-/* ─── ECOSYSTEM PAGES PREVIEW — cream bg ─── */
-.section-pages{background:var(--cream);padding:100px 40px}
-.pages-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:0}
+/* SOCIAL PROOF */
+.section-social{background:var(--cream-mid);padding:80px 40px}
+.social-header{text-align:center;margin-bottom:48px}
+.instagram-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto}
+.ig-embed-wrap{border-radius:18px;overflow:hidden;background:white;box-shadow:0 4px 24px rgba(61,94,58,0.10);min-height:520px;display:flex;align-items:stretch}
+.ig-embed-wrap .instagram-media{border-radius:18px!important;width:100%!important;min-width:0!important;flex:1}
+.social-cta{text-align:center;margin-top:40px}
+.ig-tab{background:transparent;border:2px solid var(--sand);color:var(--warm-gray);font-family:var(--font-body);font-size:14px;font-weight:600;padding:10px 24px;border-radius:100px;cursor:pointer;transition:all 0.2s}
+.ig-tab:hover{border-color:var(--sage);color:var(--forest);background:var(--sage-light)}
+.ig-tab.active{background:var(--forest);border-color:var(--forest);color:var(--cream)}
 
-/* Marketplace Preview Card */
-.page-preview-card{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-float);text-decoration:none;display:block;transition:transform 0.3s,box-shadow 0.3s;position:relative}
-.page-preview-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(61,94,58,0.18)}
-.page-preview-header{padding:28px 32px 24px;position:relative;overflow:hidden}
-.page-preview-header.market{background:linear-gradient(135deg,var(--terra) 0%,#C87050 100%)}
-.page-preview-header.kalender{background:linear-gradient(135deg,var(--forest) 0%,#4E7A4A 100%)}
-.page-preview-header::after{content:'';position:absolute;top:-30px;right:-30px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.07);pointer-events:none}
-.page-preview-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);color:white;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:0.06em;margin-bottom:14px}
-.page-preview-header h3{font-family:var(--font-serif);font-size:26px;color:white;line-height:1.2;margin-bottom:8px;font-style:italic}
-.page-preview-header p{font-size:13px;color:rgba(255,255,255,0.72);line-height:1.5}
-.page-preview-arrow{position:absolute;top:28px;right:28px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;transition:background 0.2s}
-.page-preview-card:hover .page-preview-arrow{background:rgba(255,255,255,0.25)}
-.page-preview-body{background:white;padding:24px 32px}
-
-
-/* Product grid preview inside marketplace card */
-.mkt-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
-.mkt-mini-item{background:var(--cream);border-radius:10px;padding:8px;text-align:center}
-.mkt-mini-item .emoji{font-size:20px;display:block;margin-bottom:4px}
-.mkt-mini-item span{font-size:10px;color:var(--warm-gray);font-weight:500;line-height:1.3;display:block}
-
-/* Calendar mini preview */
-.kal-mini-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:14px}
-.kal-mini-cell{height:28px;border-radius:6px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:var(--warm-gray)}
-.kal-mini-cell.has-activity{background:var(--sage-light);color:var(--forest)}
-.kal-mini-cell.today{background:var(--forest);color:white}
-.kal-mini-cell.terra{background:var(--terra-light);color:var(--terra)}
-.kal-day-header{display:flex;align-items:center;gap:8px;background:var(--cream);border-radius:10px;padding:8px 12px;margin-bottom:8px}
-.kal-day-header span{font-size:11px;font-weight:700;color:var(--forest)}
-
-
-
-/* CTA — forest bg */
+/* CTA */
 .section-cta{background:var(--forest);padding:100px 40px;text-align:center;position:relative;overflow:hidden}
 .section-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(200,222,204,0.1) 0%,transparent 70%);pointer-events:none}
 .cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
@@ -196,7 +162,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .btn-cta-secondary:hover{border-color:var(--sage-light);background:rgba(200,222,204,0.1)}
 .cta-note{margin-top:24px;font-size:13px;color:rgba(245,239,224,0.5)}
 
-/* FOOTER — charcoal bg */
+/* FOOTER */
 footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,0.6)}
 .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
 .footer-brand-name{font-size:18px;font-weight:800;color:rgba(245,239,224,0.8);margin-bottom:12px}
@@ -228,10 +194,9 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
   .ecosystem-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .about-float-1,.about-float-2{display:none}
-
+  .instagram-grid{grid-template-columns:1fr}
   .footer-inner{grid-template-columns:1fr 1fr;gap:32px}
-  .section-problem,.section-ecosystem,.section-about,.section-cta,.section-pages{padding:60px 20px}
-  .pages-grid{grid-template-columns:1fr}
+  .section-problem,.section-ecosystem,.section-about,.section-social,.section-cta{padding:60px 20px}
 }
 @media(max-width:600px){
   .ecosystem-grid,.footer-inner{grid-template-columns:1fr}
@@ -249,8 +214,6 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
   <div class="nav-links">
     <a href="#features">Fitur</a>
     <a href="#ekosistem">Ekosistem</a>
-    <a href="https://hexababy.com/marketplace" target="_blank">Marketplace</a>
-    <a href="https://hexababy.com/kalender" target="_blank">Kalender</a>
     <a href="#tentang">Tentang</a>
     <a href="https://instagram.com/hexababy_world" target="_blank" style="color:var(--forest);font-weight:600;">@hexababy_world</a>
     <a href="https://app.hexababy.com" target="_blank" class="nav-cta">Buka App →</a>
@@ -281,6 +244,7 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
         <ellipse cx="392" cy="78" rx="22" ry="12" fill="#7BA370" opacity="0.55" transform="rotate(-35 392 78)"/>
         <ellipse cx="410" cy="60" rx="16" ry="10" fill="#3D5E3A" opacity="0.3" transform="rotate(-55 410 60)"/>
         <ellipse cx="48" cy="310" rx="16" ry="9" fill="#7BA370" opacity="0.4" transform="rotate(20 48 310)"/>
+        <!-- Badge left: bar chart -->
         <rect x="8" y="68" width="175" height="58" rx="16" fill="white" filter="url(#fs)"/>
         <rect x="24" y="103" width="7" height="12" rx="2" fill="#3D5E3A" opacity="0.35"/>
         <rect x="34" y="97" width="7" height="18" rx="2" fill="#3D5E3A" opacity="0.6"/>
@@ -290,6 +254,7 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
         <text x="68" y="91" font-size="12" fill="#2D2926" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Data bicara</text>
         <text x="68" y="106" font-size="12" fill="#2D2926" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">lebih jelas</text>
         <text x="68" y="120" font-size="10" fill="#6B5E52" font-family="Plus Jakarta Sans,sans-serif">dari asumsi manapun</text>
+        <!-- Badge right: shield -->
         <rect x="280" y="68" width="170" height="58" rx="16" fill="white" filter="url(#fs)"/>
         <circle cx="302" cy="97" r="13" fill="#C8DECC" opacity="0.5"/>
         <path d="M302 84C302 84 294 87 294 93L294 100C294 106 302 110 302 110C302 110 310 106 310 100L310 93C310 87 302 84 302 84Z" fill="#3D5E3A" opacity="0.7"/>
@@ -297,11 +262,13 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
         <text x="322" y="91" font-size="12" fill="#2D2926" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Berbasis</text>
         <text x="322" y="106" font-size="12" fill="#2D2926" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">WHO &amp; IDAI</text>
         <text x="322" y="120" font-size="10" fill="#6B5E52" font-family="Plus Jakarta Sans,sans-serif">Panduan terverifikasi</text>
+        <!-- App card -->
         <rect x="96" y="145" width="268" height="262" rx="22" fill="white" stroke="#EDE5D0" stroke-width="1.5" filter="url(#fs)"/>
         <rect x="96" y="145" width="268" height="60" rx="22" fill="#3D5E3A"/>
         <rect x="96" y="183" width="268" height="22" fill="#3D5E3A"/>
         <text x="230" y="169" font-size="13" fill="#F5EFE0" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">HEXABABY App</text>
         <text x="230" y="186" font-size="10" fill="#C8DECC" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">MPASI Planner · Tracker · Journal</text>
+        <!-- Row 1 -->
         <rect x="108" y="218" width="244" height="36" rx="11" fill="#F5EFE0"/>
         <circle cx="126" cy="236" r="11" fill="#7BA370" opacity="0.3"/>
         <line x1="122" y1="229" x2="122" y2="243" stroke="#3D5E3A" stroke-width="1.4" stroke-linecap="round"/>
@@ -311,6 +278,7 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
         <text x="145" y="246" font-size="9.5" fill="#6B5E52" font-family="Plus Jakarta Sans,sans-serif">Ayam cincang + brokoli + wortel</text>
         <rect x="302" y="224" width="42" height="20" rx="10" fill="#C8DECC"/>
         <text x="323" y="237" font-size="8.5" fill="#3D5E3A" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">✓ Log</text>
+        <!-- Row 2 -->
         <rect x="108" y="260" width="244" height="36" rx="11" fill="#F5EFE0"/>
         <circle cx="126" cy="278" r="11" fill="#B85C38" opacity="0.15"/>
         <rect x="122.5" y="270" width="7" height="14" rx="3.5" fill="#3D5E3A" opacity="0.75"/>
@@ -322,6 +290,7 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
         <path d="M213 285.5Q215 287.5 217 285.5" stroke="#6B5E52" stroke-width="1" stroke-linecap="round" fill="none"/>
         <rect x="302" y="266" width="42" height="20" rx="10" fill="#C8DECC"/>
         <text x="323" y="279" font-size="8.5" fill="#3D5E3A" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">✓ Log</text>
+        <!-- Row 3 -->
         <rect x="108" y="302" width="244" height="36" rx="11" fill="#F5EFE0"/>
         <circle cx="126" cy="320" r="11" fill="#3D5E3A" opacity="0.12"/>
         <path d="M122 313A9 9 0 1 0 122 327A6 6 0 1 1 122 313Z" fill="#3D5E3A" opacity="0.75"/>
@@ -329,6 +298,7 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
         <text x="145" y="330" font-size="9.5" fill="#6B5E52" font-family="Plus Jakarta Sans,sans-serif">10.5 jam · Nyenyak</text>
         <rect x="302" y="308" width="42" height="20" rx="10" fill="#C8DECC"/>
         <text x="323" y="321" font-size="8.5" fill="#3D5E3A" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">✓ Log</text>
+        <!-- Insight bar -->
         <rect x="108" y="344" width="244" height="55" rx="12" fill="#3D5E3A"/>
         <rect x="120" y="358" width="4" height="8" rx="1" fill="#C8DECC" opacity="0.45"/>
         <rect x="126" y="353" width="4" height="13" rx="1" fill="#C8DECC" opacity="0.7"/>
@@ -336,6 +306,7 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
         <text x="142" y="362" font-size="11" fill="#C8DECC" font-family="Plus Jakarta Sans,sans-serif" font-weight="700">Insight Minggu Ini</text>
         <text x="120" y="377" font-size="9.5" fill="rgba(245,239,224,0.85)" font-family="Plus Jakarta Sans,sans-serif">Asupan protein: Cukup · Variasi sayur: ↑</text>
         <text x="120" y="391" font-size="8.5" fill="#C8DECC" font-family="Plus Jakarta Sans,sans-serif">Panduan berbasis WHO · IDAI · AAP</text>
+        <!-- Chip 1: leaf -->
         <rect x="76" y="422" width="98" height="70" rx="18" fill="white" stroke="#EDE5D0" stroke-width="1.5" filter="url(#fs)"/>
         <circle cx="125" cy="440" r="12" fill="#C8DECC" opacity="0.45"/>
         <path d="M125 451C125 451 115 442 118 433C120 427 132 427 132 435C132 443 125 451 125 451Z" fill="#3D5E3A" opacity="0.8"/>
@@ -343,6 +314,7 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
         <text x="125" y="465" font-size="11.5" fill="#3D5E3A" font-weight="800" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">MPASI</text>
         <text x="125" y="477" font-size="9.5" fill="#7BA370" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">300+ menu</text>
         <text x="125" y="488" font-size="8.5" fill="#B4B2A9" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">real food</text>
+        <!-- Chip 2: clipboard dark -->
         <rect x="181" y="415" width="98" height="82" rx="18" fill="#3D5E3A" filter="url(#fs)"/>
         <circle cx="230" cy="435" r="12" fill="rgba(255,255,255,0.1)"/>
         <rect x="223" y="429" width="14" height="16" rx="3" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
@@ -354,6 +326,7 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
         <text x="230" y="470" font-size="9.5" fill="#C8DECC" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">Harian &amp;</text>
         <text x="230" y="482" font-size="9.5" fill="#C8DECC" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">mingguan</text>
         <text x="230" y="492" font-size="8.5" fill="rgba(200,222,204,0.7)" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif">Semua tercatat ✓</text>
+        <!-- Chip 3: speech bubble -->
         <rect x="286" y="422" width="98" height="70" rx="18" fill="white" stroke="#EDE5D0" stroke-width="1.5" filter="url(#fs)"/>
         <circle cx="335" cy="440" r="12" fill="#C8DECC" opacity="0.45"/>
         <path d="M326 434Q326 428 335 428Q344 428 344 434Q344 440 340 441L340 445L336 441Q326 441 326 434Z" fill="#3D5E3A" opacity="0.8"/>
@@ -367,7 +340,6 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
   </div>
 </section>
 
-<!-- wavy: cream → forest -->
 <div class="wavy-divider"><svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none"><path d="M0 0 C240 60 480 60 720 30 C960 0 1200 0 1440 40 L1440 60 L0 60 Z" fill="#2A4027"/></svg></div>
 
 <!-- PROBLEM -->
@@ -390,7 +362,6 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
   </div>
 </section>
 
-<!-- wavy: forest → cream -->
 <div class="wavy-divider"><svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none"><path d="M0 60 C360 0 720 0 1080 30 C1260 45 1380 20 1440 0 L1440 60 L0 60 Z" fill="#F5EFE0"/></svg></div>
 
 <!-- FEATURES -->
@@ -450,6 +421,15 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
         <p>Kurva BB & TB berbasis WHO. Tren asupan nutrisi. Visual yang bisa langsung ditunjukkan ke dokter anak.</p>
         <ul class="feature-list"><li>Kurva pertumbuhan WHO</li><li>Tren nutrisi mingguan/bulanan</li><li>Export PDF untuk konsultasi</li></ul>
       </div>
+      <!-- Marketplace Coming Soon -->
+      <div class="feature-card reveal reveal-delay-2" style="background:var(--cream-mid);border:2px dashed var(--sand);position:relative;overflow:hidden">
+        <div style="position:absolute;top:18px;right:20px;background:var(--terra);color:white;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.05em">COMING SOON</div>
+        <span class="feature-emoji" style="filter:grayscale(0.3)">🛍️</span>
+        <div class="feature-tag" style="background:var(--sand);color:var(--warm-gray)">Marketplace</div>
+        <h3 style="color:var(--warm-gray)">HEXABABY Marketplace</h3>
+        <p style="color:var(--light-gray)">Produk MPASI real food yang sudah diverifikasi standar 7 poin — langsung bisa dibeli tanpa perlu baca label satu per satu.</p>
+        <ul class="feature-list" style="opacity:0.5"><li>Produk lolos kurasi @hexababygroup</li><li>Liten Yoghurt & pantry staples</li><li>Pengiriman ke seluruh Indonesia</li></ul>
+      </div>
     </div>
     <div style="text-align:center;margin-top:48px" class="reveal">
       <a href="https://app.hexababy.com" target="_blank" class="btn-primary" style="font-size:17px;padding:18px 40px">Coba Gratis Sekarang →</a>
@@ -458,7 +438,6 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
   </div>
 </section>
 
-<!-- wavy: cream → forest-dark -->
 <div class="wavy-divider"><svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none"><path d="M0 30 C360 60 720 0 1080 40 C1260 55 1380 30 1440 20 L1440 60 L0 60 Z" fill="#2A4027"/></svg></div>
 
 <!-- ECOSYSTEM -->
@@ -480,7 +459,6 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
   </div>
 </section>
 
-<!-- wavy: forest-dark → cream -->
 <div class="wavy-divider"><svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none"><path d="M0 60 C240 10 600 50 960 20 C1200 5 1380 40 1440 60 L1440 0 L0 0 Z" fill="#F5EFE0"/></svg></div>
 
 <!-- ABOUT -->
@@ -531,97 +509,34 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
   </div>
 </section>
 
-<!-- ─────────────────────────────────────── -->
-<!-- PAGES PREVIEW: Marketplace + Kalender  -->
-<!-- No wavy needed — stays on cream bg     -->
-<!-- ─────────────────────────────────────── -->
-<section class="section-pages" id="halaman" style="padding-top:20px">
+<!-- SOCIAL PROOF -->
+<section class="section-social">
   <div class="section-inner">
-    <div class="section-header reveal" style="margin-bottom:40px">
-      <div class="section-label" style="color:var(--forest)">🌐 Halaman Ekosistem</div>
-      <h2 class="section-title">Lebih dari sekadar app — <em>ekosistem lengkap.</em></h2>
-      <p class="section-subtitle">Marketplace produk kurasi & kalender aktivitas harian — semua tersedia di hexababy.com.</p>
+    <div class="social-header reveal">
+      <div class="section-label" style="color:var(--forest);text-align:center">📸 Konten dari Ekosistem HEXABABY</div>
+      <h2 class="section-title">Konten yang <em>terbukti</em> resonates.</h2>
+      <p class="section-subtitle">Reel-reel terpopuler dari @hexababy_world dan @hexababy_playroom.</p>
     </div>
-    <div class="pages-grid">
-
-      <!-- MARKETPLACE CARD -->
-      <a href="https://hexababy.com/marketplace" target="_blank" class="page-preview-card reveal">
-        <div class="page-preview-header market">
-          <div class="page-preview-arrow">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M7 3L11 7L7 11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="page-preview-badge">🛍️ LIVE SEKARANG</div>
-          <h3>HEXABABY Marketplace</h3>
-          <p>Produk MPASI real food terkurasi — lolos standar 7 poin @hexababygroup</p>
-        </div>
-        <div class="page-preview-body">
-          <div class="mkt-mini-grid">
-            <div class="mkt-mini-item"><span class="emoji">🥛</span><span>Liten Yoghurt Jersey</span></div>
-            <div class="mkt-mini-item"><span class="emoji">🍯</span><span>Raw Honey Anak</span></div>
-            <div class="mkt-mini-item"><span class="emoji">🧀</span><span>Keju Real Food</span></div>
-            <div class="mkt-mini-item"><span class="emoji">🫐</span><span>Snack Freeze Dry</span></div>
-            <div class="mkt-mini-item"><span class="emoji">🐟</span><span>Ikan & Seafood</span></div>
-            <div class="mkt-mini-item"><span class="emoji">🌾</span><span>Pantry Staples</span></div>
-          </div>
-        </div>
-      </a>
-
-      <!-- KALENDER CARD -->
-      <a href="https://hexababy.com/kalender" target="_blank" class="page-preview-card reveal reveal-delay-1">
-        <div class="page-preview-header kalender">
-          <div class="page-preview-arrow">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M7 3L11 7L7 11" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="page-preview-badge">📅 JUNI 2026 AKTIF</div>
-          <h3>Kalender Aktivitas Playroom</h3>
-          <p>30 hari aktivitas phonics harian — cocok untuk bayi 0–3 tahun bersama Mama</p>
-        </div>
-        <div class="page-preview-body">
-          <!-- Mini calendar grid -->
-          <div class="kal-day-header" style="margin-bottom:10px">
-            <span style="width:28px;height:28px;background:var(--forest);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-size:13px;font-weight:800;flex-shrink:0">✨</span>
-            <div><div style="font-size:12px;font-weight:700;color:var(--charcoal)">Phonics Month — Juni 2026</div><div style="font-size:11px;color:var(--warm-gray)">Belajar huruf lewat sensori & aktivitas</div></div>
-          </div>
-          <div class="kal-mini-grid">
-            <div class="kal-mini-cell" style="font-size:8px;color:var(--warm-gray);background:transparent">Sen</div>
-            <div class="kal-mini-cell" style="font-size:8px;color:var(--warm-gray);background:transparent">Sel</div>
-            <div class="kal-mini-cell" style="font-size:8px;color:var(--warm-gray);background:transparent">Rab</div>
-            <div class="kal-mini-cell" style="font-size:8px;color:var(--warm-gray);background:transparent">Kam</div>
-            <div class="kal-mini-cell" style="font-size:8px;color:var(--warm-gray);background:transparent">Jum</div>
-            <div class="kal-mini-cell" style="font-size:8px;color:var(--warm-gray);background:transparent">Sab</div>
-            <div class="kal-mini-cell" style="font-size:8px;color:var(--warm-gray);background:transparent">Min</div>
-            <div class="kal-mini-cell has-activity">1</div>
-            <div class="kal-mini-cell has-activity">2</div>
-            <div class="kal-mini-cell has-activity">3</div>
-            <div class="kal-mini-cell has-activity">4</div>
-            <div class="kal-mini-cell has-activity">5</div>
-            <div class="kal-mini-cell today">6</div>
-            <div class="kal-mini-cell has-activity">7</div>
-            <div class="kal-mini-cell has-activity">8</div>
-            <div class="kal-mini-cell has-activity">9</div>
-            <div class="kal-mini-cell has-activity">10</div>
-            <div class="kal-mini-cell has-activity">11</div>
-            <div class="kal-mini-cell has-activity">12</div>
-            <div class="kal-mini-cell has-activity">13</div>
-            <div class="kal-mini-cell has-activity">14</div>
-            <div class="kal-mini-cell">15</div>
-            <div class="kal-mini-cell">16</div>
-            <div class="kal-mini-cell">17</div>
-            <div class="kal-mini-cell">18</div>
-            <div class="kal-mini-cell">19</div>
-            <div class="kal-mini-cell">20</div>
-            <div class="kal-mini-cell">21</div>
-          </div>
-        </div>
-      </a>
-
+    <div class="ig-tabs reveal" style="display:flex;justify-content:center;gap:12px;margin-bottom:40px">
+      <button class="ig-tab active" onclick="switchTab('world')" id="tab-world">🥦 @hexababy_world</button>
+      <button class="ig-tab" onclick="switchTab('playroom')" id="tab-playroom">🧠 @hexababy_playroom</button>
     </div>
+    <div class="instagram-grid" id="reels-world">
+      <div class="ig-embed-wrap reveal"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPNt3vJEkj0/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+      <div class="ig-embed-wrap reveal reveal-delay-1"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIbjMxfyH-A/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+      <div class="ig-embed-wrap reveal reveal-delay-2"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPqR7a7EmTz/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+    </div>
+    <div class="instagram-grid" id="reels-playroom" style="display:none">
+      <div class="ig-embed-wrap reveal"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSpDKX0kgL3/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+      <div class="ig-embed-wrap reveal reveal-delay-1"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQPLDtykg-y/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+      <div class="ig-embed-wrap reveal reveal-delay-2"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DWoW_i2SqR4/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:18px;margin:0;max-width:100%;width:100%;min-width:0"></blockquote></div>
+    </div>
+    <div class="social-cta reveal" id="social-cta-world"><a href="https://instagram.com/hexababy_world" target="_blank" class="btn-secondary" style="margin:0 auto;display:inline-flex">Follow @hexababy_world →</a></div>
+    <div class="social-cta reveal" id="social-cta-playroom" style="display:none"><a href="https://instagram.com/hexababy_playroom" target="_blank" class="btn-secondary" style="margin:0 auto;display:inline-flex">Follow @hexababy_playroom →</a></div>
   </div>
 </section>
+<script async src="//www.instagram.com/embed.js"></script>
 
-
-
-<!-- wavy: cream → forest -->
 <div class="wavy-divider"><svg viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none"><path d="M0 20 C360 80 720 0 1080 50 C1260 70 1380 30 1440 10 L1440 80 L0 80 Z" fill="#3D5E3A"/></svg></div>
 
 <!-- CTA -->
@@ -667,10 +582,10 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
     </div>
     <div class="footer-col">
       <h4>Info</h4>
-      <a href="https://hexababy.com">Beranda</a>
-      <a href="https://hexababy.com/marketplace">Marketplace</a>
-      <a href="https://hexababy.com/kalender">Kalender Aktivitas</a>
       <a href="#tentang">Tentang</a>
+      <a href="#features">Fitur</a>
+      <a href="https://hexababy.com/kalender">Kalender Aktivitas</a>
+      <a href="https://hexababy.com/marketplace">Marketplace</a>
       <a href="mailto:hello@hexababy.com">Kontak</a>
     </div>
   </div>
@@ -682,6 +597,7 @@ footer{background:var(--charcoal);padding:60px 40px 32px;color:rgba(245,239,224,
 
 <script>
 function toggleMenu(){var l=document.querySelector('.nav-links'),o=l.getAttribute('data-open')==='true';if(!o){l.style.cssText='display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);gap:16px;z-index:99';l.setAttribute('data-open','true')}else{l.style.display='none';l.setAttribute('data-open','false')}}
+function switchTab(a){var wg=document.getElementById('reels-world'),pg=document.getElementById('reels-playroom'),wc=document.getElementById('social-cta-world'),pc=document.getElementById('social-cta-playroom'),tw=document.getElementById('tab-world'),tp=document.getElementById('tab-playroom');if(a==='world'){wg.style.display='grid';pg.style.display='none';wc.style.display='block';pc.style.display='none';tw.classList.add('active');tp.classList.remove('active')}else{wg.style.display='none';pg.style.display='grid';wc.style.display='none';pc.style.display='block';tw.classList.remove('active');tp.classList.add('active');if(window.instgrm)window.instgrm.Embeds.process()}}
 var revealEls=document.querySelectorAll('.reveal');
 if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08,rootMargin:'0px 0px -20px 0px'});revealEls.forEach(function(el){obs.observe(el)})}else{revealEls.forEach(function(el){el.classList.add('visible')})}
 window.addEventListener('scroll',function(){document.getElementById('main-nav').style.boxShadow=window.scrollY>40?'0 4px 24px rgba(61,94,58,0.1)':'none'});
