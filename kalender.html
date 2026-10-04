@@ -302,6 +302,33 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
   .dp-product-cards{grid-template-columns:1fr}
   .dp-rek-grid{grid-template-columns:1fr 1fr}
 }
+
+/* ── Kalender 8 Indera ── */
+.age-sel-wrap{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--forest)}
+.age-sel{font-family:var(--font-body);font-size:12px;font-weight:700;color:var(--forest);background:var(--cream);border:1.5px solid var(--forest);border-radius:100px;padding:5px 26px 5px 11px;appearance:none;-webkit-appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--forest) 50%),linear-gradient(135deg,var(--forest) 50%,transparent 50%);background-position:calc(100% - 13px) 52%,calc(100% - 9px) 52%;background-size:4px 4px;background-repeat:no-repeat}
+.age-sel:focus-visible{outline:2px solid var(--terra);outline-offset:2px}
+.pill-sx-taktil{background:#F3DDD0;color:#8A3E22}
+.pill-sx-auditori{background:#DCE5F0;color:#3B5677}
+.pill-sx-visual{background:rgba(200,222,204,0.7);color:#1e4a1c}
+.pill-sx-og{background:#EBDDE6;color:#6A3A5B}
+.pill-sx-vestibular{background:#D3EAE5;color:#25604F}
+.pill-sx-proprio{background:#EFE3CC;color:#6B4F22}
+.pill-sx-intero{background:#F2D9DB;color:#86393F}
+.dp-single{padding:22px 28px;background:rgba(240,248,242,0.45)}
+.dp-step-block+.dp-step-block{margin-top:22px;padding-top:22px;border-top:1px dashed rgba(61,94,58,0.18)}
+.dp-addon{display:flex;gap:14px;align-items:flex-start;margin-top:16px;background:var(--terra-light);border-radius:var(--radius-sm);padding:12px}
+.dp-addon-img{width:72px;height:72px;border-radius:10px;object-fit:cover;flex-shrink:0;background:var(--cream-mid)}
+.dp-addon-ph{display:flex;align-items:center;justify-content:center;font-size:26px}
+.dp-addon-eyebrow{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra)}
+.dp-addon-name{font-size:14px;font-weight:700;color:var(--charcoal);margin-top:2px}
+.dp-addon-status{display:inline-block;font-size:10px;font-weight:700;color:var(--terra);border:1.5px solid var(--terra);border-radius:100px;padding:1px 8px;margin-left:4px;vertical-align:middle}
+.dp-addon-price{font-size:13px;font-weight:800;color:var(--charcoal);margin-top:2px}
+.dp-addon-alt{font-size:12px;color:var(--warm-gray);margin-top:3px}
+.dp-addon-btn{display:inline-block;margin-top:9px;font-size:12px;font-weight:700;color:#fff;background:var(--terra);text-decoration:none;padding:7px 14px;border-radius:100px}
+.dp-safety{margin-top:22px;background:rgba(200,222,204,0.25);border:1px solid rgba(200,222,204,0.5);border-radius:var(--radius-sm);padding:10px 12px}
+.dp-safety-src{font-size:11px;color:var(--warm-gray);margin-top:6px}
+.prod-card-ph{display:flex;align-items:center;justify-content:center;font-size:28px;background:var(--cream-mid)}
+@media(max-width:767px){.dp-single{padding:16px 18px}}
 </style>
 </head>
 <body>
@@ -321,8 +348,8 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
 <section class="page-header">
   <div class="page-header-inner">
     <div class="page-badge">📅 Kalender Aktivitas Harian</div>
-    <h1 class="page-title">Hari ini mau ngapain<br><em>sama si kecil?</em></h1>
-    <p class="page-desc">Setiap hari ada aktivitas yang sudah dikurasi untuk anak 1–3 tahun. Tinggal buka, tinggal main — tanpa perlu riset dari nol.</p>
+    <h1 class="page-title">Hari ini mau main<br><em>apa, Mam?</em></h1>
+    <p class="page-desc">Setiap hari ada aktivitas yang sudah dikurasi untuk anak 6–36 bulan. Tinggal buka, tinggal main — tanpa perlu riset dari nol.</p>
   </div>
 </section>
 <div class="wavy"><svg viewBox="0 0 1440 56" fill="none" preserveAspectRatio="none"><path d="M0 0 C240 56 480 56 720 28 C960 0 1200 0 1440 36 L1440 56 L0 56 Z" fill="#F5EFE0"/></svg></div>
@@ -348,11 +375,11 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
       <div class="free-dl-icon-row">
         <div class="free-dl-icon">📄</div>
         <div>
-          <div class="free-dl-title">Download Dot Marker Letter A</div>
-          <div class="free-dl-desc">1 halaman printable — langsung bisa main hari ini. Gratis tanpa perlu daftar.</div>
+          <div class="free-dl-title">Download Kartu Memori Buah &amp; Sayur</div>
+          <div class="free-dl-desc">1 halaman printable, 6 pasang kartu untuk main cari pasangan. Langsung bisa main hari ini, gratis tanpa perlu daftar.</div>
         </div>
       </div>
-      <a href="https://drive.google.com/file/d/1ZTWc5Jgzepk_FyBdt-dz7Mr70wr9PqFE/view?usp=sharing" target="_blank" class="btn-dl">Download Gratis →</a>
+      <a href="https://drive.google.com/file/d/1lsT3VdUebhGeF3TohMc_wZ9EyOUR2alI/view?usp=sharing" target="_blank" class="btn-dl">Download Gratis →</a>
     </div>
   </div>
 
@@ -377,6 +404,7 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
       </div>
       <div class="cal-topbar-meta">
         <div class="cal-theme-chip" id="calThemeChip">✨ Phonics</div>
+        <label class="age-sel-wrap" id="ageSelWrap" style="display:none"><span>Usia</span><select id="ageSel" class="age-sel" aria-label="Pilih usia anak"></select></label>
         <button class="cal-today-btn" onclick="goToToday()">Hari ini</button>
       </div>
     </div>
@@ -432,7 +460,9 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
       </div>
     </div>
 
-    <div class="dp-rek-section">
+    <div class="dp-single" id="dpSingle" style="display:none"></div>
+
+    <div class="dp-rek-section" id="dpRekSection">
       <div class="dp-rek-header">
         <div class="dp-rek-title-wrap">
           <div class="dp-rek-title">🛒 Rekomendasi Alat &amp; Bahan</div>
@@ -451,7 +481,7 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
   <div class="cta-inner reveal">
     <div style="font-size:40px;margin-bottom:16px">🌿</div>
     <h2 class="cta-title">Satu aktivitas hari ini lebih baik dari <em>rencana sempurna besok.</em></h2>
-    <p class="cta-desc" id="ctaDesc">Dapatkan Phonics Set dan mulai main hari ini bersama si kecil.</p>
+    <p class="cta-desc" id="ctaDesc">Dapatkan Phonics Set dan mulai main hari ini bersama anak.</p>
     <div class="cta-buttons">
       <a href="https://langkah-awal.myr.id/catalog/hexababy-phonics-set-30-hari-belajar-huruf" target="_blank" class="btn-cta-primary" id="ctaBtn">📦 Dapatkan Phonics Set — Rp 49.000</a>
       <a href="https://app.hexababy.com" target="_blank" class="btn-cta-secondary">Buka App Hexababy →</a>
@@ -502,7 +532,7 @@ footer{background:var(--charcoal);padding:48px 40px 28px;color:rgba(245,239,224,
 
 <script>
 const MAYAR="https://langkah-awal.myr.id/catalog/hexababy-phonics-set-30-hari-belajar-huruf";
-const FREE_DL="https://drive.google.com/file/d/1ZTWc5Jgzepk_FyBdt-dz7Mr70wr9PqFE/view?usp=sharing";
+const FREE_DL="https://drive.google.com/file/d/1lsT3VdUebhGeF3TohMc_wZ9EyOUR2alI/view?usp=sharing";
 const MARKETPLACE="https://www.hexababy.com/marketplace#rekomendasi";
 const DAYS_DATA=[{"n": 1, "dn": "Senin", "l": "A, a", "lv": "Easy", "act": "Touch & Feel Phonics Card", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Tempel kapas bulat mengikuti bentuk huruf A di kartu. Anak menelusuri tekstur lembut sambil Mama sebut bunyi /ae/ — cara paling natural memperkenalkan huruf pertama lewat sentuhan.", "steps": ["Cetak kartu huruf A, tempel kapas bulat mengikuti bentuk huruf.", "Berikan kartu ke anak.", "Tunjukkan cara menelusuri dari atas mengikuti garis huruf.", "Mama sebut bunyi /ae/ setiap kali anak menelusuri."], "mats": ["Kapas bulat", "Lem kertas"], "hxFile": "2A. Touch & Feel Phonics A6 Card", "rek": [{"name": "Kapas Bulat", "img": "https://down-id.img.susercontent.com/file/id-11134207-81ztf-mf282oh2m9l7ab@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/902GoURHrQ", "pid": "RK-108"}, {"name": "Pompom Balls", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0s-mdcri01ji5ko2e@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/W3igthiHt", "pid": "RK-109"}, {"name": "Lem Kertas Kuat", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98p-lm8qg3239cmc3b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOe81oNt", "pid": "RK-110"}]}, {"n": 2, "dn": "Selasa", "l": "B, b", "lv": "Easy", "act": "Dot Marker Letter", "cat": "motor", "pillar": "Motorik", "cel": false, "desc": "Isi outline huruf B dengan dot marker, pompom, atau sticker bulat. Melatih motorik halus sambil mengenal bentuk huruf B.", "steps": ["Siapkan sheet huruf B.", "Tunjukkan cara mengisi lingkaran arena.", "Anak isi tiap lingkaran satu per satu dengan marker, sticker, atau pompom.", "Sebut bunyi /b/ bersama saat selesai."], "mats": ["Bingo dot marker / dot sticker warna / pompom balls"], "hxFile": "5A. Dot Phonics A6 (A-L)", "rek": [{"name": "Washable Dot Marker", "img": "https://down-id.img.susercontent.com/file/57cf06eb8c3805775a4f38435f0b4fdc@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7fWt6B3bBj", "pid": "RK-067"}, {"name": "Dot Sticker Warna", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7rbma-lpoummkpx58l97@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDStwAnYO", "pid": "RK-068"}, {"name": "Pompom Balls", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0s-mdcri01ji5ko2e@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/W3igthiHt", "pid": "RK-109"}]}, {"n": 3, "dn": "Rabu", "l": "A - F", "lv": "Medium", "act": "Letter Matching Pinch Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Cocokkan huruf di jepitan kayu dengan huruf yang sama di base board A-F, lalu jepitkan di tepinya. Melatih matching dan motorik halus sekaligus.", "steps": ["Cetak base board A-F dan potongan huruf.", "Tempel potongan huruf ke jepitan pakai hot glue (Mama yang kerjakan).", "Taruh base board di meja, sebar jepitan di sebelahnya.", "Anak cocokkan huruf di jepitan ke base board, jepitkan di tepi kertas.", "Lepas semua, acak, ulangi."], "mats": ["Jepitan kayu kecil 4cm (26 pcs)", "Hot glue gun mini"], "hxFile": "4. Letter Matching Pinch Game", "rek": [{"name": "Jepitan Kayu Kecil", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0p-mbrsab8bt85sac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/6VKvig03yE", "pid": "RK-069"}, {"name": "Hot Glue Gun Mini + Isi", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m9tl9kyx1d8365@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/8fPQIqiyqI", "pid": "RK-070"}]}, {"n": 4, "dn": "Kamis", "l": "A - F", "lv": "Medium", "act": "Sensory & Find the Letter", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Masak agar-agar biru, sembunyikan huruf A-F dan figurin binatang di dasar wadah, lalu tuang dan tunggu set. Anak rogoh jelly, temukan huruf, cocokkan ke flashcard referensi di meja.", "steps": ["Masak agar-agar, tambah pewarna makanan biru.", "Taruh figurin binatang di dasar wadah.", "Letakkan huruf A-F di atas figurin.", "Tuang agar-agar perlahan, masukkan kulkas minimal 2 jam.", "Tempel flashcard referensi A-F di meja.", "Anak rogoh jelly, temukan huruf, sebut bunyinya, cocokkan ke flashcard."], "mats": ["Agar-agar plain (tanpa rasa)", "Pewarna makanan biru", "Loyang / wadah bening", "Figurin binatang kecil (opsional)"], "hxFile": "7. Sensory Guideline", "rek": [{"name": "Gelatin Sapi", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0n-mbrrzt2tgshffd@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/1VwFsoOgfG", "pid": "RK-111"}, {"name": "Animal Figurine", "img": "https://down-id.img.susercontent.com/file/id-11134207-822wg-mmycroxcwe883d@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/1VvQolwQe9", "pid": "RK-039"}, {"name": "Sensory Bin Transparan", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7qvg2-liibvjsczxmu0f@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/2qRdMSG0si", "pid": "RK-079"}, {"name": "Sensory Mat (Art Mat)", "img": "https://down-id.img.susercontent.com/file/id-11134207-822wj-mo97ne14v9500a@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8ma9s5", "pid": "RK-080"}, {"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}]}, {"n": 5, "dn": "Jumat", "l": "A - F", "lv": "Medium", "act": "Post-it Matching Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Tempel post-it huruf A-F secara acak di whiteboard. Anak memindahkan tiap post-it ke posisi huruf yang sama di poster referensi.", "steps": ["Tulis huruf A-F masing-masing di satu post-it.", "Tempel acak di whiteboard.", "Pasang poster referensi di dekatnya.", "Anak ambil post-it satu per satu, cari huruf yang cocok di poster, tempel di sebelahnya."], "mats": ["Sticky notes", "Spidol marker"], "hxFile": "8. Poster Phonics", "rek": [{"name": "Sticky Notes", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mc53iua29tlr30@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOX5Xcx0", "pid": "RK-074"}, {"name": "Spidol Marker", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7reqc-m8n2bo0rysowa0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApYFN6iTX", "pid": "RK-107"}, {"name": "Frame Poster Tanpa Paku", "img": "https://down-id.img.susercontent.com/file/id-11134207-82251-mhsuixtw3u9vd7@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5q5EvrsVjZ", "pid": "RK-087"}]}, {"n": 6, "dn": "Sabtu", "l": "A - F", "lv": "Medium", "act": "Egg Letter Match", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Taruh huruf A-F di dalam telur plastik, tutup kembali. Anak buka telur satu per satu dan cocokkan hurufnya ke flashcard di meja.", "steps": ["Taruh huruf A-F di dalam tiap telur, tutup kembali.", "Taruh semua telur di keranjang.", "Tempel flashcard A-F di meja.", "Anak ambil satu telur, buka, lihat hurufnya, cocokkan ke flashcard yang tepat."], "mats": ["Plastic Easter eggs warna (minimal 6 pcs)", "Keranjang rotan kecil"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Plastic Easter Eggs", "img": "https://down-id.img.susercontent.com/file/id-11134207-8224v-mho2s39d181x01@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/3B4TksjzRA", "pid": "RK-075"}, {"name": "Wooden Alphabet Puzzle", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m9lb5f1ai5f1df@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/902GhkaAIa", "pid": "RK-078"}, {"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Keranjang Rotan Kecil", "img": "https://down-id.img.susercontent.com/file/sg-11134201-8261x-mm75jc5lv2md76@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/1qZ6HYgsAC", "pid": "RK-112"}]}, {"n": 7, "dn": "Minggu", "l": "A - F", "lv": "Medium", "act": "Letter Fruit Velcro Tree", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Petik buah huruf A-F dari tumpukan dan tempelkan ke pohon di posisi huruf yang cocok menggunakan tack-it atau double tape.", "steps": ["Cetak dan laminate pohon A-F beserta potongan buah.", "Pasang tack-it atau double tape di bagian tengah belakang setiap buah.", "Sebar buah di meja, pasang pohon di dinding.", "Anak ambil satu buah, temukan posisi huruf yang cocok di pohon, tempelkan."], "mats": ["Tack-it / double tape"], "hxFile": "3. Letter Fruit Velcro Matchmaking", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 8, "dn": "Senin", "l": "C, c", "lv": "Medium", "act": "Touch & Feel Phonics Card", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Tempel daun kering atau pasir mengikuti lekukan huruf C. Tekstur kasar alami berbeda dari kapas minggu lalu - kontras sensori memperkuat memori bentuk huruf di otak anak.", "steps": ["Tempel daun kering atau pasir mengikuti lekukan huruf C.", "Berikan kartu ke anak.", "Tunjukkan arah penelusuran dari atas, melingkar ke kiri, turun ke bawah.", "Mama sebut bunyi /k/ setiap kali anak selesai menelusuri."], "mats": ["Daun kering / pasir halus", "Lem kertas"], "hxFile": "2A. Touch & Feel Phonics A6 Card", "rek": [{"name": "Lem Kertas Kuat", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98p-lm8qg3239cmc3b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOe81oNt", "pid": "RK-110"}]}, {"n": 9, "dn": "Selasa", "l": "D, d", "lv": "Medium", "act": "Dot Marker Letter", "cat": "motor", "pillar": "Motorik", "cel": false, "desc": "Isi outline huruf D dengan dot sticker atau pompom. Perhatikan bentuk setengah lingkaran D - ajak anak isi area lengkung kanan dulu baru tiang kiri.", "steps": ["Siapkan sheet huruf D.", "Tunjukkan struktur tiang kiri lurus dan lengkung kanan.", "Anak isi lingkaran arena di area lengkung dulu, baru tiang.", "Sebut bunyi /d/ bersama saat selesai."], "mats": ["Dot sticker warna / pompom balls"], "hxFile": "5A. Dot Phonics A6 (A-L)", "rek": [{"name": "Washable Dot Marker", "img": "https://down-id.img.susercontent.com/file/57cf06eb8c3805775a4f38435f0b4fdc@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7fWt6B3bBj", "pid": "RK-067"}, {"name": "Dot Sticker Warna", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7rbma-lpoummkpx58l97@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDStwAnYO", "pid": "RK-068"}, {"name": "Pompom Balls", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0s-mdcri01ji5ko2e@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/W3igthiHt", "pid": "RK-109"}]}, {"n": 10, "dn": "Rabu", "l": "g - m", "lv": "Medium", "act": "Letter Fruit Velcro Tree", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Petik buah jeruk bergambar huruf g-m dan tempel ke pohon huruf yang cocok. Range huruf lebih banyak dari minggu lalu.", "steps": ["Cetak dan laminate pohon g-m beserta potongan buah jeruk.", "Pasang tack-it atau double tape di belakang setiap buah.", "Sebar buah di meja, pasang pohon di dinding.", "Anak ambil satu buah, temukan posisi huruf yang cocok di pohon, tempelkan."], "mats": ["Tack-it / double tape"], "hxFile": "3. Letter Fruit Velcro Matchmaking", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 11, "dn": "Kamis", "l": "G - M", "lv": "Advanced", "act": "Find Letter with Magnet", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Tempel flashcard huruf G-M di whiteboard sebagai target. Anak cari huruf magnet yang cocok dari tumpukan dan tempelkan ke papan.", "steps": ["Tempel flashcard G-M di whiteboard sebagai target.", "Sebar semua magnetic letters di meja.", "Anak pilih huruf magnet yang cocok untuk tiap kartu target.", "Tempelkan huruf magnet di sebelah flashcard yang sesuai."], "mats": ["Magnetic alphabet letter set A-Z (upper+lower)", "Whiteboard magnetic"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Whiteboard Magnetic", "img": "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mfme4igkcphkac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOVlZCFv", "pid": "RK-077"}]}, {"n": 12, "dn": "Jumat", "l": "G - M", "lv": "Advanced", "act": "Letter Matching Pinch Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Gunakan set pinch game dengan huruf G-M. Anak cocokkan dan jepitkan jepitan ke base board.", "steps": ["Siapkan base board G-M di meja.", "Sebar jepitan huruf G-M.", "Anak cocokkan huruf di jepitan ke base board, jepitkan di tepinya.", "Coba tantangan ringan: siapa paling cepat selesai?"], "mats": ["Jepitan kayu kecil 4cm (26 pcs)"], "hxFile": "4. Letter Matching Pinch Game", "rek": [{"name": "Jepitan Kayu Kecil", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0p-mbrsab8bt85sac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/6VKvig03yE", "pid": "RK-069"}, {"name": "Hot Glue Gun Mini + Isi", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m9tl9kyx1d8365@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/8fPQIqiyqI", "pid": "RK-070"}]}, {"n": 13, "dn": "Sabtu", "l": "G - M", "lv": "Advanced", "act": "Post-it Matching Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Post-it matching untuk huruf G-M. Format familiar dari minggu lalu - anak biasanya lebih cepat dan lebih percaya diri kali ini.", "steps": ["Tulis huruf G-M di post-it, satu huruf per kertas.", "Tempel acak di whiteboard.", "Anak ambil satu per satu, temukan huruf yang cocok di poster.", "Tempel post-it di sebelah huruf yang cocok di poster."], "mats": ["Sticky notes", "Spidol marker"], "hxFile": "8. Poster Phonics", "rek": [{"name": "Sticky Notes", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mc53iua29tlr30@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOX5Xcx0", "pid": "RK-074"}, {"name": "Spidol Marker", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7reqc-m8n2bo0rysowa0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApYFN6iTX", "pid": "RK-107"}]}, {"n": 14, "dn": "Minggu", "l": "G, H, I", "lv": "Advanced", "act": "Letter Puzzle", "cat": "cognitive", "pillar": "Kognitif", "cel": false, "desc": "Print kartu Puzzle Letter Matching - cocokkan G kapital ke g kecil, lalu ke gambar grape. Lakukan hal sama untuk H dan I.", "steps": ["Cetak dan potong kartu Puzzle Letter Matching untuk G, H, I.", "Tempel kartu referensi di dinding dengan tack-it.", "Anak cocokkan huruf kecil (g, h, i) ke kapitalnya.", "Cocokkan gambar ke huruf yang sesuai.", "Saat semua terpasang, sebut bunyi tiap huruf bersama."], "mats": ["Tack-it / double tape / velcro tape"], "hxFile": "6. PUZZLE LETTER MATCHING", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 15, "dn": "Senin", "l": "E, e", "lv": "Medium", "act": "Touch & Feel Phonics Card", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Tempel benang wol di tiap garis huruf E. Tiga garis horizontal yang berbulu mengikuti urutan atas-tengah-bawah - membantu otak merekam arah penulisan lewat tekstur.", "steps": ["Tempel benang wol di tiap garis huruf E dengan urutan garis atas, tengah, bawah.", "Berikan kartu ke anak.", "Tunjukkan urutan penelusuran: garis atas, tengah, bawah.", "Anak telusuri sambil Mama sebut bunyi /e/ setiap kali."], "mats": ["Benang wol", "Lem kertas"], "hxFile": "2A. Touch & Feel Phonics A6 Card", "rek": [{"name": "Benang Wol", "img": "https://down-id.img.susercontent.com/file/id-11134207-8224q-mkj6ljkzqbk467@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5L905nNlKt", "pid": "RK-117"}, {"name": "Lem Kertas Kuat", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98p-lm8qg3239cmc3b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOe81oNt", "pid": "RK-110"}]}, {"n": 16, "dn": "Selasa", "l": "F, f", "lv": "Medium", "act": "Dot Marker Letter", "cat": "motor", "pillar": "Motorik", "cel": false, "desc": "Isi outline huruf F dengan dot marker atau sticker. Ajak anak isi garis atas dulu, tengah, baru turun ke bawah.", "steps": ["Siapkan sheet huruf F.", "Tunjukkan struktur garis atas, garis tengah, tiang bawah.", "Anak isi tiap lingkaran arena dari atas ke bawah sesuai urutan.", "Sebut bunyi /f/ bersama saat selesai."], "mats": ["Bingo dot marker / dot sticker warna"], "hxFile": "5A. Dot Phonics A6 (A-L)", "rek": [{"name": "Washable Dot Marker", "img": "https://down-id.img.susercontent.com/file/57cf06eb8c3805775a4f38435f0b4fdc@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7fWt6B3bBj", "pid": "RK-067"}, {"name": "Dot Sticker Warna", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7rbma-lpoummkpx58l97@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDStwAnYO", "pid": "RK-068"}, {"name": "Pompom Balls", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0s-mdcri01ji5ko2e@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/W3igthiHt", "pid": "RK-109"}]}, {"n": 17, "dn": "Rabu", "l": "N - T", "lv": "Medium", "act": "Sensory & Find the Letter", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Rendam bihun kering dengan pewarna hijau lalu sembunyikan huruf N-T di dalamnya. Anak mengaduk, meraba, dan menemukan huruf satu per satu, lalu cocokkan ke kartu referensi di meja.", "steps": ["Rendam bihun kering di air hangat + pewarna hijau selama 15-20 menit, tiriskan.", "Taruh bihun di wadah, sembunyikan huruf N-T di dalamnya.", "Tempel kartu referensi N-T di meja.", "Anak aduk dan rogoh bihun, temukan huruf satu per satu.", "Tiap huruf ditemukan: sebut bunyinya, cocokkan ke kartu referensi."], "mats": ["Bihun kering", "Pewarna makanan hijau", "Sensory bin / wadah"], "hxFile": "7. Sensory Guideline", "rek": [{"name": "Bihun Kering", "img": "https://down-id.img.susercontent.com/file/9b02df708080054bfc60a73498e52170@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSQI6N7zu", "pid": "RK-116"}, {"name": "Sensory Bin Transparan", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7qvg2-liibvjsczxmu0f@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/2qRdMSG0si", "pid": "RK-079"}, {"name": "Sensory Mat (Art Mat)", "img": "https://down-id.img.susercontent.com/file/id-11134207-822wj-mo97ne14v9500a@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8ma9s5", "pid": "RK-080"}]}, {"n": 18, "dn": "Kamis", "l": "N - T", "lv": "Advanced", "act": "Letter Fruit Velcro Tree", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Petik buah mangga bergambar huruf n-t ke pohon yang cocok. Range huruf semakin lebar.", "steps": ["Cetak dan laminate pohon n-t beserta potongan buah mangga.", "Pasang tack-it atau double tape di belakang setiap buah.", "Sebar buah di meja, pasang pohon di dinding.", "Anak ambil satu buah, temukan posisi huruf yang cocok di pohon, tempelkan.", "Boleh bagi dua sesi jika perlu istirahat di tengah."], "mats": ["Tack-it / double tape"], "hxFile": "3. Letter Fruit Velcro Matchmaking", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 19, "dn": "Jumat", "l": "N - T", "lv": "Advanced", "act": "Find Letter with Magnet", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Magnet hunt untuk huruf N-T. Huruf N dan M mirip secara visual - bagus untuk melatih diskriminasi bentuk yang lebih teliti.", "steps": ["Tempel flashcard N-T di whiteboard sebagai target.", "Sebar magnetic letters di meja.", "Anak cari huruf magnet yang cocok satu per satu.", "Tempelkan ke papan di sebelah flashcard yang sesuai.", "Perhatikan khusus saat anak memilih antara N dan M."], "mats": ["Magnetic alphabet letter set A-Z (upper+lower)", "Whiteboard magnetic"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Whiteboard Magnetic", "img": "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mfme4igkcphkac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOVlZCFv", "pid": "RK-077"}]}, {"n": 20, "dn": "Sabtu", "l": "N - T", "lv": "Advanced", "act": "Egg Letter Match", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Egg match untuk huruf N-T. Perhatikan huruf mana yang masih ragu - ulang bunyi huruf itu secara perlahan saat anak menemukannya.", "steps": ["Tulis huruf N-T di dalam tiap telur.", "Taruh di keranjang.", "Tempel flashcard N-T di meja.", "Anak buka telur satu per satu, cocokkan ke flashcard yang tepat.", "Untuk huruf yang masih ragu, ulangi bunyinya pelan-pelan bersama."], "mats": ["Plastic Easter eggs warna (minimal 7 pcs)", "Keranjang rotan kecil"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Plastic Easter Eggs", "img": "https://down-id.img.susercontent.com/file/id-11134207-8224v-mho2s39d181x01@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/3B4TksjzRA", "pid": "RK-075"}, {"name": "Wooden Alphabet Puzzle", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m9lb5f1ai5f1df@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/902GhkaAIa", "pid": "RK-078"}, {"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Keranjang Rotan Kecil", "img": "https://down-id.img.susercontent.com/file/sg-11134201-8261x-mm75jc5lv2md76@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/1qZ6HYgsAC", "pid": "RK-112"}]}, {"n": 21, "dn": "Minggu", "l": "N, O, P", "lv": "Advanced", "act": "Letter Puzzle", "cat": "cognitive", "pillar": "Kognitif", "cel": false, "desc": "Print kartu Puzzle Letter Matching - cocokkan N, O, P kapital ke huruf kecilnya lalu ke gambar yang sesuai.", "steps": ["Cetak dan potong kartu Puzzle Letter Matching untuk N, O, P.", "Tempel kartu referensi di papan dengan tack-it.", "Sebelum mulai, tanya anak: ini bentuknya mirip apa?", "Anak cocokkan huruf kecil (n, o, p) ke kapitalnya.", "Cocokkan gambar ke huruf yang sesuai, sebut bunyi tiap huruf bersama."], "mats": ["Tack-it / double tape / velcro tape"], "hxFile": "6. PUZZLE LETTER MATCHING", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 22, "dn": "Senin", "l": "G, g", "lv": "Advanced", "act": "Touch & Feel Phonics Card", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Tempel amplas halus mengikuti bentuk huruf G. Lekukan unik G benar-benar terasa di ujung jari lewat tekstur kasar.", "steps": ["Tempel amplas halus mengikuti bentuk huruf G.", "Berikan kartu ke anak.", "Tunjukkan arah penelusuran melingkar dari atas ke kiri, turun, masuk ke kanan.", "Mama sebut bunyi /g/ setiap kali anak menelusuri penuh."], "mats": ["Amplas halus (grade 220+)", "Lem kertas"], "hxFile": "2A. Touch & Feel Phonics A6 Card", "rek": [{"name": "Amplas Halus Grade 220", "img": "https://down-id.img.susercontent.com/file/id-11134207-81ztm-meqlx2ooxz42a9@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5flqUPMUev", "pid": "RK-115"}, {"name": "Lem Kertas Kuat", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98p-lm8qg3239cmc3b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOe81oNt", "pid": "RK-110"}]}, {"n": 23, "dn": "Selasa", "l": "H, h", "lv": "Advanced", "act": "Dot Marker Letter", "cat": "motor", "pillar": "Motorik", "cel": false, "desc": "Isi outline huruf H dengan dot marker. Dua tiang vertikal dan satu garis tengah - ajak anak isi dengan urutan tiang kiri dulu, baru kanan, baru tengah.", "steps": ["Siapkan sheet huruf H.", "Tunjukkan struktur tiang kiri, tiang kanan, sambungan tengah.", "Anak isi lingkaran arena mulai dari tiang kiri dulu.", "Lanjut tiang kanan, baru isi garis tengah.", "Sebut bunyi /h/ bersama."], "mats": ["Bingo dot marker / dot sticker warna"], "hxFile": "5A. Dot Phonics A6 (A-L)", "rek": [{"name": "Washable Dot Marker", "img": "https://down-id.img.susercontent.com/file/57cf06eb8c3805775a4f38435f0b4fdc@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7fWt6B3bBj", "pid": "RK-067"}, {"name": "Dot Sticker Warna", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7rbma-lpoummkpx58l97@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDStwAnYO", "pid": "RK-068"}, {"name": "Pompom Balls", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0s-mdcri01ji5ko2e@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/W3igthiHt", "pid": "RK-109"}]}, {"n": 24, "dn": "Rabu", "l": "U - Z", "lv": "Advanced", "act": "Letter Matching Pinch Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Pinch game untuk huruf U-Z, set penutup alfabet. Mulai dari U, V, W yang punya pola visual mirip.", "steps": ["Siapkan base board U-Z di meja.", "Sebar jepitan huruf U-Z.", "Mulai dari U, V, W - tunjukkan perbedaan bentuknya sebelum mulai.", "Anak cocokkan huruf di jepitan ke base board, jepitkan di tepinya."], "mats": ["Jepitan kayu kecil 4cm (26 pcs)"], "hxFile": "4. Letter Matching Pinch Game", "rek": [{"name": "Jepitan Kayu Kecil", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0p-mbrsab8bt85sac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/6VKvig03yE", "pid": "RK-069"}, {"name": "Hot Glue Gun Mini + Isi", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk9-m9tl9kyx1d8365@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/8fPQIqiyqI", "pid": "RK-070"}]}, {"n": 25, "dn": "Kamis", "l": "U - Z", "lv": "Advanced", "act": "Find Letter with Magnet", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Magnet hunt untuk huruf U-Z. Huruf X dan Y paling jarang dilatih - berikan lebih banyak waktu saat anak menemukannya.", "steps": ["Tempel flashcard U-Z di whiteboard.", "Sebar magnetic letters di meja.", "Anak cari tiap huruf magnet yang cocok, tempelkan ke papan.", "Untuk X dan Y, sebut bunyinya lebih pelan dan berulang."], "mats": ["Magnetic alphabet letter set A-Z (upper+lower)", "Whiteboard magnetic"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Whiteboard Magnetic", "img": "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mfme4igkcphkac@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOVlZCFv", "pid": "RK-077"}]}, {"n": 26, "dn": "Jumat", "l": "U - Z", "lv": "Advanced", "act": "Post-it Matching Game", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Post-it matching untuk huruf U-Z. Ini set terakhir alfabet - setelah selesai, lihat semua post-it yang terpasang bersama sebagai momen kecil perayaan.", "steps": ["Tulis huruf U-Z di post-it.", "Tempel acak di whiteboard.", "Anak pindahkan ke posisi yang cocok di poster referensi.", "Saat semua selesai, lihat bersama dan sebut huruf U sampai Z keras-keras."], "mats": ["Sticky notes", "Spidol marker"], "hxFile": "8. Poster Phonics", "rek": [{"name": "Sticky Notes", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mc53iua29tlr30@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5VSOX5Xcx0", "pid": "RK-074"}, {"name": "Spidol Marker", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7reqc-m8n2bo0rysowa0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApYFN6iTX", "pid": "RK-107"}]}, {"n": 27, "dn": "Sabtu", "l": "U - Z", "lv": "Advanced", "act": "Letter Fruit Velcro Tree", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Petik buah kakao bergambar huruf u-z dan tempel ke pohon terakhir. Saat semua buah terpasang, sebut semua huruf dari u sampai z bersama.", "steps": ["Cetak dan laminate pohon u-z beserta potongan buah kakao.", "Pasang tack-it atau double tape di belakang setiap buah.", "Sebar buah di meja, pasang pohon di dinding.", "Anak petik satu per satu dan tempel ke pohon yang cocok.", "Saat semua terpasang, tunjuk dari u sampai z dan sebut bunyinya bersama."], "mats": ["Tack-it / double tape"], "hxFile": "3. Letter Fruit Velcro Matchmaking", "rek": [{"name": "Velcro Tape", "img": "https://down-id.img.susercontent.com/file/sg-11134201-820mu-mo0pd89z7oqw8b@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7AacW0mNZo", "pid": "RK-071"}, {"name": "Tack It Tape", "img": "https://down-id.img.susercontent.com/file/5c6bc0dd1ca0f7a6d9e8da36af5f4118@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/50W7w4PVln", "pid": "RK-072"}, {"name": "Double Tape", "img": "https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbrsrp9dvyqbb0@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/7VDSuXVSkx", "pid": "RK-073"}]}, {"n": 28, "dn": "Minggu", "l": "U - Z", "lv": "Advanced", "act": "Egg Letter Match", "cat": "matching", "pillar": "Matching", "cel": false, "desc": "Egg match untuk huruf U-Z, melengkapi 26 huruf yang sudah dijelajahi bulan ini. Buka telur terakhir bersama sebagai penutup yang seru.", "steps": ["Tulis huruf U-Z di dalam tiap telur.", "Taruh di keranjang.", "Tempel flashcard U-Z di meja.", "Anak buka telur satu per satu, cocokkan ke flashcard.", "Telur terakhir = 26 huruf selesai, rayakan!"], "mats": ["Plastic Easter eggs warna (minimal 6 pcs)", "Keranjang rotan kecil"], "hxFile": "1. Flashcard Phonics Song", "rek": [{"name": "Plastic Easter Eggs", "img": "https://down-id.img.susercontent.com/file/id-11134207-8224v-mho2s39d181x01@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/3B4TksjzRA", "pid": "RK-075"}, {"name": "Wooden Alphabet Puzzle", "img": "https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m9lb5f1ai5f1df@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/902GhkaAIa", "pid": "RK-078"}, {"name": "Magnetic Alphabet A-Z", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-lzcuqnrcecsl99@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8fgYp1", "pid": "RK-076"}, {"name": "Keranjang Rotan Kecil", "img": "https://down-id.img.susercontent.com/file/sg-11134201-8261x-mm75jc5lv2md76@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/1qZ6HYgsAC", "pid": "RK-112"}]}, {"n": 29, "dn": "Senin", "l": "A - M", "lv": "Advanced", "act": "Sensory & Find the Letter", "cat": "sensory", "pillar": "Sensori", "cel": false, "desc": "Sembunyikan buah huruf A-M di dalam jagung popcorn kering. Anak merogoh, menemukan buah huruf, sebut bunyinya, lalu langsung tempel ke pohon di dinding.", "steps": ["Pasang pohon huruf A-F dan G-M di dinding.", "Pastikan tack-it sudah terpasang di belakang semua buah huruf A-M.", "Kubur semua buah huruf A-M di dalam jagung popcorn di keranjang.", "Anak rogoh jagung, temukan buah huruf, sebut bunyinya.", "Langsung tempel buah ke pohon yang sesuai."], "mats": ["Jagung popcorn kering", "Keranjang / sensory bin"], "hxFile": "7. Sensory Guideline", "rek": [{"name": "Jagung Kering (Bahan Sensory)", "img": "https://down-id.img.susercontent.com/file/id-11134207-81zti-me1v1j5ys3r972@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/2Vomy08V17", "pid": "RK-081"}, {"name": "Sensory Bin Transparan", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7qvg2-liibvjsczxmu0f@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/2qRdMSG0si", "pid": "RK-079"}, {"name": "Sensory Mat (Art Mat)", "img": "https://down-id.img.susercontent.com/file/id-11134207-822wj-mo97ne14v9500a@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8ma9s5", "pid": "RK-080"}]}, {"n": 30, "dn": "Selasa", "l": "N - Z", "lv": "Advanced", "act": "Sensory & Find the Letter", "cat": "sensory", "pillar": "Sensori", "cel": true, "desc": "Sembunyikan buah huruf N-Z di dalam kacang hitam kering. Anak merogoh, menemukan buah huruf, sebut bunyinya, lalu langsung tempel ke pohon. Penutup 30 hari phonics!", "steps": ["Pasang pohon huruf N-T dan U-Z di dinding.", "Pastikan tack-it sudah terpasang di belakang semua buah huruf N-Z.", "Kubur semua buah huruf N-Z di dalam kacang hitam di keranjang.", "Anak rogoh kacang, temukan buah huruf, sebut bunyinya.", "Tempel ke pohon. Saat semua selesai: 30 hari phonics tuntas!"], "mats": ["Kacang hitam kering", "Keranjang / sensory bin"], "hxFile": "7. Sensory Guideline", "rek": [{"name": "Kedelai Hitam (Bahan Sensory)", "img": "https://down-id.img.susercontent.com/file/id-11134207-7r991-ly1i5ic8w71oc5@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/6L1VX9n1T8", "pid": "RK-082"}, {"name": "Sensory Bin Transparan", "img": "https://down-id.img.susercontent.com/file/sg-11134201-7qvg2-liibvjsczxmu0f@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/2qRdMSG0si", "pid": "RK-079"}, {"name": "Sensory Mat (Art Mat)", "img": "https://down-id.img.susercontent.com/file/id-11134207-822wj-mo97ne14v9500a@resize_w900_nl.webp", "shopee": "https://s.shopee.co.id/5ApY8ma9s5", "pid": "RK-080"}]}];
 
@@ -515,7 +545,8 @@ const MONTHS_META={
   '2026-6':{name:'Juni 2026',theme:'✨ Phonics',days:30,startDow:0},
   '2026-7':{name:'Juli 2026',theme:'🔢 Number Sense',days:31,startDow:2},
   '2026-8':{name:'Agustus 2026',theme:'🎨 Colors & Shapes',days:31,startDow:5},
-  '2026-9':{name:'September 2026',theme:'🐾 Animals',days:30,startDow:1,coming:true},
+  '2026-9':{name:'September 2026',theme:'🧠 Our Amazing Body',days:30,startDow:1,sensory:true},
+  '2026-10':{name:'Oktober 2026',theme:'🍎 Buah & Sayur',days:31,startDow:3,sensory:true},
 };
 const LV_DESC={
   Easy:'Nyanyikan saja. Fokus mendengar bunyi huruf — belum butuh respon aktif dari anak. Rekomendasi: "Phonics Song 2" di YouTube (Dave & Ava atau Super Simple Songs).',
@@ -532,8 +563,391 @@ const SD={Easy:{d:'●',c:'#C8DECC'},Medium:{d:'●●',c:'#FAC775'},Advanced:{d
 const WB={1:'wk1',2:'wk2',3:'wk3',4:'wk4'};
 const LVC={Easy:'dp-chip-easy',Medium:'dp-chip-medium',Advanced:'dp-chip-advanced'};
 
+// ═══════════ KALENDER 8 INDERA (Sep–Okt 2026) ═══════════
+// Data di bawah ini diisi dari spreadsheet "Hexababy_Kalender_8_Indera_Data.xlsx"
+const HX_WA="6282116875019";
+const AGE_GROUPS=[{k:'a1',label:'6–12 bulan'},{k:'a2',label:'13–18 bulan'},{k:'a3',label:'19–24 bulan'},{k:'a4',label:'25–36 bulan'}];
+const SENSES=[
+  {k:'taktil',n:'Taktil',e:'🖐️'},{k:'auditori',n:'Auditori',e:'👂'},{k:'visual',n:'Visual',e:'👀'},
+  {k:'og',n:'Olfaktori + Gustatori',short:'Cium & Cicip',e:'👃'},{k:'vestibular',n:'Vestibular',e:'🌀'},
+  {k:'proprio',n:'Proprioseptif',e:'💪'},{k:'intero',n:'Interoseptif',e:'💓'}
+];
+const DAY_NAMES=['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu'];
+
+// Sheet "Rekomendasi Afiliasi" → PID, nama, link gambar, link afiliasi Shopee
+const REK_CATALOG={
+  'RK-079':{name:'Sensory Bin Transparan',img:'https://down-id.img.susercontent.com/file/sg-11134201-7qvg2-liibvjsczxmu0f@resize_w900_nl.webp',shopee:'https://s.shopee.co.id/2qRdMSG0si'},
+  'RK-107':{name:'Spidol Marker',img:'https://down-id.img.susercontent.com/file/sg-11134201-7reqc-m8n2bo0rysowa0@resize_w900_nl.webp',shopee:'https://s.shopee.co.id/5ApYFN6iTX'},
+  'RK-112':{name:'Keranjang Rotan Kecil',img:'https://down-id.img.susercontent.com/file/sg-11134201-8261x-mm75jc5lv2md76@resize_w900_nl.webp',shopee:'https://s.shopee.co.id/1qZ6HYgsAC'},
+  'RK-133':{name:'Cat Air / Poster Warna-warni',img:'https://down-id.img.susercontent.com/file/id-11134207-7r98z-lp0oea40mxo780@resize_w900_nl.webp',shopee:'https://s.shopee.co.id/9KgumB0l3I'},
+  'RK-134':{name:'Kertas Gambar',img:'https://down-id.img.susercontent.com/file/id-11134207-7r990-lv1h083ftpal85@resize_w900_nl.webp',shopee:'https://s.shopee.co.id/9V0KyU07iL'},
+  'RK-135':{name:'Mangkuk Kecil',img:'https://down-id.img.susercontent.com/file/844c9340e4c9a790f4dce74f53d68daf@resize_w900_nl.webp',shopee:'https://s.shopee.co.id/2LXAQl13sz'},
+  'RK-136':{name:'Tas Jaring Belanja Anak',img:'https://down-id.img.susercontent.com/file/id-11134207-7r98w-ltxvsqre0ej87e@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/4fwivbswAo'},
+  'RK-137':{name:'Selotip Kertas Warna (Masking Tape)',img:'https://down-id.img.susercontent.com/file/id-11134207-7rbkc-m8o6umgk3abxa8@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/4qG97usIpr'},
+  'RK-138':{name:'Set Sendok Kayu',img:'https://down-id.img.susercontent.com/file/d0a10d72652f6ea384527b0ecaf489f5@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/30oUwXzHYW'},
+  'RK-139':{name:'Panci Kecil Stainless',img:'https://down-id.img.susercontent.com/file/id-11134207-82251-mknnr8y1ekg0f2@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/3B7v8qyeDZ'},
+  'RK-140':{name:'Penumbuk Kentang (Potato Masher)',img:'https://down-id.img.susercontent.com/file/id-11134207-81ztd-mtksoe60d1c2eb@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/2gBeXw0YEU'},
+  'RK-141':{name:'Parutan Sayur',img:'https://down-id.img.susercontent.com/file/id-11134207-8224r-mgs8huked05kca@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/5AszWmG31j'},
+  'RK-142':{name:'Saringan / Colander Plastik',img:'https://down-id.img.susercontent.com/file/id-11134201-23030-725rp02df5nv78@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/2gBeYBPZ6G'},
+  'RK-143':{name:'Kantong Serut Kain (Drawstring Pouch)',img:'https://down-id.img.susercontent.com/file/id-11134207-7r98s-ls7zxvtsexqe3c@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/2qV4kUOvlJ'},
+  'RK-144':{name:'Gelas Latihan Minum Anak',img:'https://down-id.img.susercontent.com/file/id-11134207-822wm-mpncvmz4p8n4c3@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/30oUwnOIQM'},
+  'RK-146':{name:'Celemek Anak',img:'https://down-id.img.susercontent.com/file/id-11134207-81ztj-memftrey6m8599@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/3B7v96Nf5P'},
+  'RK-147':{name:'Blender Mini',img:'https://down-id.img.susercontent.com/file/id-11134207-81ztf-mqej7btqj6yqd7@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/1gJ7Mci9xM'},
+  'RK-148':{name:'Selimut Bayi Tebal',img:'https://down-id.img.susercontent.com/file/id-11134207-7rbk3-ma2gepk6odv769@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/1qcXYvhWcP'},
+  'RK-149':{name:'Gerobak Tarik Anak (Pull Wagon)',img:'https://down-id.img.susercontent.com/file/id-11134207-82251-mk273zu23mro7a@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/1LgGy0jQdK'},
+  'RK-150':{name:'Kursi Makan Bayi (High Chair)',img:'https://down-id.img.susercontent.com/file/id-11134207-822wl-mo6m0mco893ad6@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/1VzhAJinIN'},
+  'RK-151':{name:'Piring Hisap Bayi (Suction Plate)',img:'https://down-id.img.susercontent.com/file/sg-11134201-7rfgp-m9iujfrhvekx3b@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/113QZOkhJI'},
+  'RK-152':{name:'Set Sendok Garpu Anak',img:'https://down-id.img.susercontent.com/file/id-11134207-7r992-lvprzhnex85gee@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/20vxlVw5h3'},
+  'RK-153':{name:'Piring Sekat Anak',img:'https://down-id.img.susercontent.com/file/id-11134207-8224q-mgjj915aqyof78@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/2VsEMQuBgA'},
+  'RK-154':{name:'Buku Cerita Emosi Anak · Pilihan 1',img:'https://down-id.img.susercontent.com/file/id-11134207-7ra0g-mcswp9gg2nfre2@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/2LYoA7up19'},
+  'RK-155':{name:'Gym Ball / Bola Pilates',img:'https://down-id.img.susercontent.com/file/d444922ce8341864c3f6018612b5d975@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/4qG99BKwnC'},
+  'RK-156':{name:'Set Alat Musik Anak (Marakas & Tamborin)',img:'https://down-id.img.susercontent.com/file/id-11134207-7ras9-m5xxpo0zk0li02@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/4fwiwsLa8B'},
+  'RK-157':{name:'Mainan Dorong (Push Walker)',img:'https://down-id.img.susercontent.com/file/id-11134207-81ztk-mec9oi96d43o7e@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/4VdIkZMDTA'},
+  'RK-158':{name:'Alas Makan Anti Kotor (Splat Mat)',img:'https://down-id.img.susercontent.com/file/id-11134207-7qukw-ljp9xddzvr56ff@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/4LJsYGMqo9'},
+  'RK-159':{name:'Bola Sensori Bertekstur',img:'https://down-id.img.susercontent.com/file/id-11134207-7rbk4-m7a8x15w64o7da@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/4B0SLxNU98'},
+  'RK-160':{name:'Tali Tambang Anak',img:'https://down-id.img.susercontent.com/file/id-11134207-7rask-m5u8a5sg338620@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/1BMqmez0E5'},
+  'RK-161':{name:'Kaca Pembesar Anak',img:'https://down-id.img.susercontent.com/file/id-11134207-822wu-mld9f0evf5dvac@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/gQaBk0uF0'},
+  'RK-154B':{name:'Buku Cerita Emosi Anak · Pilihan 2',img:'https://down-id.img.susercontent.com/file/sg-11134201-8258o-msny10oxgd8g3f@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/1VzhAaxzi0'},
+  'RK-154C':{name:'Buku Cerita Emosi Anak · Pilihan 3',img:'https://down-id.img.susercontent.com/file/id-11134207-81ztm-mrffg95qfabqc3@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/1LgGyHyd2z'},
+  'RK-145':{name:'Sensory Bin / Nampan',img:'https://down-id.img.susercontent.com/file/id-11134207-822wm-mllxajlwowslce@resize_w900_nl.webp',shopee:'https://s.shopee.co.id/1LedFrL2MV'},
+  'RK-118':{name:'Lotion Pijat Bayi',img:'https://down-id.img.susercontent.com/file/id-11134207-822ws-mmig4sr2yqdg7d@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/AAHfQH4p3x'},
+  'RK-119':{name:'Cermin Bayi Anti Pecah',img:'https://down-id.img.susercontent.com/file/id-11134207-7ra0r-md2pefq0b5mke9@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/AKb5ca4Bj0'},
+  'RK-120':{name:'Matras Bermain Anak (Playmat)',img:'https://down-id.img.susercontent.com/file/id-11134207-7r98o-ltdzen44uvrdcb@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/AUuVot3YO3'},
+  'RK-121':{name:'Stiker Besar Anak',img:'https://down-id.img.susercontent.com/file/id-11134207-81zto-mqt5tyaiusy30d@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/2gBeUudqsK'},
+  'RK-122':{name:'Sabun Busa Mandi Anak',img:'https://down-id.img.susercontent.com/file/id-11134207-7rasg-m0wswm2osge14b@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/2qV4hDdDXN'},
+  'RK-123':{name:'Stetoskop Mainan',img:'https://down-id.img.susercontent.com/file/id-11134207-7ra0q-mcrjhrw8vnrrc0@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/30oUtWcaCQ'},
+  'RK-124':{name:'Kertas Roll Gambar',img:'https://down-id.img.susercontent.com/file/id-11134207-7ra0r-mbm1r0ilq1zk71@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/3B7v5pbwrT'},
+  'RK-125':{name:'Krayon Jumbo',img:'https://down-id.img.susercontent.com/file/id-11134207-8224t-mil9yuk8t6vb24@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/3LRLI8bJWW'},
+  'RK-126':{name:'Botol Sensory Anak',img:'https://down-id.img.susercontent.com/file/id-11134207-7r990-lp5gzokaeykze7@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/6L4ws2zMer'},
+  'RK-127':{name:'Scarf Sensory / Kain Tipis',img:'https://down-id.img.susercontent.com/file/sg-11134201-7qvds-lkflzaor37gy80@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/6AlWfjzzzq'},
+  'RK-128':{name:'Set Talenan & Pisau Anak',img:'https://down-id.img.susercontent.com/file/9e068c953bddb106f19343edf6b9b38b@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/60S6TR0dKp'},
+  'RK-129':{name:'Piring Plastik Warna',img:'https://down-id.img.susercontent.com/file/id-11134207-7ra0i-mbm3c9ycwhc62f@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/7Ae3rZwBy4'},
+  'RK-130':{name:'Perasan Jeruk Manual',img:'https://down-id.img.susercontent.com/file/86ae5ec949ffc07c0ef4d5b7b2322c77@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/70KdfGwpJ3'},
+  'RK-131':{name:'Rolling Pin Anak',img:'https://down-id.img.susercontent.com/file/908c8ac740611ea994c47d91228c8439@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/2LYo6nCiam'},
+  'RK-132':{name:'Penutup Mata Anak',img:'https://down-id.img.susercontent.com/file/4a327758d0d98ef1cc5d6237cb106627@resize_w450_nl.webp',shopee:'https://s.shopee.co.id/2VsEJ6C5Fp'}
+};
+
+// Sheet "Produk Add-on" → produk fisik Hexababy pendukung aktivitas
+const ADDON={
+  stepping:{name:'Rainbow Stepping Stones',status:'PO · tiba awal Des',price:'Mulai Rp 499.000',img:'https://lh3.googleusercontent.com/d/1kzFvJ0O_uFFd4yq-5x9GcbXnoNJOMms5=w600',link:'https://wa.link/zy7ut2',cta:'Pre-Order Sekarang'},
+  audio:{name:'Audio Flashcard',status:'PO · tiba awal Des',price:'Mulai Rp 99.000',img:'https://lh3.googleusercontent.com/d/181g8DnqqV2z0cIZ5I9FialkLU47QSaQz=w600',link:'https://wa.link/zy7ut2',cta:'Pre-Order Sekarang'},
+  tenframe:{name:'Montessori Math Ten Frame',status:'PO · tiba awal Des',price:'Mulai Rp 379.000',img:'https://lh3.googleusercontent.com/d/1qYw2wBSWw1QjH18D94QzwSO9PJIqsVzi=w600',link:'https://wa.link/zy7ut2',cta:'Pre-Order Sekarang'}
+};
+
+const SENSORY={
+  '2026-9':{
+    label:'HEXABABY · Our Amazing Body',
+    sets:['Parts of the Face','Facial Expression','The Skeleton','Internal Organs'],
+    // Sheet "Flashcard Files" → nama file per set
+    files:['Flashcard Our Amazing Body – Set 1 Parts of the Face','Flashcard Our Amazing Body – Set 2 Facial Expression','Flashcard Our Amazing Body – Set 3 The Skeleton','Flashcard Our Amazing Body – Set 4 Internal Organs'],
+    schedule:{a1:[0,1,0,1],a2:[0,1,0,1],a3:[0,1,2,3],a4:[0,1,2,3]},
+    safety:['Pijat dan permainan di kasur selalu diawasi, jauhkan dari tepi tempat tidur.','Stiker minimal 3 cm dan selalu diawasi, untuk anak yang masih memasukkan benda ke mulut.','Bawang putih dan kayu manis untuk dicium saja, bukan dicicip mentah.','Kenalkan satu makanan baru dalam satu waktu.'],
+    ages:{
+      a1:[
+        {t:'Pijat Sambil Sebut',d:'Kenalkan nama bagian tubuh lewat sentuhan lembut setelah mandi.',steps:['Baringkan anak di alas empuk setelah mandi.','Pijat lembut tangan, kaki, lalu perut.','Sebut nama tiap bagian saat menyentuhnya: “Ini tangan.”'],mats:['Minyak pijat bayi','Handuk atau alas empuk'],rek:['RK-118','RK-120']},
+        {t:'Kepala Pundak Lutut Kaki',d:'Hubungkan bunyi lagu dengan bagian tubuh yang disentuh.',steps:['Pangku anak menghadap Mama.','Nyanyi pelan sambil sentuh bagian tubuhnya sesuai lagu.','Ulangi 2–3 kali, makin lama makin ceria.'],mats:['Tidak perlu alat'],rek:[]},
+        {t:'Cari Wajah di Cermin',d:'Lanjutkan flashcard wajah dengan wajah aslinya di cermin.',steps:['Duduk berdua di depan cermin.','Tunjuk mata, hidung, mulut di pantulan, lalu di wajah aslinya.','Biarkan ia meraih pantulannya sendiri.'],mats:['Cermin bayi anti pecah'],rek:['RK-119']},
+        {t:'Hidung Mencium, Mulut Mencicip',d:'Kenalkan fungsi hidung dan mulut lewat buah.',steps:['Dekatkan pisang ke hidung, sentuh hidungnya: “Hidung mencium.”','Tawarkan pisang dengan tekstur sesuai usianya.','Sentuh mulutnya: “Mulut mencicip.”'],mats:['Pisang matang'],rek:[]},
+        {t:'Goyang di Dada Mama',d:'Rasakan gerakan pelan sambil tetap dekat dengan Mama.',steps:['Mama berbaring telentang, anak tengkurap di dada.','Pegang badannya, goyang pelan ke kiri dan kanan.','Berhenti kalau ia terlihat tidak nyaman.'],mats:['Kasur atau matras'],rek:['RK-120']},
+        {t:'Merangkak Lewat Bantal',d:'Latih kekuatan dan kesadaran posisi tubuh.',steps:['Susun 2–3 bantal di lantai.','Taruh mainan favorit di seberangnya.','Biarkan ia merangkak naik dan turun, Mama jaga di samping.'],mats:['Bantal','Mainan favorit'],rek:['RK-120']},
+        {t:'Namai Rasa Tubuhnya',d:'Bantu anak mengenali sinyal dari dalam tubuhnya.',steps:['Saat ia rewel, berhenti sebentar dan amati.','Tebak dan namai: “Ngantuk ya, matanya merah.”','Penuhi kebutuhannya sambil terus bicara pelan.'],mats:['Tidak perlu alat'],rek:[]}
+      ],
+      a2:[
+        {t:'Stiker di Badan',d:'Cari dan lepas stiker sambil mengenal bagian tubuh.',steps:['Tempel 5 stiker di tangan, lutut, dan perutnya.','Ajak cari: “Stikernya di mana?”','Lepas satu per satu sambil sebut nama bagian tubuhnya.'],mats:['Stiker besar (min. 3 cm)'],rek:['RK-121']},
+        {t:'Kepala Pundak, Pelan lalu Cepat',d:'Latih mendengar perubahan tempo.',steps:['Nyanyi pelan sambil sentuh bagian tubuh.','Ulangi dengan tempo cepat.','Biarkan ia ikut menyentuh sendiri.'],mats:['Tidak perlu alat'],rek:[]},
+        {t:'Sentuh & Sebut di Cermin',d:'Hubungkan gambar di kartu dengan tubuhnya sendiri.',steps:['Tunjukkan satu kartu dari set minggu ini.','Ajak sentuh bagian yang sama di tubuhnya, di depan cermin.','Ulangi untuk 3–4 kartu.'],mats:['Cermin','Kartu Our Amazing Body'],rek:['RK-119']},
+        {t:'Cium, Cicip, Tunjuk',d:'Kenalkan hidung dan mulut sambil mencicip buah.',steps:['Cium jeruk bersama, lalu tunjuk hidung.','Cicip potongan jeruk, lalu tunjuk mulut.','Ulangi dengan buah lain.'],mats:['Jeruk','1 buah lain'],rek:[]},
+        {t:'Berguling di Kasur',d:'Rasakan tubuh berputar dengan aman.',steps:['Bentangkan matras atau pakai kasur.','Contohkan berguling, lalu ajak ia ikut.','Mama jaga di tepi, berguling ke dua arah.'],mats:['Matras atau kasur'],rek:['RK-120']},
+        {t:'Dorong Keranjang Cucian',d:'Heavy work yang bikin tubuh terasa tenang.',steps:['Isi keranjang dengan handuk sampai agak berat.','Ajak dorong menyeberangi ruangan.','Hitung bersama sampai garis finish.'],mats:['Keranjang cucian','Handuk'],rek:[]},
+        {t:'Mana yang Sakit?',d:'Bantu anak menunjuk dan menamai rasa sakit.',steps:['Saat ia terbentur, peluk dulu.','Tanya: “Mana yang sakit?” dan ajak tunjuk.','Sebut nama bagiannya, lalu usap.'],mats:['Tidak perlu alat'],rek:[]}
+      ],
+      a3:[
+        {t:'Busa Sabun di Badan',d:'Gosok dan sebut bagian tubuh saat mandi.',steps:['Saat mandi, oles busa di siku, lutut, dan perut.','Sebut tiap bagian sambil menggosok.','Ajak ia oles sendiri ke bagian yang Mama sebut.'],mats:['Sabun busa anak'],rek:['RK-122']},
+        {t:'Detak Jantung Mama',d:'Dengarkan bunyi dari dalam tubuh.',steps:['Ajak tempelkan telinga di dada Mama.','Dengar bersama, lalu tiru: “dug-dug”.','Gantian, Mama dengar dadanya.'],mats:['Stetoskop mainan (opsional)'],rek:['RK-123']},
+        {t:'Cermin Ekspresi',d:'Tiru ekspresi di kartu dan namai emosinya.',steps:['Pilih 3 kartu ekspresi: senang, sedih, kaget.','Tiru ekspresinya bersama di depan cermin.','Sebut nama emosinya.'],mats:['Cermin','Kartu Facial Expression'],rek:['RK-119']},
+        {t:'Hidung Pintar',d:'Tebak wangi dengan mata tertutup.',steps:['Siapkan bawang putih, jeruk, dan kayu manis di mangkuk.','Mata ditutup, cium satu per satu lalu tebak.','Cicip jeruknya bersama.'],mats:['Bawang putih','Jeruk','Kayu manis','Penutup mata'],rek:['RK-132']},
+        {t:'Ikuti Perintah Badan',d:'Latih keseimbangan lewat gerakan sederhana.',steps:['Beri perintah: putar badan, jongkok, berdiri.','Lakukan bersama, pelan-pelan.','Akhiri dengan diam seperti patung.'],mats:['Tidak perlu alat'],rek:[]},
+        {t:'Dorong Tembok',d:'Rasakan otot bekerja sekuat tenaga.',steps:['Berdiri menghadap tembok, tangan menempel.','Dorong sekuat tenaga sambil hitung sampai 5.','Lanjut lompat dua kaki 5 kali.'],mats:['Tidak perlu alat'],rek:[]},
+        {t:'Marah Itu Terasa di Badan',d:'Kenali tanda emosi di tubuh.',steps:['Saat ia kesal, sebut rasanya: “Kamu marah ya.”','Tunjuk tanda di badannya: tangan mengepal, napas cepat.','Ajak napas tiup lilin 3 kali bersama.'],mats:['Tidak perlu alat'],rek:[]}
+      ],
+      a4:[
+        {t:'Jiplak Badan',d:'Gambar tubuhnya sendiri dalam ukuran asli.',steps:['Bentangkan kertas besar, ajak ia berbaring di atasnya.','Jiplak tepi badannya dengan spidol.','Ajak raba dan warnai tiap bagian sambil sebut namanya.'],mats:['Kertas roll besar','Spidol','Krayon'],rek:['RK-124','RK-107','RK-125']},
+        {t:'Jantung Cepat, Jantung Pelan',d:'Bandingkan detak jantung sebelum dan sesudah bergerak.',steps:['Dengar detak jantungnya setelah rebahan.','Ajak lari di tempat 30 detik.','Dengar lagi. Apa bedanya?'],mats:['Stetoskop mainan'],rek:['RK-123']},
+        {t:'Organ di Dalam Tubuh',d:'Tempel organ di jiplakan badan dari hari Senin.',steps:['Pilih 3 kartu organ: jantung, paru-paru, lambung.','Gambar atau tempel organnya di jiplakan badan.','Ceritakan tugas tiap organ dalam satu kalimat.'],mats:['Jiplakan badan dari Senin','Kartu Internal Organs','Selotip'],rek:[]},
+        {t:'Tutup Hidung, Cicip Apel',d:'Buktikan hidung ikut membantu merasakan makanan.',steps:['Potong apel kecil-kecil.','Cicip sambil tutup hidung.','Buka hidung, cicip lagi. Rasanya beda?'],mats:['Apel'],rek:[]},
+        {t:'Yoga Hewan',d:'Latih keseimbangan lewat pose hewan.',steps:['Pose flamingo: berdiri satu kaki.','Pose kupu-kupu: duduk, kepakkan lutut.','Putar badan pelan 3 kali, lalu berhenti dan diam.'],mats:['Matras'],rek:['RK-120']},
+        {t:'Tarik Tambang',d:'Heavy work bersama Mama.',steps:['Pegang ujung handuk panjang masing-masing.','Tarik pelan, lalu lebih kuat.','Gantian menang, tutup dengan pelukan.'],mats:['Handuk panjang'],rek:[]},
+        {t:'Check-in Sebelum Tidur',d:'Ajak anak membaca sinyal tubuh dan perasaannya.',steps:['Saat sudah di kasur, tanya: “Perutnya lapar?”','Lanjut: “Badannya capek?”','Terakhir: “Hari ini perasaannya senang atau sedih?”'],mats:['Tidak perlu alat'],rek:[]}
+      ]
+    }
+  },
+  '2026-10':{
+    label:'HEXABABY · Fruits & Veggies',
+    sets:['Fruits','Vegetables','Fruits + Vegetables'],
+    files:['Flashcard Fruits','Flashcard Vegetables','Flashcard Fruits + Flashcard Vegetables'],
+    schedule:{a1:[0,1,0,1],a2:[0,1,0,1],a3:[0,1,0,2],a4:[0,1,0,2]},
+    safety:['Potong anggur dan tomat ceri memanjang, jangan diberikan utuh.','Wortel dan sayur keras untuk di bawah 3 tahun: kukus sampai lunak atau parut tipis.','Bawang putih dan bawang bombay mentah untuk dicium saja.','Tidak ada madu sebelum usia 12 bulan. Kenalkan satu makanan baru dalam satu waktu.','Main air, ayunan selimut, dan stepping stones selalu diawasi.'],
+    ages:{
+      a1:[
+        {t:'Remas Sayur Kukus',d:'Rasakan tekstur sayur asli dengan tangan.',steps:['Kukus brokoli dan stik wortel sampai lunak.','Dinginkan, taruh di meja high chair.','Biarkan diremas, dipencet, dan dicicip.'],mats:['Brokoli','Wortel'],rek:[]},
+        {t:'Kriuk Apel & Botol Beras',d:'Dengarkan bunyi-bunyi dari dapur.',steps:['Gigit apel dekat telinganya.','Kocok botol berisi beras, pelan lalu keras.','Biarkan ia ikut mengocok.'],mats:['Apel','Botol kecil, tutup dilem rapat','Beras'],rek:['RK-126']},
+        {t:'Cilukba Buah',d:'Latih fokus mata dan object permanence.',steps:['Taruh jeruk di depannya, tutup dengan kain.','Buka sambil bilang “ada!”','Biarkan ia mencoba membuka sendiri.'],mats:['Jeruk','Kain tipis'],rek:['RK-127']},
+        {t:'Cium Dulu, Baru Cicip',d:'Kenalkan satu buah baru minggu ini.',steps:['Pilih 1 buah baru untuk minggu ini.','Dekatkan ke hidungnya dan sebut namanya.','Tawarkan dengan tekstur sesuai usia.'],mats:['1 buah baru'],rek:[]},
+        {t:'Naik-naik ke Puncak Gunung',d:'Bounce pelan mengikuti lagu.',steps:['Pangku menghadap Mama, pegang badannya.','Bounce pelan mengikuti lagu.','Di bagian “puncak”, angkat sedikit lebih tinggi.'],mats:['Tidak perlu alat'],rek:[]},
+        {t:'Merangkak ke Keranjang Buah',d:'Merangkak menuju tujuan yang menarik.',steps:['Taruh keranjang buah 1–2 meter di depannya.','Panggil namanya dari belakang keranjang.','Biarkan ia merangkak dan dorong labu kecil.'],mats:['Keranjang','Labu kecil atau jeruk'],rek:['RK-112']},
+        {t:'Kenyang Itu Boleh Berhenti',d:'Hormati tanda kenyang anak.',steps:['Makan bersama tanpa distraksi.','Perhatikan tanda kenyang: menoleh, menutup mulut.','Berhenti dan namai: “Udah kenyang ya.”'],mats:['Tidak perlu alat'],rek:[]}
+      ],
+      a2:[
+        {t:'Cuci Sayur di Baskom',d:'Rasakan sayur basah dan kering.',steps:['Siapkan baskom air dan beberapa sayur.','Ajak gosok sayur dengan tangannya.','Bandingkan sayur basah dan sayur kering.'],mats:['Baskom atau sensory bin','Wortel, timun'],rek:['RK-079']},
+        {t:'Tebak Bunyi Dapur',d:'Kenali bunyi dan sumbernya.',steps:['Potong timun di dekatnya, dengarkan bunyinya.','Kocok marakas kacang hijau.','Tanya: “Bunyi apa ya?” lalu tunjukkan sumbernya.'],mats:['Timun','Botol kacang hijau, tutup dilem rapat'],rek:['RK-126']},
+        {t:'Buah Asli & Kartunya',d:'Pasangkan buah asli dengan kartunya.',steps:['Ambil 3 kartu buah dan buah aslinya.','Taruh kartu di lantai, berikan buahnya.','Ajak pasangkan buah dengan kartunya.'],mats:['3 buah asli','3 kartu buah'],rek:[]},
+        {t:'Manis, Asam, Segar',d:'Cium lalu cicip tiga rasa berbeda.',steps:['Cium pisang, jeruk, dan semangka satu per satu.','Cicip potongan kecilnya.','Namai rasanya: manis, asam, segar.'],mats:['Pisang','Jeruk','Semangka'],rek:[]},
+        {t:'Seberangi Sungai',d:'Melangkah dari batu ke batu sambil dipegang Mama.',steps:['Susun batu berjarak satu langkah kecil.','Pegang tangannya, melangkah dari batu ke batu.','Ambil buah di ujung sebagai hadiah.'],mats:['Stepping stones atau bantal sofa','1 buah'],rek:[],p:'stepping',alt:'Susun bantal sofa sebagai batu.'},
+        {t:'Angkut Keranjang Belanja',d:'Bawa beban ringan dari dapur.',steps:['Isi keranjang kecil dengan 3–4 buah.','Ajak bawa dari dapur ke ruang tamu.','Keluarkan dan hitung bersama.'],mats:['Keranjang kecil','Buah'],rek:['RK-112']},
+        {t:'Haus? Kenyang?',d:'Kenali rasa haus dan kenyang.',steps:['Setelah main, tanya “Haus?” lalu minum.','Setelah makan, tepuk perutnya.','Namai: “Perutnya kenyang.”'],mats:['Gelas minum anak'],rek:[]}
+      ],
+      a3:[
+        {t:'Potong Buah Mainan',d:'Bandingkan buah mainan dengan buah asli.',steps:['Lepas-pasang potongan buah mainan.','Bandingkan dengan kulit buah asli.','Potong pisang asli dengan pisau makan tumpul.'],mats:['Buah mainan atau pisang','Talenan dan pisau anak'],rek:['RK-128']},
+        {t:'Instruksi 2 Langkah',d:'Dengarkan dan lakukan dua perintah berurutan.',steps:['Taruh apel dan piring di depannya.','Beri instruksi: “Ambil apel, taruh di piring.”','Tambah satu langkah kalau sudah lancar.'],mats:['Apel','Piring'],rek:[]},
+        {t:'Sortir Warna Buah',d:'Kelompokkan buah sesuai warnanya.',steps:['Siapkan piring merah, hijau, dan oranye.','Campur buah di keranjang.','Ajak taruh buah ke piring yang warnanya sama.'],mats:['3 piring warna','Buah aneka warna'],rek:['RK-129','RK-112']},
+        {t:'Tebak Wangi, Mata Tertutup',d:'Tebak wangi lalu bandingkan rasa.',steps:['Tutup matanya dengan kain.','Cium jeruk, pisang, daun bawang satu per satu, lalu tebak.','Cicip jeruk dan pisang: mana manis, mana asam?'],mats:['Jeruk','Pisang','Daun bawang','Penutup mata'],rek:['RK-132']},
+        {t:'Seberangi Sungai',d:'Melangkah sendiri dari batu ke batu.',steps:['Susun batu berjarak satu langkah.','Ia melangkah sendiri dari batu ke batu.','Ambil buah di seberang.'],mats:['Stepping stones atau bantal sofa','1 buah'],rek:[],p:'stepping',alt:'Susun bantal sofa sebagai batu.'},
+        {t:'Peras Jeruk',d:'Heavy work untuk tangan.',steps:['Belah jeruk jadi dua.','Tekan dan putar di perasan manual.','Minum air jeruknya bersama.'],mats:['Jeruk','Perasan jeruk manual'],rek:['RK-130']},
+        {t:'Deg-deg Jantungku',d:'Rasakan jantung bekerja setelah bergerak.',steps:['Lompat 10 kali bersama.','Pegang dada, rasakan deg-degan.','Tenangkan dengan napas cium bunga, tiup lilin.'],mats:['Tidak perlu alat'],rek:[]}
+      ],
+      a4:[
+        {t:'Salad Pura-pura, lalu Beneran',d:'Dari main peran ke masak sungguhan.',steps:['Main potong buah mainan dulu.','Sobek selada dan cuci tomat untuk salad.','Sajikan untuk keluarga.'],mats:['Buah mainan','Selada, tomat','Mangkuk'],rek:['RK-128']},
+        {t:'Kartu Bicara: Nama Buah',d:'Dengar nama buah lalu cari aslinya.',steps:['Masukkan kartu buah ke Audio Flashcard.','Dengarkan namanya.','Tunjuk buah aslinya di dapur.'],mats:['Audio Flashcard atau suara Mama','Buah asli'],rek:[],p:'audio',alt:'Mama sebut bunyi awal “/a/… apel”, anak menebak.'},
+        {t:'Hitung sampai 10',d:'Hitung buah lalu amati pola biji.',steps:['Potong anggur memanjang.','Isi ten frame satu per satu sambil berhitung.','Belah kiwi atau belimbing, amati pola bijinya.'],mats:['Ten frame atau karton telur','Anggur','Kiwi atau belimbing'],rek:[],p:'tenframe',alt:'Pakai karton telur 10 lubang.'},
+        {t:'Blind Taste Test',d:'Tebak rasa dengan mata tertutup.',steps:['Siapkan manis (pisang), asam (jeruk), asin (keju), pahit (pare kukus sedikit).','Tutup mata, cicip satu per satu.','Sebut rasanya.'],mats:['Pisang','Jeruk','Keju','Pare kukus','Penutup mata'],rek:['RK-132']},
+        {t:'Seberangi Sungai Bawa Jeruk',d:'Jaga keseimbangan sambil membawa benda.',steps:['Taruh jeruk di atas sendok.','Jalan dari batu ke batu tanpa menjatuhkan jeruk.','Ulangi sambil hitung langkah.'],mats:['Stepping stones atau garis selotip','Jeruk','Sendok'],rek:[],p:'stepping',alt:'Jalan di garis selotip di lantai.'},
+        {t:'Uleni Adonan',d:'Tekan dan gulung adonan sekuat tenaga.',steps:['Campur tepung, air, dan sedikit minyak.','Ajak uleni, tekan, dan gulung.','Bentuk jadi buah-buahan.'],mats:['Tepung terigu','Air','Minyak'],rek:['RK-131']},
+        {t:'Lapar Sedikit, Sedang, Banget?',d:'Latih membaca rasa lapar sebelum makan.',steps:['Sebelum makan, ajak pegang perut.','Tanya: lapar sedikit, sedang, atau banget?','Ambil porsi sesuai jawabannya.'],mats:['Tidak perlu alat'],rek:[]}
+      ]
+    }
+  }
+};
+
+// Oktober 2026 — 31 aktivitas unik per usia (indeks = tanggal - 1). Indera mengikuti hari.
+function A(t,d,steps,mats,rek,p,alt){var o={t:t,d:d,steps:steps,mats:mats,rek:rek||[]};if(p){o.p=p;o.alt=alt;}return o;}
+var NONE=['Tidak perlu alat'];
+SENSORY['2026-10'].ages={
+a1:[
+A('Cium & Cicip Pisang','Dari kartu Banana ke pisang asli.',['Tunjukkan kartu Banana, lalu pisang aslinya.','Dekatkan pisang ke hidungnya: “Wangi pisang.”','Tawarkan pisang lumat atau potongan panjang sesuai kemampuannya.'],['Pisang matang']),
+A('Naik-naik ke Puncak Gunung','Bounce pelan mengikuti lagu.',['Pangku menghadap Mama, pegang badannya.','Bounce pelan mengikuti lagu.','Di bagian “puncak”, angkat sedikit lebih tinggi.'],NONE),
+A('Merangkak ke Keranjang Buah','Merangkak menuju tujuan yang menarik.',['Taruh keranjang buah 1–2 meter di depannya.','Panggil namanya dari belakang keranjang.','Biarkan ia merangkak dan meraih buahnya.'],['Keranjang','Jeruk atau pisang'],['RK-112']),
+A('Kenyang Itu Boleh Berhenti','Hormati tanda kenyang anak.',['Makan bersama tanpa distraksi.','Perhatikan tanda kenyang: menoleh, menutup mulut.','Berhenti dan namai: “Udah kenyang ya.”'],NONE),
+A('Remas Alpukat','Rasakan lembut dan licinnya alpukat.',['Belah alpukat matang, potong memanjang.','Taruh di meja high chair.','Biarkan diremas dan dicicip sambil Mama sebut “avocado”.'],['Alpukat matang']),
+A('Botol Bunyi','Ikuti arah suara dengan kepala.',['Isi botol dengan beras, tutup rapat dan dilem.','Kocok pelan di kiri, lalu di kanan telinganya.','Lihat ia menoleh ke arah suara.'],['Botol kecil','Beras'],['RK-126']),
+A('Cilukba Jeruk','Latih fokus mata dan object permanence.',['Taruh jeruk di depannya, tutup dengan kain.','Buka sambil bilang “ada!”','Biarkan ia mencoba membuka sendiri.'],['Jeruk','Kain tipis'],['RK-127']),
+A('Wortel Kukus','Dari kartu Carrot ke wortel asli.',['Tunjukkan kartu Carrot dan wortel aslinya.','Cium wortel kukus bersama.','Tawarkan stik wortel kukus yang lunak.'],['Wortel']),
+A('Goyang di Dada Mama','Rasakan gerakan pelan sambil dekat Mama.',['Mama berbaring telentang, anak tengkurap di dada.','Pegang badannya, goyang pelan ke kiri dan kanan.','Berhenti kalau ia terlihat tidak nyaman.'],['Kasur atau matras'],['RK-120']),
+A('Tummy Time Raih Tomat','Latih kekuatan lengan dan leher.',['Tengkurapkan anak di matras.','Gulirkan tomat besar pelan di depannya.','Biarkan ia meraih dan mendorongnya.'],['Tomat besar','Matras'],['RK-120']),
+A('Lapar atau Ngantuk?','Baca tanda dari tubuhnya.',['Perhatikan tanda: mengisap tangan (lapar), menggosok mata (ngantuk).','Namai tandanya dengan suara pelan.','Penuhi kebutuhannya sesuai tanda.'],NONE),
+A('Remas Brokoli Kukus','Rasakan tekstur “pohon kecil”.',['Kukus brokoli sampai lunak, dinginkan.','Taruh beberapa kuntum besar di meja high chair.','Biarkan diremas sambil Mama sebut “broccoli”.'],['Brokoli']),
+A('Kriuk Timun','Dengarkan bunyi renyah dari dekat.',['Potong timun di dekatnya.','Gigit timun dekat telinganya: “kriuk!”','Ulangi dan lihat reaksinya.'],['Timun']),
+A('Terong Ungu, Tomat Merah','Ikuti warna kontras dengan mata.',['Taruh terong dan tomat di depannya.','Gerakkan pelan kiri–kanan, ikuti matanya.','Sebut nama dan warnanya.'],['Terong','Tomat']),
+A('Cium & Cicip Pepaya','Dari kartu Papaya ke pepaya asli.',['Tunjukkan kartu Papaya lalu pepaya yang dibelah.','Dekatkan ke hidungnya.','Tawarkan pepaya matang yang lunak.'],['Pepaya matang']),
+A('Perahu Goyang','Rasakan gerakan maju-mundur.',['Pangku anak menghadap depan.','Goyang ke depan dan belakang seperti perahu.','Berhenti sebentar, lalu goyang lagi.'],NONE),
+A('Merangkak Kejar Jeruk','Merangkak mengejar benda yang bergerak.',['Gulirkan jeruk pelan di lantai.','Ajak merangkak mengejarnya.','Biarkan ia memegang dan mendorongnya lagi.'],['Jeruk']),
+A('Pelukan Tenang','Bantu tubuhnya kembali tenang.',['Saat ia rewel, peluk erat dan diam sejenak.','Tarik napas pelan dan dalam di dekatnya.','Namai: “Sudah tenang ya.”'],NONE),
+A('Mangga Licin','Rasakan licin dan lengketnya mangga.',['Potong mangga matang memanjang, sisakan sedikit kulit untuk pegangan.','Taruh di meja high chair.','Biarkan dipegang, diremas, dan dicicip.'],['Mangga matang']),
+A('Lagu Nama Buah','Kenali nama buah lewat nada.',['Pegang 3 buah: pisang, jeruk, mangga.','Nyanyikan nama tiap buah dengan nada berbeda.','Ulangi dengan buah yang sama setiap hari minggu ini.'],['Pisang','Jeruk','Mangga']),
+A('Buah Naga Berbintik','Amati warna dan pola di dalam buah.',['Belah buah naga di depannya.','Tunjukkan kulit lalu dagingnya yang berbintik.','Biarkan ia mengamati dan menyentuh.'],['Buah naga']),
+A('Cium Bawang, Cicip Kentang','Kenali wangi kuat dan rasa lembut.',['Cium bawang bombay dari jarak agak jauh, lihat reaksinya.','Tunjukkan kartu Potato dan kentang kukus.','Tawarkan kentang lumat.'],['Bawang bombay','Kentang']),
+A('Ayunan Selimut','Ayun pelan dekat lantai bersama dua orang dewasa.',['Bentangkan selimut di lantai, baringkan anak.','Mama dan Papa angkat sedikit dari lantai.','Ayun pelan kiri–kanan sambil bernyanyi.'],['Selimut tebal']),
+A('Merangkak Lewat Bantal','Latih kekuatan dan posisi tubuh.',['Susun 2–3 bantal di lantai.','Taruh sayur mainan atau wortel besar di seberangnya.','Biarkan ia merangkak naik dan turun.'],['Bantal'],['RK-120']),
+A('Namai Rasa Tubuhnya','Bantu anak mengenali sinyal dari dalam.',['Saat ia rewel, berhenti sebentar dan amati.','Tebak dan namai: “Ngantuk ya, matanya merah.”','Penuhi kebutuhannya sambil bicara pelan.'],NONE),
+A('Kentang Lumat di Nampan','Main tekstur lembut dan lengket.',['Lumatkan kentang kukus, taruh di nampan.','Biarkan ia meremas dan mengoleskan.','Sebut: “lembut, lengket.”'],['Kentang kukus','Nampan'],['RK-079']),
+A('Panci & Sendok Kayu','Buat bunyi sendiri.',['Taruh panci terbalik dan sendok kayu di depannya.','Contohkan memukul pelan dan keras.','Biarkan ia mencoba sendiri.'],['Panci','Sendok kayu']),
+A('Paprika Tiga Warna','Amati warna cerah sayur.',['Taruh paprika merah, hijau, dan oranye berjajar.','Gerakkan satu per satu di depan matanya.','Sebut nama warnanya.'],['Paprika']),
+A('Cium & Cicip Brokoli','Kenalkan brokoli lewat hidung dan mulut.',['Tunjukkan kartu Broccoli lalu brokoli kukus.','Dekatkan ke hidungnya.','Tawarkan kuntum brokoli yang lunak.'],['Brokoli']),
+A('Pesawat Terbang','Rasakan gerakan naik dan turun.',['Pegang badannya kuat dengan dua tangan.','Angkat pelan naik-turun seperti pesawat.','Berhenti kalau ia terlihat takut.'],NONE),
+A('Tarik Kain, Dapat Tomat','Tarik untuk mendapatkan sesuatu.',['Taruh tomat di atas kain, agak jauh darinya.','Contohkan cara menarik kainnya.','Biarkan ia menarik sampai tomat mendekat.'],['Kain','Tomat'],['RK-127'])
+],
+a2:[
+A('Manis atau Asam?','Cium lalu cicip buah dari kartu.',['Cium pisang, jeruk, dan mangga satu per satu.','Cicip potongan kecilnya.','Namai rasanya: manis atau asam.'],['Pisang','Jeruk','Mangga']),
+A('Jalan Zigzag Buah','Latih keseimbangan saat berbelok.',['Taruh 4 buah berjajar di lantai.','Gandeng tangannya, jalan zigzag melewatinya.','Akhiri dengan mengambil satu buah.'],['4 buah']),
+A('Angkut Keranjang Belanja','Bawa beban ringan dari dapur.',['Isi keranjang kecil dengan 3–4 buah.','Ajak bawa dari dapur ke ruang tamu.','Keluarkan dan hitung bersama.'],['Keranjang kecil','Buah'],['RK-112']),
+A('Haus? Kenyang?','Kenali rasa haus dan kenyang.',['Setelah main, tanya “Haus?” lalu minum.','Setelah makan, tepuk perutnya.','Namai: “Perutnya kenyang.”'],['Gelas minum anak']),
+A('Kulit Kasar, Kulit Halus','Bandingkan kulit buah dengan tangan.',['Siapkan kiwi, jeruk, dan buah naga.','Ajak raba kulitnya satu per satu.','Sebut: “Kiwi kasar, jeruk halus.”'],['Kiwi','Jeruk','Buah naga']),
+A('Tebak Bunyi Dapur','Kenali bunyi dan sumbernya.',['Potong timun di dekatnya, dengarkan bunyinya.','Kocok botol berisi kacang hijau.','Tanya: “Bunyi apa ya?” lalu tunjukkan sumbernya.'],['Timun','Botol kacang hijau, tutup dilem rapat'],['RK-126']),
+A('Buah Asli & Kartunya','Pasangkan buah dengan kartunya.',['Ambil 3 kartu buah dan buah aslinya.','Taruh kartu di lantai, berikan buahnya.','Ajak pasangkan buah dengan kartunya.'],['3 buah asli','3 kartu Fruits']),
+A('Cicip Timun & Tomat','Rasakan segar dan asam.',['Tunjukkan kartu Cucumber dan Tomato.','Cium, lalu cicip potongan timun dan tomat.','Namai: “segar” dan “asam”.'],['Timun','Tomat']),
+A('Seberangi Sungai','Melangkah dari batu ke batu sambil dipegang Mama.',['Susun batu berjarak satu langkah kecil.','Pegang tangannya, melangkah dari batu ke batu.','Ambil wortel di ujung sebagai hadiah.'],['Stepping stones atau bantal sofa','Wortel'],[],'stepping','Susun bantal sofa sebagai batu.'),
+A('Dorong Kardus Sayur','Heavy work yang bikin tubuh tenang.',['Isi kardus dengan kentang dan wortel.','Ajak dorong menyeberangi ruangan.','Bongkar dan hitung isinya bersama.'],['Kardus','Kentang, wortel']),
+A('Tepuk Perut Kenyang','Hubungkan rasa kenyang dengan kata.',['Setelah makan, tepuk perutnya pelan.','Tanya: “Perutnya penuh?”','Biarkan ia ikut menepuk perutnya sendiri.'],NONE),
+A('Cuci Sayur di Baskom','Rasakan sayur basah dan kering.',['Siapkan baskom air dan beberapa sayur.','Ajak gosok sayur dengan tangannya.','Bandingkan sayur basah dan kering.'],['Baskom atau sensory bin','Wortel, timun'],['RK-079']),
+A('Sayur Jatuh ke Panci','Dengarkan bunyi “dug!”',['Siapkan panci dan beberapa kentang dan wortel.','Ajak jatuhkan satu per satu ke panci.','Dengarkan bunyinya bersama.'],['Panci','Kentang, wortel']),
+A('Cari Wortel','Latih mencari benda yang disembunyikan.',['Taruh wortel di bawah salah satu dari 3 mangkuk.','Angkat satu per satu bersama.','Ajak ia mencari sendiri.'],['3 mangkuk','Wortel'],['RK-135']),
+A('Cium & Cicip Jambu','Kenali wangi kuat jambu biji.',['Tunjukkan kartu Guava lalu jambu yang dibelah.','Cium wanginya bersama.','Cicip potongan kecil tanpa biji.'],['Jambu biji']),
+A('Berputar Pelan','Rasakan tubuh berputar dengan aman.',['Gendong anak menghadap Mama.','Berputar pelan 3 kali sambil bernyanyi.','Berhenti dan diam sebentar.'],NONE),
+A('Peluk Pepaya','Bawa benda besar dan agak berat.',['Pilih pepaya kecil yang cukup berat.','Ajak ia memeluk dan membawanya beberapa langkah.','Taruh di meja, lalu belah untuk camilan.'],['Pepaya kecil']),
+A('Capek? Istirahat Dulu','Kenali rasa capek setelah bermain.',['Setelah main aktif, ajak duduk.','Tanya: “Capek ya? Napasnya cepat.”','Rebahan bersama sebentar.'],NONE),
+A('Stempel Jeruk','Rasakan cat dan cap buah di kertas.',['Belah jeruk jadi dua, keringkan permukaannya.','Celupkan ke cat, lalu cap di kertas.','Biarkan ia mengecap sendiri.'],['Jeruk','Cat air washable','Kertas gambar'],['RK-133','RK-134']),
+A('Ketuk Nama Buah','Dengarkan suku kata nama buah.',['Pegang sendok dan mangkuk.','Ketuk sambil sebut: “pi-sang” (2 ketukan).','Gantian ia yang mengetuk.'],['Sendok','Mangkuk'],['RK-135']),
+A('Sortir Pisang & Jeruk','Kelompokkan buah sesuai jenis.',['Siapkan 2 keranjang.','Campur pisang dan jeruk di lantai.','Ajak masukkan pisang ke satu keranjang, jeruk ke lainnya.'],['2 keranjang','Pisang','Jeruk'],['RK-112']),
+A('Sup Wortel Kentang','Cium aroma masakan, lalu cicip.',['Masak sup wortel dan kentang bersama.','Ajak cium uapnya dari jarak aman.','Cicip setelah dingin.'],['Wortel','Kentang']),
+A('Berguling di Matras','Rasakan tubuh berputar.',['Bentangkan matras.','Contohkan berguling, lalu ajak ia ikut.','Mama jaga di tepi, berguling ke dua arah.'],['Matras'],['RK-120']),
+A('Tarik Gerobak Sayur','Tarik beban dengan tali.',['Ikat tali di kardus kecil berisi sayur.','Ajak tarik keliling ruangan.','Berhenti di “pasar” dan bongkar isinya.'],['Kardus kecil','Tali','Sayur']),
+A('Badan Gerah','Kenali rasa panas setelah bergerak.',['Setelah main aktif, pegang dahi dan lehernya.','Namai: “Badannya gerah, berkeringat.”','Ajak minum dan duduk di tempat sejuk.'],NONE),
+A('Cari Sayur di Beras','Temukan sayur yang tersembunyi.',['Isi sensory bin dengan beras.','Sembunyikan wortel dan kentang kecil di dalamnya.','Ajak menggali dan menemukannya.'],['Sensory bin','Beras','Wortel, kentang'],['RK-079']),
+A('Ambil Tomat!','Ikuti satu instruksi.',['Taruh tomat, wortel, dan timun di lantai.','Beri instruksi: “Ambil tomat.”','Ganti sayur yang diminta.'],['Tomat','Wortel','Timun']),
+A('Tomat Menggelinding','Ikuti benda bergerak dengan mata.',['Duduk berhadapan di lantai.','Gulirkan tomat pelan ke arahnya.','Gantian ia yang menggulirkan.'],['Tomat']),
+A('Cicip Paprika Merah','Kenalkan rasa manis paprika.',['Tunjukkan kartu Peppers dan paprika merah.','Cium, lalu cicip potongan tipis.','Namai: “manis, renyah.”'],['Paprika merah']),
+A('Jalan di Atas Bantal','Latih keseimbangan di permukaan tidak rata.',['Jajarkan bantal di lantai.','Gandeng tangannya, jalan di atasnya.','Ulangi tanpa gandeng kalau sudah stabil.'],['Bantal']),
+A('Panjat Bantal Sofa','Gunakan seluruh tubuh untuk memanjat.',['Tumpuk 2–3 bantal sofa di lantai.','Ajak memanjat naik dan turun.','Mama jaga di samping.'],['Bantal sofa','Matras'],['RK-120'])
+],
+a3:[
+A('Tebak Wangi, Mata Tertutup','Tebak buah dari wanginya.',['Tutup matanya dengan kain.','Cium jeruk, pisang, mangga satu per satu, lalu tebak.','Buka mata dan cicip bersama.'],['Jeruk','Pisang','Mangga','Penutup mata'],['RK-132']),
+A('Seberangi Sungai','Melangkah sendiri dari batu ke batu.',['Susun batu berjarak satu langkah.','Ia melangkah sendiri dari batu ke batu.','Ambil buah di seberang.'],['Stepping stones atau bantal sofa','1 buah'],[],'stepping','Susun bantal sofa sebagai batu.'),
+A('Peras Jeruk','Heavy work untuk tangan.',['Belah jeruk jadi dua.','Tekan dan putar di perasan manual.','Minum air jeruknya bersama.'],['Jeruk','Perasan jeruk manual'],['RK-130']),
+A('Deg-deg Jantungku','Rasakan jantung bekerja setelah bergerak.',['Lompat 10 kali bersama.','Pegang dada, rasakan deg-degan.','Tenangkan dengan napas cium bunga, tiup lilin.'],NONE),
+A('Kantong Misteri Buah','Tebak buah hanya dengan meraba.',['Masukkan kiwi, jeruk, dan pisang ke kantong.','Ajak meraba tanpa melihat.','Tebak, lalu keluarkan untuk dicek.'],['Kantong kain','Kiwi','Jeruk','Pisang']),
+A('Instruksi 2 Langkah','Dengarkan dan lakukan dua perintah.',['Taruh pisang dan piring di depannya.','Beri instruksi: “Ambil pisang, taruh di piring.”','Tambah satu langkah kalau sudah lancar.'],['Pisang','Piring']),
+A('Sortir Warna Buah','Kelompokkan buah sesuai warnanya.',['Siapkan piring merah, hijau, dan oranye.','Campur buah di keranjang.','Ajak taruh buah ke piring yang warnanya sama.'],['3 piring warna','Buah aneka warna'],['RK-129','RK-112']),
+A('Wortel Mentah vs Kukus','Bandingkan rasa dan tekstur.',['Parut wortel mentah tipis dan kukus wortel lain.','Cium keduanya.','Cicip dan bandingkan: renyah atau lembut?'],['Wortel','Parutan']),
+A('Lompat ke Lingkaran Sayur','Lompat dengan dua kaki.',['Buat 4 lingkaran dari selotip di lantai.','Taruh satu sayur di tiap lingkaran.','Lompat ke lingkaran sayur yang Mama sebut.'],['Selotip kertas','4 sayur']),
+A('Tumbuk Kentang','Tekan sekuat tenaga.',['Kukus kentang, dinginkan.','Ajak tumbuk pakai penumbuk atau garpu.','Pakai untuk makan siang bersama.'],['Kentang','Penumbuk atau garpu']),
+A('Haus Setelah Lari','Kenali rasa haus dari dalam tubuh.',['Lari kecil bersama di halaman.','Tanya: “Mulutnya kering? Haus?”','Minum bersama sambil namai rasanya.'],['Gelas minum']),
+A('Petik Brokoli','Rasakan batang dan kuntum brokoli.',['Berikan satu bonggol brokoli mentah yang sudah dicuci.','Ajak petik kuntumnya satu per satu.','Kumpulkan untuk dimasak.'],['Brokoli','Mangkuk'],['RK-135']),
+A('Bunyi Sayur Dipotong','Tebak sayur dari bunyinya.',['Tutup matanya.','Potong wortel, lalu tomat.','Tebak: mana yang “kriuk”, mana yang “cret”?'],['Wortel','Tomat','Penutup mata'],['RK-132']),
+A('Cari Pasangan Kartu','Cocokkan sayur asli dengan kartunya.',['Taruh 4 kartu Vegetables terbuka di lantai.','Berikan sayur aslinya satu per satu.','Ajak taruh di atas kartu yang sama.'],['4 kartu Vegetables','4 sayur asli']),
+A('Buah Naga & Kiwi','Cicip dua buah berbiji kecil.',['Tunjukkan kartu Dragon Fruit dan Kiwi.','Belah keduanya, cium wanginya.','Cicip dan bandingkan rasanya.'],['Buah naga','Kiwi']),
+A('Putar & Berhenti','Latih keseimbangan setelah berputar.',['Berputar pelan 3 kali bersama.','Mama bilang “stop!”, diam seperti patung.','Ulangi 3–4 kali.'],NONE),
+A('Dorong Keranjang Penuh','Heavy work dengan keranjang berat.',['Isi keranjang dengan pepaya dan jeruk.','Ajak dorong dari pintu ke dapur.','Bongkar dan tata di meja.'],['Keranjang','Buah'],['RK-112']),
+A('Lapar Sedikit atau Banget?','Tunjukkan rasa lapar dengan tangan.',['Sebelum makan, tanya: “Laparnya segini atau segini?”','Tunjukkan tangan kecil dan tangan lebar.','Ambil porsi sesuai pilihannya.'],NONE),
+A('Cuci Anggur','Rasakan air dan buah yang licin.',['Taruh anggur di saringan.','Ajak siram dan gosok anggurnya.','Mama potong memanjang sebelum dimakan.'],['Anggur','Saringan']),
+A('Tepuk Suku Kata Buah','Dengarkan suku kata nama buah.',['Sebut “pi-sang” sambil tepuk 2 kali.','Lanjut “ma-ngga”, “pe-pa-ya”.','Ajak ia ikut menepuk.'],NONE),
+A('Puzzle Buah Belah','Cocokkan dua belahan buah.',['Belah jeruk, kiwi, dan jambu jadi dua.','Acak belahannya di piring.','Ajak cari pasangannya.'],['Jeruk','Kiwi','Jambu']),
+A('Buah atau Sayur?','Cicip lalu kelompokkan.',['Siapkan potongan pisang, mangga, timun, tomat.','Cicip satu per satu.','Taruh di piring “buah” atau “sayur”.'],['Pisang','Mangga','Timun','Tomat','2 piring'],['RK-129']),
+A('Jalan di Garis Selotip','Jaga keseimbangan di garis lurus.',['Tempel selotip lurus 2 meter di lantai.','Ajak jalan di atas garis.','Bawa satu buah di tangan sampai ujung.'],['Selotip kertas']),
+A('Tarik Tambang','Heavy work bersama Mama.',['Pegang ujung handuk panjang masing-masing.','Tarik pelan, lalu lebih kuat.','Gantian menang, tutup dengan pelukan.'],['Handuk panjang']),
+A('Cium Jeruk, Tiup Lilin','Latih napas untuk menenangkan tubuh.',['Pegang potongan jeruk di depan hidung.','Tarik napas pelan sambil mencium wanginya.','Hembuskan seperti meniup lilin. Ulangi 3 kali.'],['Jeruk']),
+A('Potong Pisang Sendiri','Rasakan pisau menembus buah.',['Siapkan talenan dan pisau anak.','Contohkan memotong pisang.','Biarkan ia memotong sendiri.'],['Pisang','Talenan dan pisau anak'],['RK-128']),
+A('Tunjuk Saat Disebut','Dengarkan nama lalu cari kartunya.',['Taruh 4 kartu (2 buah, 2 sayur) di lantai.','Sebut satu nama.','Ia menunjuk kartu yang benar.'],['Kartu Fruits & Vegetables']),
+A('Sortir Buah vs Sayur','Kelompokkan sesuai jenisnya.',['Siapkan 2 keranjang: buah dan sayur.','Campur 6–8 buah dan sayur di lantai.','Ajak masukkan ke keranjang yang tepat.'],['2 keranjang','Buah dan sayur'],['RK-112']),
+A('Salad Buah Mini','Buat dan cicip bersama.',['Potong pisang, mangga, dan pepaya.','Ajak campur di mangkuk.','Cium dan cicip bersama.'],['Pisang','Mangga','Pepaya','Mangkuk'],['RK-135']),
+A('Seberangi Sungai Bawa Sayur','Melangkah sambil membawa benda.',['Susun batu berjarak satu langkah.','Bawa satu wortel di tangan.','Seberangi tanpa menjatuhkannya.'],['Stepping stones atau bantal sofa','Wortel'],[],'stepping','Susun bantal sofa sebagai batu.'),
+A('Angkat Kantong Kentang','Bawa beban dengan dua tangan.',['Isi tas kecil dengan 4–5 kentang.','Ajak angkat dan bawa ke dapur.','Hitung kentangnya bersama.'],['Tas kecil','Kentang'])
+],
+a4:[
+A('Blind Taste Test','Tebak rasa dengan mata tertutup.',['Siapkan pisang (manis), jeruk (asam), keju (asin), pare kukus sedikit (pahit).','Tutup mata, cicip satu per satu.','Sebut rasanya.'],['Pisang','Jeruk','Keju','Pare','Penutup mata'],['RK-132']),
+A('Seberangi Sungai Bawa Jeruk','Jaga keseimbangan sambil membawa benda.',['Taruh jeruk di atas sendok.','Jalan dari batu ke batu tanpa menjatuhkan jeruk.','Ulangi sambil hitung langkah.'],['Stepping stones atau garis selotip','Jeruk','Sendok'],[],'stepping','Jalan di garis selotip di lantai.'),
+A('Uleni Adonan','Tekan dan gulung sekuat tenaga.',['Campur tepung, air, dan sedikit minyak.','Ajak uleni, tekan, dan gulung.','Bentuk jadi buah-buahan.'],['Tepung terigu','Air','Minyak'],['RK-131']),
+A('Lapar Sedikit, Sedang, Banget?','Baca rasa lapar sebelum makan.',['Sebelum makan, ajak pegang perut.','Tanya: lapar sedikit, sedang, atau banget?','Ambil porsi sesuai jawabannya.'],NONE),
+A('Potong Pisang & Mangga','Latih tangan memotong buah lunak.',['Siapkan talenan dan pisau anak.','Potong pisang dulu, lalu mangga.','Tata di piring untuk camilan keluarga.'],['Pisang','Mangga','Talenan dan pisau anak'],['RK-128']),
+A('Kartu Bicara: Nama Buah','Dengar nama buah lalu cari aslinya.',['Masukkan kartu buah ke Audio Flashcard.','Dengarkan namanya.','Tunjuk buah aslinya di dapur.'],['Audio Flashcard atau suara Mama','Buah asli'],[],'audio','Mama sebut bunyi awal “/b/… banana”, anak menebak.'),
+A('Hitung sampai 10','Hitung buah satu per satu.',['Potong anggur memanjang.','Isi ten frame satu per satu sambil berhitung.','Hitung mundur saat memakannya.'],['Ten frame atau karton telur','Anggur'],[],'tenframe','Pakai karton telur 10 lubang.'),
+A('Bawang Putih vs Tomat','Bandingkan wangi kuat dan rasa segar.',['Cium bawang putih dan bawang bombay: wanginya tajam.','Cium tomat: wanginya lembut.','Cicip tomatnya saja.'],['Bawang putih','Bawang bombay','Tomat']),
+A('Yoga Sayur','Pose seimbang ala sayur.',['Pose wortel: berdiri tegak, tangan lurus ke atas.','Pose brokoli: satu kaki, tangan jadi “daun”.','Pose kentang: meringkuk bulat, lalu diam.'],['Matras'],['RK-120']),
+A('Tumbuk Kentang','Heavy work untuk tangan dan bahu.',['Kukus kentang, dinginkan.','Tumbuk pakai penumbuk sampai halus.','Bentuk jadi bola kentang.'],['Kentang','Penumbuk']),
+A('Perut Keroncongan','Dengarkan tanda lapar dari perut.',['Sebelum makan, tempel stetoskop di perutnya.','Dengarkan bunyi “kruk-kruk”.','Bicarakan: itu tanda perut minta diisi.'],['Stetoskop mainan'],['RK-123']),
+A('Kupas Kentang Kukus','Rasakan kulit tipis yang mengelupas.',['Kukus kentang kecil, dinginkan.','Ajak kupas kulitnya pakai jari.','Bandingkan kulit dan isinya.'],['Kentang kecil']),
+A('Tebak Bunyi Awal','Dengarkan bunyi awal nama sayur.',['Sebut “/t/… tomato”, “/k/… carrot”.','Tanya: “Sayur apa yang bunyinya /p/?”','Ia mencari kartu potato.'],['Kartu Vegetables']),
+A('Belah & Amati','Lihat isi sayur dari dekat.',['Belah tomat, timun, dan paprika.','Amati biji dan pola di dalamnya.','Bandingkan: mana yang bijinya paling banyak?'],['Tomat','Timun','Paprika']),
+A('Jus atau Utuh?','Bandingkan buah utuh dan jusnya.',['Cicip potongan jeruk.','Peras jeruk lain, cicip jusnya.','Diskusikan: mana yang lebih asam?'],['Jeruk','Perasan jeruk'],['RK-130']),
+A('Putar lalu Ambil Buah','Jaga keseimbangan setelah berputar.',['Berputar 3 kali di tempat.','Jalan lurus ke keranjang buah.','Ambil satu buah dan bawa kembali.'],['Keranjang buah'],['RK-112']),
+A('Peras Jeruk Sendiri','Heavy work untuk tangan.',['Belah jeruk jadi dua.','Peras sendiri sampai habis.','Tuang ke gelas dan minum bersama.'],['Jeruk','Perasan jeruk manual'],['RK-130']),
+A('Check-in Emosi','Namai perasaan dan tanda di tubuh.',['Pagi hari, tanya: “Hari ini perasaannya apa?”','Tunjuk wajah senang, sedih, atau marah.','Tanya: “Badannya terasa bagaimana?”'],NONE),
+A('Kantong Misteri Buah','Tebak buah hanya dengan meraba.',['Masukkan 5 buah berbeda ke kantong.','Raba satu, tebak namanya.','Keluarkan dan cocokkan dengan kartunya.'],['Kantong kain','5 buah','Kartu Fruits']),
+A('Cerita Buah','Dengarkan cerita dan beri tanda.',['Mama cerita pendek dengan 3 nama buah.','Setiap mendengar nama buah, ia angkat buahnya.','Gantian ia yang bercerita.'],['3 buah']),
+A('Pola Buah ABAB','Susun pola dua buah.',['Potong anggur dan pisang.','Contohkan pola: anggur, pisang, anggur, pisang.','Ajak lanjutkan polanya.'],['Anggur','Pisang','Piring']),
+A('Smoothie Rahasia','Tebak sayur yang tersembunyi.',['Blender pisang dengan sedikit wortel kukus.','Cium dan cicip smoothie-nya.','Tebak: ada sayur apa di dalamnya?'],['Pisang','Wortel kukus','Susu atau air']),
+A('Engklek Buah & Sayur','Lompat satu dan dua kaki.',['Buat kotak engklek dari selotip.','Taruh kartu buah dan sayur di tiap kotak.','Lompat sambil sebut nama kartunya.'],['Selotip kertas','Kartu Fruits & Vegetables']),
+A('Tarik Gerobak Belanja','Tarik beban berat dengan tali.',['Isi kardus dengan sayur dan buah.','Ikat tali, tarik keliling rumah.','Antar ke “dapur” dan bongkar.'],['Kardus','Tali','Buah dan sayur']),
+A('Jantung Setelah Menari','Rasakan jantung sebelum dan sesudah bergerak.',['Pegang dada saat diam.','Menari bersama 1 lagu.','Pegang lagi. Apa bedanya?'],NONE),
+A('Stempel Sayur','Cap pola dari potongan sayur.',['Belah paprika dan kentang.','Celupkan ke cat, cap di kertas.','Bandingkan bentuk capnya.'],['Paprika','Kentang','Cat air washable','Kertas gambar'],['RK-133','RK-134']),
+A('Instruksi 3 Langkah','Dengarkan tiga perintah berurutan.',['Taruh buah dan sayur di lantai.','Beri instruksi: “Ambil tomat, taruh di keranjang, lalu tepuk tangan.”','Ganti urutan dan isinya.'],['Buah dan sayur','Keranjang'],['RK-112']),
+A('Grafik Buah & Sayur','Hitung dan bandingkan jumlah.',['Campur 10 buah dan sayur.','Susun berjajar: barisan buah dan barisan sayur.','Hitung: mana yang lebih banyak?'],['Buah dan sayur']),
+A('Tebak Rasa: Buah atau Sayur?','Cicip dengan mata tertutup.',['Tutup matanya.','Cicip potongan mangga, timun, paprika, pepaya.','Tebak: ini buah atau sayur?'],['Mangga','Timun','Paprika','Pepaya','Penutup mata'],['RK-132']),
+A('Seberangi Sungai Rintangan','Seimbang sambil melewati rintangan.',['Susun batu dengan jarak berbeda.','Tambah bantal di tengah sebagai “batu besar”.','Seberangi sambil bawa keranjang kecil.'],['Stepping stones','Bantal','Keranjang kecil'],[],'stepping','Jalan di garis selotip dan bantal.'),
+A('Bawa Belanjaan Pulang','Heavy work setelah belanja.',['Ajak ikut belanja buah dan sayur.','Ia membawa satu tas kecil sendiri.','Bongkar dan tata di kulkas bersama.'],['Tas belanja kecil'])
+]
+};
+
+// Auto-attach rekomendasi afiliasi berdasarkan alat yang disebut di aktivitas
+const AUTO_REK=[
+  [/pijat/i,'RK-118'],[/cermin/i,'RK-119'],[/matras/i,'RK-120'],[/stiker/i,'RK-121'],[/busa/i,'RK-122'],[/stetoskop/i,'RK-123'],
+  [/kertas (roll|besar)/i,'RK-124'],[/krayon/i,'RK-125'],[/spidol/i,'RK-107'],[/botol/i,'RK-126'],[/kain tipis|tutup dengan kain|di atas kain|menarik kain/i,'RK-127'],
+  [/talenan|pisau/i,'RK-128'],[/piring/i,'RK-129'],[/peras/i,'RK-130'],[/adonan/i,'RK-131'],[/penutup mata|tutup mata|mata ditutup|tutup matanya/i,'RK-132'],
+  [/\bcat\b/i,'RK-133'],[/kertas gambar|di kertas/i,'RK-134'],[/mangkuk/i,'RK-135'],[/keranjang/i,'RK-112'],[/sensory bin|baskom/i,'RK-079'],[/nampan/i,'RK-145'],
+  [/\btas\b/i,'RK-136'],[/selotip/i,'RK-137'],[/sendok kayu/i,'RK-138'],[/\bpanci\b/i,'RK-139'],[/tumbuk|lumat/i,'RK-140'],[/parut/i,'RK-141'],
+  [/saringan/i,'RK-142'],[/kantong/i,'RK-143'],[/minum/i,'RK-144'],[/salad|\bsup\b|smoothie|adonan|masak|potong pisang|potong pisang|stempel|\bcap\b/i,'RK-146'],
+  [/smoothie|blender/i,'RK-147'],[/selimut/i,'RK-148'],[/\btali\b|gerobak/i,'RK-149'],[/high chair/i,'RK-150'],[/tawarkan/i,'RK-151'],[/sendok(?! kayu)/i,'RK-152'],
+  [/cicip/i,'RK-153'],[/perasaan|emosi|marah|tenang|napas|capek|ngantuk|rewel|lapar|kenyang|haus|sakit|jantung/i,'RK-154'],[/perasaan|emosi|marah|tenang|napas|capek|ngantuk|rewel|lapar|kenyang|haus|sakit|jantung/i,'RK-154B'],[/perasaan|emosi|marah|tenang|napas|capek|ngantuk|rewel|lapar|kenyang|haus|sakit|jantung/i,'RK-154C'],
+  [/bounce|goyang|ayun|perahu|pesawat|berputar|putar badan|putar pelan/i,'RK-155'],[/nyanyi|lagu|ketuk|tepuk|bunyi|suara|dengar/i,'RK-156'],
+  [/\bdorong/i,'RK-157'],[/tambang/i,'RK-160'],[/amati (biji|pola|isi|dan)|belah & amati|berbintik/i,'RK-161'],[/remas|lumat|high chair/i,'RK-158'],[/gulir|menggelinding|lompat|berguling|jalan|merangkak|panjat|yoga|engklek|seberangi/i,'RK-159']
+];
+function applyAutoRek(){
+  Object.keys(SENSORY).forEach(function(mk){var ages=SENSORY[mk].ages;Object.keys(ages).forEach(function(ak){ages[ak].forEach(function(a){
+    var txt=[a.t].concat(a.steps,a.mats).join(' ');
+    AUTO_REK.forEach(function(r){if(r[0].test(txt)&&a.rek.indexOf(r[1])<0)a.rek.push(r[1]);});
+  });});});
+}
+applyAutoRek();
+
+const FLASH_DESC={
+  a1:'Flash kartu {set} dengan cepat, 1 kartu per detik, sambil sebut namanya dengan jelas dan ceria. Cukup 1–2 menit. Jangan tanya “ini apa?”, tutup dengan pelukan.',
+  a2:'Flash kartu {set}, 1 kartu per detik, sebut namanya dengan jelas dan ceria. 3–5 menit. Jangan tanya “ini apa?”, tutup dengan pelukan.',
+  a3:'Flash kartu {set}, 1 kartu per detik, sebut namanya keras dan semangat. Sekitar 5 menit, boleh 2 putaran kalau anak masih antusias.',
+  a4:'Flash kartu {set}, 1 kartu per detik, sekitar 5–10 menit. Setelah 2 putaran, balik 3–4 kartu ke sisi kata dan bacakan.'
+};
+
+var curAge=(function(){try{return localStorage.getItem('hx-age')||'a1';}catch(e){return 'a1';}})();
+if(!AGE_GROUPS.some(function(a){return a.k===curAge;}))curAge='a1';
+function ageLabel(k){var a=AGE_GROUPS.find(function(x){return x.k===k;});return a?a.label:'';}
+
+function genSensory(key){
+  var S=SENSORY[key],meta=MONTHS_META[key],out=[];
+  for(var n=1;n<=meta.days;n++){
+    var wd=(meta.startDow+n-1)%7, list=S.ages[curAge], a=(list.length>=meta.days?list[n-1]:list[wd]), sn=SENSES[wd], w=gw(n);
+    var si=S.schedule[curAge][w-1];
+    out.push({n:n,dn:DAY_NAMES[wd],l:sn.short||sn.n,lv:null,act:a.t,cat:'sx-'+sn.k,pillar:sn.short||sn.n,cel:false,
+      desc:a.d,steps:a.steps,mats:a.mats,hxFile:S.files[si],
+      rek:a.rek.map(function(pid){var r=REK_CATALOG[pid]||{name:pid};return {name:r.name,img:r.img,shopee:r.shopee,pid:pid};}),
+      sensory:true,sense:sn,addon:a.p?{key:a.p,alt:a.alt}:null,
+      flash:{set:S.sets[si],desc:FLASH_DESC[curAge].replace('{set}',S.sets[si]),file:S.files[si]}});
+  }
+  return out;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function waLink(text){return 'https://wa.me/'+HX_WA+'?text='+encodeURIComponent(text);}
+
+function renderSensoryDetail(d,monthKey){
+  var S=SENSORY[monthKey],meta=MONTHS_META[monthKey];
+  var h='';
+  h+='<div class="dp-step-block">'+
+     '<div class="dp-section-head dp-section-head-pagi"><div class="dp-section-emoji">⚡</div><div class="dp-section-title-wrap"><div class="dp-section-time">Langkah 1 · Flashcard Drilling</div><div class="dp-section-name">'+esc(d.flash.set)+'</div></div></div>'+
+     '<div class="dp-act-desc">'+esc(d.flash.desc)+'</div>'+
+     '<div class="dp-phonics-ref"><div class="dp-phonics-ref-label">Material yang dibutuhkan</div><ul class="dp-mat-list dp-phonics-ref-desc"><li>'+esc(d.flash.file)+'</li></ul></div>'+
+     '</div>';
+  h+='<div class="dp-step-block">'+
+     '<div class="dp-section-head dp-section-head-sore"><div class="dp-section-emoji">'+d.sense.e+'</div><div class="dp-section-title-wrap"><div class="dp-section-time">Langkah 2 · Aktivitas '+esc(d.sense.n)+'</div><div class="dp-section-name">'+esc(d.act)+'</div></div></div>'+
+     '<div class="dp-act-desc">'+esc(d.desc)+'</div>'+
+     '<div class="dp-sub-label">Cara bermain</div><ol class="dp-step-list">'+d.steps.map(function(s){return '<li>'+esc(s)+'</li>';}).join('')+'</ol>'+
+     '<div class="dp-sub-label" style="margin-top:10px">Bahan dibutuhkan</div><ul class="dp-mat-list">'+d.mats.map(function(m){return '<li>'+esc(m)+'</li>';}).join('')+'</ul>';
+  if(d.addon){
+    var P=ADDON[d.addon.key];
+    var link=P.link||waLink('Halo Hexababy, aku mau tanya '+P.name+' (dari Kalender Aktivitas '+meta.name+', usia '+ageLabel(curAge)+').');
+    h+='<div class="dp-addon">'+
+       (P.img?'<img class="dp-addon-img" src="'+esc(P.img)+'" alt="'+esc(P.name)+'" loading="lazy" onerror="this.style.visibility=&quot;hidden&quot;">':'<div class="dp-addon-img dp-addon-ph">🌿</div>')+
+       '<div class="dp-addon-body"><div class="dp-addon-eyebrow">Produk Hexababy pendukung</div>'+
+       '<div class="dp-addon-name">'+esc(P.name)+' <span class="dp-addon-status">'+esc(P.status)+'</span></div>'+
+       (P.price?'<div class="dp-addon-price">'+esc(P.price)+'</div>':'')+
+       '<div class="dp-addon-alt">Tanpa produk: '+esc(d.addon.alt)+'</div>'+
+       '<a class="dp-addon-btn" href="'+esc(link)+'" target="_blank" rel="noopener">'+(P.cta?P.cta+' →':(P.link?'Lihat produk →':'Tanya via WhatsApp →'))+'</a></div></div>';
+  }
+  h+='</div>';
+  h+='<div class="dp-safety"><div class="dp-phonics-ref-label">Aman dulu, baru main</div><ul class="dp-mat-list">'+S.safety.map(function(s){return '<li>'+esc(s)+'</li>';}).join('')+'</ul>'+
+     '<div class="dp-safety-src">Sumber: WHO &amp; IDAI (MPASI), AAP (pencegahan tersedak), CDC (milestone 6–36 bulan).</div></div>';
+  document.getElementById('dpSingle').innerHTML=h;
+}
+
 // ── Multi-month support ──
 const DATA_BY_MONTH={'2026-6':DAYS_DATA,'2026-7':JULY_DAYS_DATA,'2026-8':AUGUST_DAYS_DATA};
+function buildSensoryMonths(){Object.keys(SENSORY).forEach(function(k){DATA_BY_MONTH[k]=genSensory(k);});}
+buildSensoryMonths();
 function curData(){return DATA_BY_MONTH[mkey(curY,curM)]||[];}
 
 const LV_DESC_BY_MONTH={
@@ -562,7 +976,7 @@ const LV_MATS_BY_MONTH={
     Advanced:['1A. HEXABABY Flashcard Primary Colors','1B. HEXABABY Flashcard Secondary Colors','1A. HEXABABY Flashcard Shapes']
   }
 };
-const CHIP_LABEL_BY_MONTH={'2026-6':'Huruf','2026-7':'Angka','2026-8':'Tema'};
+const CHIP_LABEL_BY_MONTH={'2026-6':'Huruf','2026-7':'Angka','2026-8':'Tema','2026-9':'Indera','2026-10':'Indera'};
 const PAGI_NAME_BY_MONTH={'2026-6':'Phonics Song','2026-7':'Flashcard Time','2026-8':'Flashcard Time'};
 
 const PRODUCT_CARD_BY_MONTH={
@@ -585,6 +999,16 @@ const PRODUCT_CARD_BY_MONTH={
     link:'https://langkah-awal.myr.id/catalog/hexababy-colors-shapes-set-31-hari-belajar-warna-bentuk'
   }
 };
+PRODUCT_CARD_BY_MONTH['2026-9']={
+  name:'Jumbo Flashcard<br>Our Amazing Body',
+  desc:'Flashcard cetak A5 untuk drilling setiap hari bulan ini: Parts of the Face, Facial Expression, The Skeleton, Internal Organs. Tersedia per set atau bundle.',
+  priceOrig:'', price:'Mulai Rp 69.000', link:'https://shopee.co.id/HEXABABY-Jumbo-Flashcard-Our-Amazing-Body-Stimulasi-Otak-Kanan-Pengenalan-Tubuh-Anak-i.13190469.46613688385?extraParams=%7B%22display_model_id%22%3A249283840478%2C%22model_selection_logic%22%3A3%7D', cta:'Beli di Shopee'
+};
+PRODUCT_CARD_BY_MONTH['2026-10']={
+  name:'Jumbo Flashcard<br>Fruits & Veggies',
+  desc:'Flashcard cetak A5 untuk drilling setiap hari bulan ini: set Fruits dan set Vegetables. Tersedia per set atau bundle.',
+  priceOrig:'', price:'Mulai Rp 89.000', link:'https://shopee.co.id/HEXABABY-Jumbo-Flashcard-Fruits-Veggies-Stimulasi-Otak-Kanan-Pengenalan-Real-Food-Anak-i.13190469.46913427329', cta:'Beli di Shopee'
+};
 const BUNDLE_CARD={
   name:'All Access Bundle',
   desc:'Termasuk: Flashcards, Posters, Phonics Set &amp; More Activities — akses lengkap semua produk digital.',
@@ -593,16 +1017,16 @@ const BUNDLE_CARD={
 };
 function renderProductCards(monthKey,d){
   var pc=PRODUCT_CARD_BY_MONTH[monthKey]||PRODUCT_CARD_BY_MONTH['2026-6'];
-  var HX_LABEL_BY_MONTH={'2026-6':'HEXABABY · Phonics Set','2026-7':'HEXABABY · Pre-Math Set','2026-8':'HEXABABY · Colors & Shapes Set'};
+  var HX_LABEL_BY_MONTH={'2026-6':'HEXABABY · Phonics Set','2026-7':'HEXABABY · Pre-Math Set','2026-8':'HEXABABY · Colors & Shapes Set','2026-9':SENSORY['2026-9'].label,'2026-10':SENSORY['2026-10'].label};
   var label=HX_LABEL_BY_MONTH[monthKey]||'HEXABABY · Phonics Set';
   var html='';
   html+='<div class="hx-card hx-card-phonics">'+
     '<div class="hx-card-label">'+label+'</div>'+
     '<div class="hx-card-name">'+pc.name+'</div>'+
-    '<div class="hx-card-file">'+(d&&d.hxFile?'Termasuk: '+d.hxFile:'')+'</div>'+
+    '<div class="hx-card-file">'+(d&&d.hxFile&&!d.sensory?'Termasuk: '+d.hxFile:'')+'</div>'+
     '<div class="hx-card-desc">'+pc.desc+'</div>'+
-    '<div class="hx-card-price-badge">🔥 DISKON</div><div class="hx-card-price-orig">'+pc.priceOrig+'</div><div class="hx-card-price">'+pc.price+'</div>'+
-    '<a href="'+pc.link+'" target="_blank" class="btn-hx-get">Dapatkan →</a>'+
+    (pc.price?((pc.priceOrig?'<div class="hx-card-price-badge">🔥 DISKON</div><div class="hx-card-price-orig">'+pc.priceOrig+'</div>':'')+'<div class="hx-card-price">'+pc.price+'</div>'):'')+
+    '<a href="'+(pc.link||waLink('Halo Hexababy, aku mau order '+pc.name.split('<br>')[0]))+'" target="_blank" class="btn-hx-get">'+(pc.cta||'Dapatkan')+' →</a>'+
   '</div>';
   html+='<div class="hx-card hx-card-bundle">'+
     '<div class="hx-card-best">⭐ BEST DEAL</div>'+
@@ -622,11 +1046,11 @@ function updateCTA(){
   var monthKey=mkey(curY,curM);
   if(!PRODUCT_CARD_BY_MONTH[monthKey])monthKey=latestAvailableMonthKey();
   var pc=PRODUCT_CARD_BY_MONTH[monthKey];
-  var shortName=pc.name.split('<br>')[0];
+  var shortName=pc.name.replace(/^Jumbo Flashcard<br>/,'Flashcard ').split('<br>')[0];
   var descEl=document.getElementById('ctaDesc');
   var btnEl=document.getElementById('ctaBtn');
-  if(descEl)descEl.textContent='Dapatkan '+shortName+' dan mulai main hari ini bersama si kecil.';
-  if(btnEl){btnEl.textContent='📦 Dapatkan '+shortName+' — '+pc.price;btnEl.href=pc.link;}
+  if(descEl)descEl.textContent='Dapatkan '+shortName+' dan mulai main hari ini bersama anak.';
+  if(btnEl){btnEl.textContent='📦 Dapatkan '+shortName+(pc.price?' — '+pc.price:'');btnEl.href=pc.link||waLink('Halo Hexababy, aku mau order '+shortName);}
 }
 function gw(n){return n<=7?1:n<=14?2:n<=21?3:4}
 function mkey(y,m){return y+'-'+m}
@@ -649,7 +1073,7 @@ else{
 var DEFAULT_Y=curY,DEFAULT_M=curM;
 
 // Today card
-(function(){
+function renderToday(){
   var todayData=isRealMonthLive?DATA_BY_MONTH[realKey]:DATA_BY_MONTH[mkey(DEFAULT_Y,DEFAULT_M)];
   var d=todayData.find(function(x){return x.n===todayN;})||todayData[0];
   var chipLabel=CHIP_LABEL_BY_MONTH[mkey(DEFAULT_Y,DEFAULT_M)]||'Huruf';
@@ -665,7 +1089,8 @@ var DEFAULT_Y=curY,DEFAULT_M=curM;
       cells.forEach(function(c,i){if(todayData[i]&&todayData[i].n===d.n)openDetail(todayData[i],c);});
     },80);
   };
-})();
+}
+renderToday();
 
 // Progress
 if(isRealMonthLive){
@@ -684,6 +1109,7 @@ function renderCal(){
   var grid=document.getElementById('calGrid');
   grid.innerHTML='';closeDetail();
   document.getElementById('calMonthTitle').textContent=meta?meta.name:(curM+'/'+curY);
+  document.getElementById('ageSelWrap').style.display=(meta&&meta.sensory)?'inline-flex':'none';
   var chip=document.getElementById('calThemeChip');
   if(meta&&meta.theme){chip.style.display='inline-flex';chip.textContent=meta.theme+(meta.coming?' · Segera':'');}
   else chip.style.display='none';
@@ -711,7 +1137,7 @@ function renderCal(){
     var cls='day-cell '+WB[w];
     if(isToday)cls+=' today-cell';
     c.className=cls;
-    var sd=SD[d.lv]||{d:'●',c:'#ccc'};
+    var sd=d.sensory?{d:'',c:'#ccc'}:(SD[d.lv]||{d:'●',c:'#ccc'});
     var pillCls=d.cel?'pill-celebration':'pill-'+d.cat;
     var pillTxt=d.cel?'🎉':''+d.pillar;
     c.innerHTML='<div class="dc-row"><span class="dc-num">'+d.n+'</span><span class="dc-song-dots" style="color:'+sd.c+'">'+sd.d+'</span></div><div class="dc-act">'+d.act+'</div><span class="dc-pill '+pillCls+'">'+pillTxt+'</span>';
@@ -741,6 +1167,18 @@ function openDetail(d,cellEl){
   var lvMats=LV_MATS_BY_MONTH[monthKey]||LV_MATS;
   document.getElementById('dpNum').textContent=d.n;
   document.getElementById('dpDayStr').textContent=d.dn+', '+d.n+' '+(monthMeta?monthMeta.name:'');
+  var single=!!d.sensory;
+  document.querySelector('.dp-body').style.display=single?'none':'';
+  document.getElementById('dpSingle').style.display=single?'block':'none';
+  document.getElementById('dpRekSection').style.display=(d.rek&&d.rek.length)?'':'none';
+  if(single){
+    document.getElementById('dpChips').innerHTML='<span class="dp-chip dp-chip-week">'+WN[w]+'</span>'+
+      '<span class="dp-chip dp-chip-letter">'+esc(d.sense.n)+'</span>'+
+      '<span class="dp-chip dp-chip-easy">'+ageLabel(curAge)+'</span>';
+    renderProductCards(monthKey,d);
+    renderSensoryDetail(d,monthKey);
+  }
+  if(!single){
   var lvc=LVC[d.lv]||'dp-chip-easy';
   document.getElementById('dpChips').innerHTML=
     '<span class="dp-chip dp-chip-week">'+WN[w]+(d.cel?' · 🎉':'')+'</span>'+
@@ -759,11 +1197,14 @@ function openDetail(d,cellEl){
   document.getElementById('dpActDesc').textContent=d.desc;
   document.getElementById('dpActSteps').innerHTML=(d.steps||[]).map(function(s){return'<li>'+s+'</li>';}).join('');
   document.getElementById('dpActMats').innerHTML=(d.mats||[]).map(function(m){return'<li>'+m+'</li>';}).join('');
+  }
   // Rek cards
   var rg=document.getElementById('dpRekGrid');rg.innerHTML='';
   (d.rek||[]).forEach(function(item){
     var pid=item.pid?('<div class="prod-card-pid">ID: '+item.pid+'</div>'):'';
     var card=document.createElement('div');card.className='prod-card';
+    var shopLink=item.shopee||('https://shopee.co.id/search?keyword='+encodeURIComponent(item.name));
+    if(!item.img){card.innerHTML='<div class="prod-card-img prod-card-ph">🛒<span class="prod-platform-badge">Shopee</span></div><div class="prod-card-body"><div class="prod-card-name">'+item.name+'</div>'+pid+'<div class="prod-card-foot"><a href="'+shopLink+'" target="_blank" class="btn-lihat">Lihat Produk →</a></div></div>';rg.appendChild(card);return;}
     card.innerHTML='<div class="prod-card-img"><img src="'+item.img+'" alt="'+item.name+'" loading="lazy" onerror="this.parentNode.style.background=&quot;var(--cream-mid)&quot;"><span class="prod-platform-badge">Shopee</span></div><div class="prod-card-body"><div class="prod-card-name">'+item.name+'</div>'+pid+'<div class="prod-card-foot"><a href="'+item.shopee+'" target="_blank" class="btn-lihat">Lihat Produk →</a></div></div>';
     rg.appendChild(card);
   });
@@ -779,6 +1220,14 @@ function closeDetail(){
   document.getElementById('detailPanel').classList.remove('open');
   if(activeCell){activeCell.classList.remove('selected-cell');activeCell=null;}
 }
+(function(){
+  var sel=document.getElementById('ageSel');
+  sel.innerHTML=AGE_GROUPS.map(function(a){return '<option value="'+a.k+'"'+(a.k===curAge?' selected':'')+'>'+a.label+'</option>';}).join('');
+  sel.addEventListener('change',function(){
+    curAge=sel.value;try{localStorage.setItem('hx-age',curAge);}catch(e){}
+    buildSensoryMonths();renderToday();renderCal();
+  });
+})();
 renderCal();
 var revEls=document.querySelectorAll('.reveal');
 if('IntersectionObserver' in window){
