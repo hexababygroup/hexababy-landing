@@ -875,9 +875,9 @@ const AUTO_REK=[
   [/\btas\b/i,'RK-136'],[/selotip/i,'RK-137'],[/sendok kayu/i,'RK-138'],[/\bpanci\b/i,'RK-139'],[/tumbuk|lumat/i,'RK-140'],[/parut/i,'RK-141'],
   [/saringan/i,'RK-142'],[/kantong/i,'RK-143'],[/minum/i,'RK-144'],[/salad|\bsup\b|smoothie|adonan|masak|potong pisang|potong pisang|stempel|\bcap\b/i,'RK-146'],
   [/smoothie|blender/i,'RK-147'],[/selimut/i,'RK-148'],[/\btali\b|gerobak/i,'RK-149'],[/high chair/i,'RK-150'],[/tawarkan/i,'RK-151'],[/sendok(?! kayu)/i,'RK-152'],
-  [/cicip/i,'RK-153'],[/perasaan|emosi|marah|tenang|napas|capek|ngantuk|rewel|lapar|kenyang|haus|sakit|jantung/i,'RK-154'],[/perasaan|emosi|marah|tenang|napas|capek|ngantuk|rewel|lapar|kenyang|haus|sakit|jantung/i,'RK-154B'],[/perasaan|emosi|marah|tenang|napas|capek|ngantuk|rewel|lapar|kenyang|haus|sakit|jantung/i,'RK-154C'],
-  [/bounce|goyang|ayun|perahu|pesawat|berputar|putar badan|putar pelan/i,'RK-155'],[/nyanyi|lagu|ketuk|tepuk|bunyi|suara|dengar/i,'RK-156'],
-  [/\bdorong/i,'RK-157'],[/tambang/i,'RK-160'],[/amati (biji|pola|isi|dan)|belah & amati|berbintik/i,'RK-161'],[/remas|lumat|high chair/i,'RK-158'],[/gulir|menggelinding|lompat|berguling|jalan|merangkak|panjat|yoga|engklek|seberangi/i,'RK-159']
+  [/cicip/i,'RK-153'],[/perasaan|emosi|marah|tenang|rewel|ngantuk|capek/i,'RK-154'],[/perasaan|emosi|marah|tenang|rewel|ngantuk|capek/i,'RK-154B'],[/perasaan|emosi|marah|tenang|rewel|ngantuk|capek/i,'RK-154C'],
+  [/bounce/i,'RK-155'],[/nyanyi|lagu|ketuk|marakas|kocok|panci/i,'RK-156'],
+  [/dorong (keranjang|kardus)/i,'RK-157'],[/tambang/i,'RK-160'],[/amati (biji|pola|isi|dan)|belah & amati|berbintik/i,'RK-161'],[/remas|lumat|high chair/i,'RK-158'],[/\bbola\b|gulir|menggelinding/i,'RK-159']
 ];
 function applyAutoRek(){
   Object.keys(SENSORY).forEach(function(mk){var ages=SENSORY[mk].ages;Object.keys(ages).forEach(function(ak){ages[ak].forEach(function(a){
@@ -939,8 +939,6 @@ function renderSensoryDetail(d,monthKey){
        '<a class="dp-addon-btn" href="'+esc(link)+'" target="_blank" rel="noopener">'+(P.cta?P.cta+' →':(P.link?'Lihat produk →':'Tanya via WhatsApp →'))+'</a></div></div>';
   }
   h+='</div>';
-  h+='<div class="dp-safety"><div class="dp-phonics-ref-label">Aman dulu, baru main</div><ul class="dp-mat-list">'+S.safety.map(function(s){return '<li>'+esc(s)+'</li>';}).join('')+'</ul>'+
-     '<div class="dp-safety-src">Sumber: WHO &amp; IDAI (MPASI), AAP (pencegahan tersedak), CDC (milestone 6–36 bulan).</div></div>';
   document.getElementById('dpSingle').innerHTML=h;
 }
 
